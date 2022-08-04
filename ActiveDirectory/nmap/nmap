@@ -1,0 +1,287 @@
+└─$ nmap -sC -sV 10.10.120.19 -vv  
+Starting Nmap 7.92 ( https://nmap.org ) at 2022-08-04 09:15 EDT
+NSE: Loaded 155 scripts for scanning.
+NSE: Script Pre-scanning.
+NSE: Starting runlevel 1 (of 3) scan.
+Initiating NSE at 09:15
+Completed NSE at 09:15, 0.00s elapsed
+NSE: Starting runlevel 2 (of 3) scan.
+Initiating NSE at 09:15
+Completed NSE at 09:15, 0.00s elapsed
+NSE: Starting runlevel 3 (of 3) scan.
+Initiating NSE at 09:15
+Completed NSE at 09:15, 0.00s elapsed
+Initiating Ping Scan at 09:15
+Scanning 10.10.120.19 [2 ports]
+Completed Ping Scan at 09:15, 0.23s elapsed (1 total hosts)
+Initiating Parallel DNS resolution of 1 host. at 09:15
+Completed Parallel DNS resolution of 1 host. at 09:15, 13.00s elapsed
+Initiating Connect Scan at 09:15
+Scanning 10.10.120.19 [1000 ports]
+Discovered open port 445/tcp on 10.10.120.19
+Discovered open port 135/tcp on 10.10.120.19
+Discovered open port 53/tcp on 10.10.120.19
+Discovered open port 3389/tcp on 10.10.120.19
+Discovered open port 139/tcp on 10.10.120.19
+Discovered open port 80/tcp on 10.10.120.19
+Increasing send delay for 10.10.120.19 from 0 to 5 due to 18 out of 58 dropped probes since last increase.
+Discovered open port 3269/tcp on 10.10.120.19
+Discovered open port 389/tcp on 10.10.120.19
+Increasing send delay for 10.10.120.19 from 5 to 10 due to max_successful_tryno increase to 4
+Discovered open port 3268/tcp on 10.10.120.19
+Increasing send delay for 10.10.120.19 from 10 to 20 due to max_successful_tryno increase to 5
+Discovered open port 593/tcp on 10.10.120.19
+Discovered open port 88/tcp on 10.10.120.19
+Discovered open port 636/tcp on 10.10.120.19
+Discovered open port 464/tcp on 10.10.120.19
+Completed Connect Scan at 09:16, 32.62s elapsed (1000 total ports)
+Initiating Service scan at 09:16
+Scanning 13 services on 10.10.120.19
+Completed Service scan at 09:16, 16.52s elapsed (13 services on 1 host)
+NSE: Script scanning 10.10.120.19.
+NSE: Starting runlevel 1 (of 3) scan.
+Initiating NSE at 09:16
+Completed NSE at 09:16, 11.32s elapsed
+NSE: Starting runlevel 2 (of 3) scan.
+Initiating NSE at 09:16
+Completed NSE at 09:16, 8.34s elapsed
+NSE: Starting runlevel 3 (of 3) scan.
+Initiating NSE at 09:16
+Completed NSE at 09:16, 0.00s elapsed
+Nmap scan report for 10.10.120.19
+Host is up, received conn-refused (0.17s latency).
+Scanned at 2022-08-04 09:15:40 EDT for 75s
+Not shown: 987 closed tcp ports (conn-refused)
+PORT     STATE SERVICE       REASON  VERSION
+53/tcp   open  domain        syn-ack Simple DNS Plus
+80/tcp   open  http          syn-ack Microsoft IIS httpd 10.0
+| http-methods: 
+|   Supported Methods: OPTIONS TRACE GET HEAD POST
+|_  Potentially risky methods: TRACE
+|_http-title: IIS Windows Server
+|_http-server-header: Microsoft-IIS/10.0
+88/tcp   open  kerberos-sec  syn-ack Microsoft Windows Kerberos (server time: 2022-08-04 13:16:26Z)
+135/tcp  open  msrpc         syn-ack Microsoft Windows RPC
+139/tcp  open  netbios-ssn   syn-ack Microsoft Windows netbios-ssn
+389/tcp  open  ldap          syn-ack Microsoft Windows Active Directory LDAP (Domain: spookysec.local0., Site: Default-First-Site-Name)
+445/tcp  open  microsoft-ds? syn-ack
+464/tcp  open  kpasswd5?     syn-ack
+593/tcp  open  ncacn_http    syn-ack Microsoft Windows RPC over HTTP 1.0
+636/tcp  open  tcpwrapped    syn-ack
+3268/tcp open  ldap          syn-ack Microsoft Windows Active Directory LDAP (Domain: spookysec.local0., Site: Default-First-Site-Name)
+3269/tcp open  tcpwrapped    syn-ack
+3389/tcp open  ms-wbt-server syn-ack Microsoft Terminal Services
+| ssl-cert: Subject: commonName=AttacktiveDirectory.spookysec.local
+| Issuer: commonName=AttacktiveDirectory.spookysec.local
+| Public Key type: rsa
+| Public Key bits: 2048
+| Signature Algorithm: sha256WithRSAEncryption
+| Not valid before: 2022-08-03T11:48:03
+| Not valid after:  2023-02-02T11:48:03
+| MD5:   22e2 7a03 1a91 281a 48ad 373a 92ed 0197
+| SHA-1: 2e3a cc2e 7c2b f0a6 7687 c7d2 f37f 8a62 3596 85cf
+| -----BEGIN CERTIFICATE-----
+| MIIDCjCCAfKgAwIBAgIQHc1dIIjwtqtFhMl9DSGqWzANBgkqhkiG9w0BAQsFADAu
+| MSwwKgYDVQQDEyNBdHRhY2t0aXZlRGlyZWN0b3J5LnNwb29reXNlYy5sb2NhbDAe
+| Fw0yMjA4MDMxMTQ4MDNaFw0yMzAyMDIxMTQ4MDNaMC4xLDAqBgNVBAMTI0F0dGFj
+| a3RpdmVEaXJlY3Rvcnkuc3Bvb2t5c2VjLmxvY2FsMIIBIjANBgkqhkiG9w0BAQEF
+| AAOCAQ8AMIIBCgKCAQEAqhEIMwWrTVM1B6kMaFFjJbxSGb7XUQRVTDTtgO25xd9d
+| EegA93XX7x923pem87JIsJBUTJ0PZphrFaM11aJI2ybEhDpXdkAh30i6MXYMf3eh
+| LTUAzpMz0RoOHqnxwFiOirqZZKrtmzbHzBufJK6THZAf7Z/dTGy8AJUDdOwNYlB3
+| orzjBMtHMceHVea7faVlzzpKw2N2T5PMacMJ1r3LAEDESZGnsswimvHreZvLdz6z
+| 2C2vfqa97Jjv75MjJyHKXU/zbLSGeIjwhAd4w285+ynXOg77673eWbUDB84I86oO
+| BI6Fb+QZzDRnmKV84sKzY+dlFTzHyNuye9fg0MdYNQIDAQABoyQwIjATBgNVHSUE
+| DDAKBggrBgEFBQcDATALBgNVHQ8EBAMCBDAwDQYJKoZIhvcNAQELBQADggEBAACH
+| 2az8aKSmiGHg1APg9oMwx7xFMx1KbDdsZzv3yBREXt70EwlFvNgJXgQp2QU0ji1t
+| ffwlbfbh2wHBetpBeFcsItrq0Ed1a8WKAM9sG4xw6EWJ8aBKiGhkHiobeUuICqE3
+| 8VVQ6ZgUqeQuMObK1IcRpfHW4khd+MCqNOYG7UK7pslhMblg+SRy9Ez/ppym//jg
+| lfB7o8UORKBOGmTlXm0uUl3eToahU96aCu2uXkWhI1nVVtv7NfNKWe4oxwS8hlFE
+| 7odgDtow7rGCXpXgpWv67/ST/Oj/IiWEtMimvYzNUa7nUlbDX/BxyVjqzcprCzwa
+| XPNWJVaF3h6ix+lgk1M=
+|_-----END CERTIFICATE-----
+| rdp-ntlm-info: 
+|   Target_Name: THM-AD
+|   NetBIOS_Domain_Name: THM-AD
+|   NetBIOS_Computer_Name: ATTACKTIVEDIREC
+|   DNS_Domain_Name: spookysec.local
+|   DNS_Computer_Name: AttacktiveDirectory.spookysec.local
+|   Product_Version: 10.0.17763
+|_  System_Time: 2022-08-04T13:16:38+00:00
+|_ssl-date: 2022-08-04T13:16:49+00:00; +1s from scanner time.
+Service Info: Host: ATTACKTIVEDIREC; OS: Windows; CPE: cpe:/o:microsoft:windows
+
+Host script results:
+| smb2-security-mode: 
+|   3.1.1: 
+|_    Message signing enabled and required
+|_clock-skew: mean: 0s, deviation: 0s, median: 0s
+| p2p-conficker: 
+|   Checking for Conficker.C or higher...
+|   Check 1 (port 42719/tcp): CLEAN (Couldn't connect)
+|   Check 2 (port 52523/tcp): CLEAN (Couldn't connect)
+|   Check 3 (port 5740/udp): CLEAN (Timeout)
+|   Check 4 (port 45055/udp): CLEAN (Failed to receive data)
+|_  0/4 checks are positive: Host is CLEAN or ports are blocked
+| smb2-time: 
+|   date: 2022-08-04T13:16:42
+|_  start_date: N/A
+
+NSE: Script Post-scanning.
+NSE: Starting runlevel 1 (of 3) scan.
+Initiating NSE at 09:16
+Completed NSE at 09:16, 0.00s elapsed
+NSE: Starting runlevel 2 (of 3) scan.
+Initiating NSE at 09:16
+Completed NSE at 09:16, 0.00s elapsed
+NSE: Starting runlevel 3 (of 3) scan.
+Initiating NSE at 09:16
+Completed NSE at 09:16, 0.00s elapsed
+Read data files from: /usr/bin/../share/nmap
+Service detection performed. Please report any incorrect results at https://nmap.org/submit/ .
+Nmap done: 1 IP address (1 host up) scanned in 89.80 seconds
+                              
+                              
+                              
+                              
+                              
+└─$ nmap -sC -sV 10.10.120.19 -vv -A
+Starting Nmap 7.92 ( https://nmap.org ) at 2022-08-04 09:25 EDT
+NSE: Loaded 155 scripts for scanning.
+NSE: Script Pre-scanning.
+NSE: Starting runlevel 1 (of 3) scan.
+Initiating NSE at 09:25
+Completed NSE at 09:25, 0.00s elapsed
+NSE: Starting runlevel 2 (of 3) scan.
+Initiating NSE at 09:25
+Completed NSE at 09:25, 0.00s elapsed
+NSE: Starting runlevel 3 (of 3) scan.
+Initiating NSE at 09:25
+Completed NSE at 09:25, 0.00s elapsed
+Initiating Ping Scan at 09:25
+Scanning 10.10.120.19 [2 ports]
+Completed Ping Scan at 09:25, 0.17s elapsed (1 total hosts)
+Initiating Parallel DNS resolution of 1 host. at 09:25
+Completed Parallel DNS resolution of 1 host. at 09:25, 13.00s elapsed
+Initiating Connect Scan at 09:25
+Scanning 10.10.120.19 [1000 ports]
+Discovered open port 3389/tcp on 10.10.120.19
+Discovered open port 80/tcp on 10.10.120.19
+Discovered open port 445/tcp on 10.10.120.19
+Discovered open port 135/tcp on 10.10.120.19
+Discovered open port 139/tcp on 10.10.120.19
+Discovered open port 53/tcp on 10.10.120.19
+Increasing send delay for 10.10.120.19 from 0 to 5 due to 49 out of 163 dropped probes since last increase.
+Discovered open port 389/tcp on 10.10.120.19
+Increasing send delay for 10.10.120.19 from 5 to 10 due to 11 out of 33 dropped probes since last increase.
+Discovered open port 3269/tcp on 10.10.120.19
+Discovered open port 636/tcp on 10.10.120.19
+Discovered open port 464/tcp on 10.10.120.19
+Discovered open port 593/tcp on 10.10.120.19
+Discovered open port 88/tcp on 10.10.120.19
+Discovered open port 3268/tcp on 10.10.120.19
+Completed Connect Scan at 09:26, 27.96s elapsed (1000 total ports)
+Initiating Service scan at 09:26
+Scanning 13 services on 10.10.120.19
+Completed Service scan at 09:26, 15.95s elapsed (13 services on 1 host)
+NSE: Script scanning 10.10.120.19.
+NSE: Starting runlevel 1 (of 3) scan.
+Initiating NSE at 09:26
+Completed NSE at 09:26, 9.23s elapsed
+NSE: Starting runlevel 2 (of 3) scan.
+Initiating NSE at 09:26
+Completed NSE at 09:26, 5.29s elapsed
+NSE: Starting runlevel 3 (of 3) scan.
+Initiating NSE at 09:26
+Completed NSE at 09:26, 0.00s elapsed
+Nmap scan report for 10.10.120.19
+Host is up, received syn-ack (0.17s latency).
+Scanned at 2022-08-04 09:25:55 EDT for 58s
+Not shown: 987 closed tcp ports (conn-refused)
+PORT     STATE SERVICE       REASON  VERSION
+53/tcp   open  domain        syn-ack Simple DNS Plus
+80/tcp   open  http          syn-ack Microsoft IIS httpd 10.0
+|_http-server-header: Microsoft-IIS/10.0
+|_http-title: IIS Windows Server
+| http-methods: 
+|   Supported Methods: OPTIONS TRACE GET HEAD POST
+|_  Potentially risky methods: TRACE
+88/tcp   open  kerberos-sec  syn-ack Microsoft Windows Kerberos (server time: 2022-08-04 13:26:30Z)
+135/tcp  open  msrpc         syn-ack Microsoft Windows RPC
+139/tcp  open  netbios-ssn   syn-ack Microsoft Windows netbios-ssn
+389/tcp  open  ldap          syn-ack Microsoft Windows Active Directory LDAP (Domain: spookysec.local0., Site: Default-First-Site-Name)
+445/tcp  open  microsoft-ds? syn-ack
+464/tcp  open  kpasswd5?     syn-ack
+593/tcp  open  ncacn_http    syn-ack Microsoft Windows RPC over HTTP 1.0
+636/tcp  open  tcpwrapped    syn-ack
+3268/tcp open  ldap          syn-ack Microsoft Windows Active Directory LDAP (Domain: spookysec.local0., Site: Default-First-Site-Name)
+3269/tcp open  tcpwrapped    syn-ack
+3389/tcp open  ms-wbt-server syn-ack Microsoft Terminal Services
+| ssl-cert: Subject: commonName=AttacktiveDirectory.spookysec.local
+| Issuer: commonName=AttacktiveDirectory.spookysec.local
+| Public Key type: rsa
+| Public Key bits: 2048
+| Signature Algorithm: sha256WithRSAEncryption
+| Not valid before: 2022-08-03T11:48:03
+| Not valid after:  2023-02-02T11:48:03
+| MD5:   22e2 7a03 1a91 281a 48ad 373a 92ed 0197
+| SHA-1: 2e3a cc2e 7c2b f0a6 7687 c7d2 f37f 8a62 3596 85cf
+| -----BEGIN CERTIFICATE-----
+| MIIDCjCCAfKgAwIBAgIQHc1dIIjwtqtFhMl9DSGqWzANBgkqhkiG9w0BAQsFADAu
+| MSwwKgYDVQQDEyNBdHRhY2t0aXZlRGlyZWN0b3J5LnNwb29reXNlYy5sb2NhbDAe
+| Fw0yMjA4MDMxMTQ4MDNaFw0yMzAyMDIxMTQ4MDNaMC4xLDAqBgNVBAMTI0F0dGFj
+| a3RpdmVEaXJlY3Rvcnkuc3Bvb2t5c2VjLmxvY2FsMIIBIjANBgkqhkiG9w0BAQEF
+| AAOCAQ8AMIIBCgKCAQEAqhEIMwWrTVM1B6kMaFFjJbxSGb7XUQRVTDTtgO25xd9d
+| EegA93XX7x923pem87JIsJBUTJ0PZphrFaM11aJI2ybEhDpXdkAh30i6MXYMf3eh
+| LTUAzpMz0RoOHqnxwFiOirqZZKrtmzbHzBufJK6THZAf7Z/dTGy8AJUDdOwNYlB3
+| orzjBMtHMceHVea7faVlzzpKw2N2T5PMacMJ1r3LAEDESZGnsswimvHreZvLdz6z
+| 2C2vfqa97Jjv75MjJyHKXU/zbLSGeIjwhAd4w285+ynXOg77673eWbUDB84I86oO
+| BI6Fb+QZzDRnmKV84sKzY+dlFTzHyNuye9fg0MdYNQIDAQABoyQwIjATBgNVHSUE
+| DDAKBggrBgEFBQcDATALBgNVHQ8EBAMCBDAwDQYJKoZIhvcNAQELBQADggEBAACH
+| 2az8aKSmiGHg1APg9oMwx7xFMx1KbDdsZzv3yBREXt70EwlFvNgJXgQp2QU0ji1t
+| ffwlbfbh2wHBetpBeFcsItrq0Ed1a8WKAM9sG4xw6EWJ8aBKiGhkHiobeUuICqE3
+| 8VVQ6ZgUqeQuMObK1IcRpfHW4khd+MCqNOYG7UK7pslhMblg+SRy9Ez/ppym//jg
+| lfB7o8UORKBOGmTlXm0uUl3eToahU96aCu2uXkWhI1nVVtv7NfNKWe4oxwS8hlFE
+| 7odgDtow7rGCXpXgpWv67/ST/Oj/IiWEtMimvYzNUa7nUlbDX/BxyVjqzcprCzwa
+| XPNWJVaF3h6ix+lgk1M=
+|_-----END CERTIFICATE-----
+|_ssl-date: 2022-08-04T13:26:49+00:00; 0s from scanner time.
+| rdp-ntlm-info: 
+|   Target_Name: THM-AD
+|   NetBIOS_Domain_Name: THM-AD
+|   NetBIOS_Computer_Name: ATTACKTIVEDIREC
+|   DNS_Domain_Name: spookysec.local
+|   DNS_Computer_Name: AttacktiveDirectory.spookysec.local
+|   Product_Version: 10.0.17763
+|_  System_Time: 2022-08-04T13:26:41+00:00
+Service Info: Host: ATTACKTIVEDIREC; OS: Windows; CPE: cpe:/o:microsoft:windows
+
+Host script results:
+| smb2-time: 
+|   date: 2022-08-04T13:26:41
+|_  start_date: N/A
+| p2p-conficker: 
+|   Checking for Conficker.C or higher...
+|   Check 1 (port 42719/tcp): CLEAN (Couldn't connect)
+|   Check 2 (port 52523/tcp): CLEAN (Couldn't connect)
+|   Check 3 (port 5740/udp): CLEAN (Timeout)
+|   Check 4 (port 45055/udp): CLEAN (Failed to receive data)
+|_  0/4 checks are positive: Host is CLEAN or ports are blocked
+| smb2-security-mode: 
+|   3.1.1: 
+|_    Message signing enabled and required
+|_clock-skew: mean: 0s, deviation: 0s, median: 0s
+
+NSE: Script Post-scanning.
+NSE: Starting runlevel 1 (of 3) scan.
+Initiating NSE at 09:26
+Completed NSE at 09:26, 0.00s elapsed
+NSE: Starting runlevel 2 (of 3) scan.
+Initiating NSE at 09:26
+Completed NSE at 09:26, 0.00s elapsed
+NSE: Starting runlevel 3 (of 3) scan.
+Initiating NSE at 09:26
+Completed NSE at 09:26, 0.00s elapsed
+Read data files from: /usr/bin/../share/nmap
+Service detection performed. Please report any incorrect results at https://nmap.org/submit/ .
+Nmap done: 1 IP address (1 host up) scanned in 72.32 seconds
+                                                           
