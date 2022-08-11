@@ -28,3 +28,57 @@ Q) There's another flag to be found in one of the virtual hosts! Find it!
  gobuster dir -u http://vhosts.webenum.thm/ -w /usr/share/wordlists/dirbuster/directory-list-2.3-medium.txt -x.html,.css,.js,.php,.asp,.txt,.conf,.config
 
 ```
+```
+Enumerate the site, what is the name of the theme that is detected as running?
+wpscan --url http://wpscan.thm/ --enumerate t 
+
+WPScan says that this theme is out of date, what does it suggest is the number of the latest version?
+ Same as above
+
+Enumerate the site, what is the name of the plugin that WPScan has found?
+ wpscan --url http://wpscan.thm/ --enumerate p
+
+Enumerate the site, what username can WPScan find?
+ wpscan --url http://wpscan.thm/ --enumerate u
+
+
+Construct a WPScan command to brute-force the site with this username, using the rockyou wordlist as the password list. What is the password to this user? 
+ wpscan --url http://wpscan.thm/ --username <name> --password /usr/share/wordlists/rockyou.txt 
+
+```
+
+<!-- Enumerate the site, what is the name of the theme that is detected as running?
+twentynineteen
+WPScan says that this theme is out of date, what does it suggest is the number of the latest version?
+
+2.3
+Enumerate the site, what is the name of the plugin that WPScan has found?
+
+nextgen-gallery
+Enumerate the site, what username can WPScan find?
+
+phreakazoid
+Construct a WPScan command to brute-force the site with this username, using the rockyou wordlist as the password list. What is the password to this user? 
+
+linkinpark -->
+
+```
+What is the name & version of the web server that  Nikto has determined running on port 80?
+nikto -h <IP>:80
+
+There is another web server running on another port. What is the name & version of this web server?
+same as above:8080
+
+What is the name of the Cookie that this JBoss server gives?
+nikto -h <IP>:<port> -Display 2
+```
+
+
+<!-- What is the name & version of the web server that  Nikto has determined running on port 80?
+Apache/2.4.7
+There is another web server running on another port. What is the name & version of this web server?
+
+Apache-Coyote/1.1
+What is the name of the Cookie that this JBoss server gives?
+
+JSESSIONID -->
