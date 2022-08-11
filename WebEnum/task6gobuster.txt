@@ -1,0 +1,63 @@
+root@ip-10-10-83-98:~# gobuster dir -u webenum.thm -w /usr/share/wordlists/dirbuster/directory-list-2.3-medium.txt 
+===============================================================
+Gobuster v3.0.1
+by OJ Reeves (@TheColonial) & Christian Mehlmauer (@_FireFart_)
+===============================================================
+[+] Url:            http://webenum.thm
+[+] Threads:        10
+[+] Wordlist:       /usr/share/wordlists/dirbuster/directory-list-2.3-medium.txt
+[+] Status codes:   200,204,301,302,307,401,403
+[+] User Agent:     gobuster/3.0.1
+[+] Timeout:        10s
+===============================================================
+2022/08/11 05:40:16 Starting gobuster
+===============================================================
+/images (Status: 301)
+/public (Status: 301)
+/css (Status: 301)
+/js (Status: 301)
+/Changes (Status: 301)
+/VIDEO (Status: 301)
+===============================================================
+2022/08/11 05:40:40 Finished
+===============================================================
+root@ip-10-10-83-98:~# 
+
+gobuster vhost -u http://webenum.thm -w /usr/share/wordlists/SecLists/Discovery/DNS/subdomains-top1million-5000.txt 
+===============================================================
+Gobuster v3.0.1
+by OJ Reeves (@TheColonial) & Christian Mehlmauer (@_FireFart_)
+===============================================================
+[+] Url:          http://webenum.thm
+[+] Threads:      10
+[+] Wordlist:     /usr/share/wordlists/SecLists/Discovery/DNS/subdomains-top1million-5000.txt
+[+] User Agent:   gobuster/3.0.1
+[+] Timeout:      10s
+===============================================================
+2022/08/11 05:51:27 Starting gobuster
+===============================================================
+Found: learning.webenum.thm (Status: 200) [Size: 13245]
+Found: products.webenum.thm (Status: 200) [Size: 4941]
+===============================================================
+2022/08/11 05:52:04 Finished
+
+
+gobuster dir -u http://products.webenum.thm/ -w /usr/share/wordlists/dirbuster/directory-list-2.3-medium.txt -x.html,.css,.js,.php,.asp,.txt,.conf,.config
+===============================================================
+Gobuster v3.0.1
+by OJ Reeves (@TheColonial) & Christian Mehlmauer (@_FireFart_)
+===============================================================
+[+] Url:            http://products.webenum.thm/
+[+] Threads:        10
+[+] Wordlist:       /usr/share/wordlists/dirbuster/directory-list-2.3-medium.txt
+[+] Status codes:   200,204,301,302,307,401,403
+[+] User Agent:     gobuster/3.0.1
+[+] Extensions:     txt,conf,config,html,css,js,php,asp
+[+] Timeout:        10s
+===============================================================
+2022/08/11 05:58:42 Starting gobuster
+===============================================================
+/index.html (Status: 200)
+/css (Status: 301)
+/js (Status: 301)
+/flag.txt (Status: 200)
