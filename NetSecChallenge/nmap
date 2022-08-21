@@ -1,0 +1,87 @@
+root@ip-10-10-110-85:~# sudo nmap -A -p- -T4 -sC -sV 10.10.34.194
+
+Starting Nmap 7.60 ( https://nmap.org ) at 2022-08-21 13:40 BST
+Stats: 0:00:52 elapsed; 0 hosts completed (1 up), 1 undergoing SYN Stealth Scan
+SYN Stealth Scan Timing: About 23.58% done; ETC: 13:44 (0:02:45 remaining)
+Stats: 0:10:59 elapsed; 0 hosts completed (1 up), 1 undergoing SYN Stealth Scan
+SYN Stealth Scan Timing: About 66.95% done; ETC: 13:56 (0:05:25 remaining)
+Stats: 0:11:51 elapsed; 0 hosts completed (1 up), 1 undergoing SYN Stealth Scan
+SYN Stealth Scan Timing: About 69.33% done; ETC: 13:57 (0:05:14 remaining)
+Stats: 0:13:45 elapsed; 0 hosts completed (1 up), 1 undergoing SYN Stealth Scan
+SYN Stealth Scan Timing: About 77.18% done; ETC: 13:58 (0:04:04 remaining)
+Stats: 0:22:25 elapsed; 0 hosts completed (1 up), 1 undergoing Service Scan
+Service scan Timing: About 66.67% done; ETC: 14:03 (0:00:22 remaining)
+Stats: 0:22:35 elapsed; 0 hosts completed (1 up), 1 undergoing Service Scan
+Service scan Timing: About 66.67% done; ETC: 14:03 (0:00:27 remaining)
+Stats: 0:23:27 elapsed; 0 hosts completed (1 up), 1 undergoing Service Scan
+Service scan Timing: About 66.67% done; ETC: 14:04 (0:00:53 remaining)
+Stats: 0:23:32 elapsed; 0 hosts completed (1 up), 1 undergoing Service Scan
+Service scan Timing: About 66.67% done; ETC: 14:04 (0:00:56 remaining)
+Nmap scan report for ip-10-10-34-194.eu-west-1.compute.internal (10.10.34.194)
+Host is up (0.00075s latency).
+Not shown: 65529 closed ports
+PORT      STATE SERVICE       VERSION
+22/tcp    open  ssh           (protocol 2.0)
+| fingerprint-strings: 
+|   NULL: 
+|_    SSH-2.0-OpenSSH_8.2p1 THM{946219583339}
+80/tcp    open  http          lighttpd
+|_http-server-header: lighttpd THM{web_server_25352}
+|_http-title: Hello, world!
+139/tcp   open  netbios-ssn?
+| fingerprint-strings: 
+|   SMBProgNeg: 
+|_    SMBr
+445/tcp   open  microsoft-ds?
+| fingerprint-strings: 
+|   SMBProgNeg: 
+|_    SMBr
+8080/tcp  open  http          Node.js (Express middleware)
+|_http-open-proxy: Proxy might be redirecting requests
+|_http-title: Site doesn't have a title (text/html; charset=utf-8).
+10021/tcp open  ftp           vsftpd 3.0.3
+3 services unrecognized despite returning data. If you know the service/version, please submit the following fingerprints at https://nmap.org/cgi-bin/submit.cgi?new-service :
+==============NEXT SERVICE FINGERPRINT (SUBMIT INDIVIDUALLY)==============
+SF-Port22-TCP:V=7.60%I=7%D=8/21%Time=63022CD8%P=x86_64-pc-linux-gnu%r(NULL
+SF:,29,"SSH-2\.0-OpenSSH_8\.2p1\x20THM{946219583339}\r\n");
+==============NEXT SERVICE FINGERPRINT (SUBMIT INDIVIDUALLY)==============
+SF-Port139-TCP:V=7.60%I=7%D=8/21%Time=63022CDD%P=x86_64-pc-linux-gnu%r(SMB
+SF:ProgNeg,29,"\0\0\0%\xffSMBr\0\0\0\0\x88\x03@\0\0\0\0\0\0\0\0\0\0\0\0\0\
+SF:0@\x06\0\0\x01\0\x01\xff\xff\0\0");
+==============NEXT SERVICE FINGERPRINT (SUBMIT INDIVIDUALLY)==============
+SF-Port445-TCP:V=7.60%I=7%D=8/21%Time=63022CD8%P=x86_64-pc-linux-gnu%r(SMB
+SF:ProgNeg,29,"\0\0\0%\xffSMBr\0\0\0\0\x88\x03@\0\0\0\0\0\0\0\0\0\0\0\0\0\
+SF:0@\x06\0\0\x01\0\x01\xff\xff\0\0");
+MAC Address: 02:AB:73:24:85:8B (Unknown)
+No exact OS matches for host (If you know what OS is running on it, see https://nmap.org/submit/ ).
+TCP/IP fingerprint:
+OS:SCAN(V=7.60%E=4%D=8/21%OT=22%CT=1%CU=32560%PV=Y%DS=1%DC=D%G=Y%M=02AB73%T
+OS:M=63022D5D%P=x86_64-pc-linux-gnu)SEQ(SP=109%GCD=1%ISR=10A%TI=Z%CI=Z%TS=A
+OS:)SEQ(SP=109%GCD=1%ISR=10A%TI=Z%CI=Z%II=I%TS=A)OPS(O1=M2301ST11NW7%O2=M23
+OS:01ST11NW7%O3=M2301NNT11NW7%O4=M2301ST11NW7%O5=M2301ST11NW7%O6=M2301ST11)
+OS:WIN(W1=F4B3%W2=F4B3%W3=F4B3%W4=F4B3%W5=F4B3%W6=F4B3)ECN(R=Y%DF=Y%T=40%W=
+OS:F507%O=M2301NNSNW7%CC=Y%Q=)T1(R=Y%DF=Y%T=40%S=O%A=S+%F=AS%RD=0%Q=)T2(R=N
+OS:)T3(R=N)T4(R=Y%DF=Y%T=40%W=0%S=A%A=Z%F=R%O=%RD=0%Q=)T5(R=Y%DF=Y%T=40%W=0
+OS:%S=Z%A=S+%F=AR%O=%RD=0%Q=)T6(R=Y%DF=Y%T=40%W=0%S=A%A=Z%F=R%O=%RD=0%Q=)T7
+OS:(R=Y%DF=Y%T=40%W=0%S=Z%A=S+%F=AR%O=%RD=0%Q=)U1(R=Y%DF=N%T=40%IPL=164%UN=
+OS:0%RIPL=G%RID=G%RIPCK=G%RUCK=G%RUD=G)IE(R=Y%DFI=N%T=40%CD=S)
+
+Network Distance: 1 hop
+Service Info: OS: Unix
+
+Host script results:
+|_nbstat: NetBIOS name: NETSEC-CHALLENG, NetBIOS user: <unknown>, NetBIOS MAC: <unknown> (unknown)
+| smb2-security-mode: 
+|   2.02: 
+|_    Message signing enabled but not required
+| smb2-time: 
+|   date: 2022-08-21 14:04:25
+|_  start_date: 1600-12-31 23:58:45
+
+TRACEROUTE
+HOP RTT     ADDRESS
+1   0.75 ms ip-10-10-34-194.eu-west-1.compute.internal (10.10.34.194)
+
+OS and Service detection performed. Please report any incorrect results at https://nmap.org/submit/ .
+Nmap done: 1 IP address (1 host up) scanned in 1440.64 seconds
+root@ip-10-10-110-85:~# 
