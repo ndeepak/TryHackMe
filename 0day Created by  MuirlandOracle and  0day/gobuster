@@ -1,0 +1,27 @@
+root@ip-10-10-192-226:~# gobuster dir -u 10.10.100.40 -w /usr/share/wordlists/dirbuster/directory-list-2.3-medium.txt 
+===============================================================
+Gobuster v3.0.1
+by OJ Reeves (@TheColonial) & Christian Mehlmauer (@_FireFart_)
+===============================================================
+[+] Url:            http://10.10.100.40
+[+] Threads:        10
+[+] Wordlist:       /usr/share/wordlists/dirbuster/directory-list-2.3-medium.txt
+[+] Status codes:   200,204,301,302,307,401,403
+[+] User Agent:     gobuster/3.0.1
+[+] Timeout:        10s
+===============================================================
+2022/08/22 08:56:15 Starting gobuster
+===============================================================
+/cgi-bin (Status: 301)
+/img (Status: 301)
+/uploads (Status: 301)
+/admin (Status: 301)
+/css (Status: 301)
+/js (Status: 301)
+/backup (Status: 301)
+/secret (Status: 301)
+/server-status (Status: 403)
+===============================================================
+2022/08/22 08:56:36 Finished
+===============================================================
+root@ip-10-10-192-226:~# 
