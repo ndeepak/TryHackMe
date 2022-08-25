@@ -1,0 +1,89 @@
+root@ip-10-10-74-21:~# nmap 10.10.39.64
+
+Starting Nmap 7.60 ( https://nmap.org ) at 2022-08-25 17:54 BST
+Stats: 0:00:12 elapsed; 0 hosts completed (1 up), 1 undergoing SYN Stealth Scan
+SYN Stealth Scan Timing: About 46.83% done; ETC: 17:54 (0:00:14 remaining)
+Nmap scan report for ip-10-10-39-64.eu-west-1.compute.internal (10.10.39.64)
+Host is up (0.016s latency).
+Not shown: 995 filtered ports
+PORT     STATE SERVICE
+80/tcp   open  http
+135/tcp  open  msrpc
+139/tcp  open  netbios-ssn
+445/tcp  open  microsoft-ds
+3389/tcp open  ms-wbt-server
+MAC Address: 02:CC:7D:21:48:9F (Unknown)
+
+Nmap done: 1 IP address (1 host up) scanned in 17.41 seconds
+root@ip-10-10-74-21:~# 
+root@ip-10-10-74-21:~# sudo nmap -A -sC -sV -p- -T4 10.10.39.64
+
+Starting Nmap 7.60 ( https://nmap.org ) at 2022-08-25 17:55 BST
+Stats: 0:12:13 elapsed; 0 hosts completed (1 up), 1 undergoing SYN Stealth Scan
+SYN Stealth Scan Timing: About 84.52% done; ETC: 18:10 (0:02:14 remaining)
+Stats: 0:13:57 elapsed; 0 hosts completed (1 up), 1 undergoing SYN Stealth Scan
+SYN Stealth Scan Timing: About 96.59% done; ETC: 18:10 (0:00:30 remaining)
+Nmap scan report for ip-10-10-39-64.eu-west-1.compute.internal (10.10.39.64)
+Host is up (0.012s latency).
+Not shown: 65526 filtered ports
+PORT      STATE SERVICE       VERSION
+80/tcp    open  http          Microsoft IIS httpd 10.0
+| http-methods: 
+|_  Potentially risky methods: TRACE
+|_http-server-header: Microsoft-IIS/10.0
+|_http-title: IIS Windows Server
+135/tcp   open  msrpc         Microsoft Windows RPC
+139/tcp   open  netbios-ssn   Microsoft Windows netbios-ssn
+445/tcp   open  microsoft-ds  Windows Server 2016 Standard Evaluation 14393 microsoft-ds
+3389/tcp  open  ms-wbt-server Microsoft Terminal Services
+| ssl-cert: Subject: commonName=Relevant
+| Not valid before: 2022-08-24T16:53:37
+|_Not valid after:  2023-02-23T16:53:37
+|_ssl-date: 2022-08-25T17:10:58+00:00; 0s from scanner time.
+5985/tcp  open  http          Microsoft HTTPAPI httpd 2.0 (SSDP/UPnP)
+|_http-server-header: Microsoft-HTTPAPI/2.0
+|_http-title: Not Found
+49663/tcp open  http          Microsoft IIS httpd 10.0
+| http-methods: 
+|_  Potentially risky methods: TRACE
+|_http-server-header: Microsoft-IIS/10.0
+|_http-title: IIS Windows Server
+49667/tcp open  msrpc         Microsoft Windows RPC
+49669/tcp open  msrpc         Microsoft Windows RPC
+MAC Address: 02:CC:7D:21:48:9F (Unknown)
+Warning: OSScan results may be unreliable because we could not find at least 1 open and 1 closed port
+Device type: general purpose
+Running (JUST GUESSING): Microsoft Windows 10 (85%)
+OS CPE: cpe:/o:microsoft:windows_10
+Aggressive OS guesses: Microsoft Windows 10 build 14393 (85%)
+No exact OS matches for host (test conditions non-ideal).
+Network Distance: 1 hop
+Service Info: OSs: Windows, Windows Server 2008 R2 - 2012; CPE: cpe:/o:microsoft:windows
+
+Host script results:
+|_nbstat: NetBIOS name: RELEVANT, NetBIOS user: <unknown>, NetBIOS MAC: 02:cc:7d:21:48:9f (unknown)
+| smb-os-discovery: 
+|   OS: Windows Server 2016 Standard Evaluation 14393 (Windows Server 2016 Standard Evaluation 6.3)
+|   Computer name: Relevant
+|   NetBIOS computer name: RELEVANT\x00
+|   Workgroup: WORKGROUP\x00
+|_  System time: 2022-08-25T10:10:58-07:00
+| smb-security-mode: 
+|   account_used: guest
+|   authentication_level: user
+|   challenge_response: supported
+|_  message_signing: disabled (dangerous, but default)
+| smb2-security-mode: 
+|   2.02: 
+|_    Message signing enabled but not required
+| smb2-time: 
+|   date: 2022-08-25 18:10:58
+|_  start_date: 2022-08-25 17:53:54
+
+TRACEROUTE
+HOP RTT      ADDRESS
+1   11.74 ms ip-10-10-39-64.eu-west-1.compute.internal (10.10.39.64)
+
+OS and Service detection performed. Please report any incorrect results at https://nmap.org/submit/ .
+Nmap done: 1 IP address (1 host up) scanned in 963.81 seconds
+root@ip-10-10-74-21:~# 
