@@ -1,0 +1,167 @@
+root@ip-10-10-122-123:~# sudo nmap -A -T4 -p- -sC -sV 10.10.201.28
+
+Starting Nmap 7.60 ( https://nmap.org ) at 2022-08-27 19:33 BST
+Warning: 10.10.201.28 giving up on port because retransmission cap hit (6).
+Stats: 0:02:21 elapsed; 0 hosts completed (1 up), 1 undergoing SYN Stealth Scan
+SYN Stealth Scan Timing: About 18.97% done; ETC: 19:45 (0:09:58 remaining)
+Stats: 0:03:19 elapsed; 0 hosts completed (1 up), 1 undergoing SYN Stealth Scan
+SYN Stealth Scan Timing: About 22.99% done; ETC: 19:47 (0:11:03 remaining)
+Stats: 0:04:01 elapsed; 0 hosts completed (1 up), 1 undergoing SYN Stealth Scan
+SYN Stealth Scan Timing: About 25.89% done; ETC: 19:48 (0:11:27 remaining)
+Stats: 0:07:31 elapsed; 0 hosts completed (1 up), 1 undergoing SYN Stealth Scan
+SYN Stealth Scan Timing: About 40.35% done; ETC: 19:51 (0:11:05 remaining)
+Stats: 0:20:01 elapsed; 0 hosts completed (1 up), 1 undergoing SYN Stealth Scan
+SYN Stealth Scan Timing: About 92.04% done; ETC: 19:54 (0:01:44 remaining)
+Stats: 0:24:26 elapsed; 0 hosts completed (1 up), 1 undergoing SYN Stealth Scan
+SYN Stealth Scan Timing: About 99.99% done; ETC: 19:57 (0:00:00 remaining)
+Nmap scan report for ip-10-10-201-28.eu-west-1.compute.internal (10.10.201.28)
+Host is up (0.00040s latency).
+Not shown: 65530 closed ports
+PORT      STATE SERVICE      VERSION
+22/tcp    open  ssh          OpenSSH 8.2p1 Ubuntu 4ubuntu0.4 (Ubuntu Linux; protocol 2.0)
+80/tcp    open  http         nginx 1.18.0 (Ubuntu)
+|_http-server-header: nginx/1.18.0 (Ubuntu)
+|_http-title: Did not follow redirect to https://ip-10-10-201-28.eu-west-1.compute.internal:4040/
+4040/tcp  open  ssl/yo-main?
+| fingerprint-strings: 
+|   GetRequest, HTTPOptions: 
+|     HTTP/1.1 200 OK
+|     Content-type: text/html
+|     Date: Sat, 27 Aug 2022 18:58:56 GMT
+|     Connection: close
+|     <!DOCTYPE html>
+|     <html>
+|     <head>
+|     <title>ABC</title>
+|     <style>
+|     body {
+|     width: 35em;
+|     margin: 0 auto;
+|     font-family: Tahoma, Verdana, Arial, sans-serif;
+|     </style>
+|     </head>
+|     <body>
+|     <h1>Welcome to ABC!</h1>
+|     <p>Abbadabba Broadcasting Compandy</p>
+|     <p>We're in the process of building a website! Can you believe this technology exists in bedrock?!?</p>
+|     <p>Barney is helping to setup the server, and he said this info was important...</p>
+|     <pre>
+|     Hey, it's Barney. I only figured out nginx so far, what the h3ll is a database?!?
+|     Bamm Bamm tried to setup a sql database, but I don't see it running.
+|     Looks like it started something else, but I'm not sure how to turn it off...
+|     said it was from the toilet and OVER 9000!
+|_    Need to try and secure
+| ssl-cert: Subject: commonName=localhost
+| Not valid before: 2022-08-27T18:32:26
+|_Not valid after:  2023-08-27T18:32:26
+|_ssl-date: TLS randomness does not represent time
+9009/tcp  open  domain       ISC BIND What are you looking
+54321/tcp open  ssl/unknown
+| fingerprint-strings: 
+|   DNSStatusRequest, DNSVersionBindReq, FourOhFourRequest, GenericLines, GetRequest, HTTPOptions, Help, Kerberos, LANDesk-RC, LDAPBindReq, LDAPSearchReq, LPDString, NCP, NULL, NotesRPC, RPCCheck, RTSPRequest, SIPOptions, SMBProgNeg, SSLSessionReq, TLSSessionReq, TerminalServer, X11Probe: 
+|_    Error: 'undefined' is not authorized for access.
+| ssl-cert: Subject: commonName=localhost
+| Not valid before: 2022-08-27T18:32:26
+|_Not valid after:  2023-08-27T18:32:26
+|_ssl-date: TLS randomness does not represent time
+2 services unrecognized despite returning data. If you know the service/version, please submit the following fingerprints at https://nmap.org/cgi-bin/submit.cgi?new-service :
+==============NEXT SERVICE FINGERPRINT (SUBMIT INDIVIDUALLY)==============
+SF-Port4040-TCP:V=7.60%T=SSL%I=7%D=8/27%Time=630A6970%P=x86_64-pc-linux-gn
+SF:u%r(GetRequest,3BE,"HTTP/1\.1\x20200\x20OK\r\nContent-type:\x20text/htm
+SF:l\r\nDate:\x20Sat,\x2027\x20Aug\x202022\x2018:58:56\x20GMT\r\nConnectio
+SF:n:\x20close\r\n\r\n<!DOCTYPE\x20html>\n<html>\n\x20\x20<head>\n\x20\x20
+SF:\x20\x20<title>ABC</title>\n\x20\x20\x20\x20<style>\n\x20\x20\x20\x20\x
+SF:20\x20body\x20{\n\x20\x20\x20\x20\x20\x20\x20\x20width:\x2035em;\n\x20\
+SF:x20\x20\x20\x20\x20\x20\x20margin:\x200\x20auto;\n\x20\x20\x20\x20\x20\
+SF:x20\x20\x20font-family:\x20Tahoma,\x20Verdana,\x20Arial,\x20sans-serif;
+SF:\n\x20\x20\x20\x20\x20\x20}\n\x20\x20\x20\x20</style>\n\x20\x20</head>\
+SF:n\n\x20\x20<body>\n\x20\x20\x20\x20<h1>Welcome\x20to\x20ABC!</h1>\n\x20
+SF:\x20\x20\x20<p>Abbadabba\x20Broadcasting\x20Compandy</p>\n\n\x20\x20\x2
+SF:0\x20<p>We're\x20in\x20the\x20process\x20of\x20building\x20a\x20website
+SF:!\x20Can\x20you\x20believe\x20this\x20technology\x20exists\x20in\x20bed
+SF:rock\?!\?</p>\n\n\x20\x20\x20\x20<p>Barney\x20is\x20helping\x20to\x20se
+SF:tup\x20the\x20server,\x20and\x20he\x20said\x20this\x20info\x20was\x20im
+SF:portant\.\.\.</p>\n\n<pre>\nHey,\x20it's\x20Barney\.\x20I\x20only\x20fi
+SF:gured\x20out\x20nginx\x20so\x20far,\x20what\x20the\x20h3ll\x20is\x20a\x
+SF:20database\?!\?\nBamm\x20Bamm\x20tried\x20to\x20setup\x20a\x20sql\x20da
+SF:tabase,\x20but\x20I\x20don't\x20see\x20it\x20running\.\nLooks\x20like\x
+SF:20it\x20started\x20something\x20else,\x20but\x20I'm\x20not\x20sure\x20h
+SF:ow\x20to\x20turn\x20it\x20off\.\.\.\n\nHe\x20said\x20it\x20was\x20from\
+SF:x20the\x20toilet\x20and\x20OVER\x209000!\n\nNeed\x20to\x20try\x20and\x2
+SF:0secure\x20")%r(HTTPOptions,3BE,"HTTP/1\.1\x20200\x20OK\r\nContent-type
+SF::\x20text/html\r\nDate:\x20Sat,\x2027\x20Aug\x202022\x2018:58:56\x20GMT
+SF:\r\nConnection:\x20close\r\n\r\n<!DOCTYPE\x20html>\n<html>\n\x20\x20<he
+SF:ad>\n\x20\x20\x20\x20<title>ABC</title>\n\x20\x20\x20\x20<style>\n\x20\
+SF:x20\x20\x20\x20\x20body\x20{\n\x20\x20\x20\x20\x20\x20\x20\x20width:\x2
+SF:035em;\n\x20\x20\x20\x20\x20\x20\x20\x20margin:\x200\x20auto;\n\x20\x20
+SF:\x20\x20\x20\x20\x20\x20font-family:\x20Tahoma,\x20Verdana,\x20Arial,\x
+SF:20sans-serif;\n\x20\x20\x20\x20\x20\x20}\n\x20\x20\x20\x20</style>\n\x2
+SF:0\x20</head>\n\n\x20\x20<body>\n\x20\x20\x20\x20<h1>Welcome\x20to\x20AB
+SF:C!</h1>\n\x20\x20\x20\x20<p>Abbadabba\x20Broadcasting\x20Compandy</p>\n
+SF:\n\x20\x20\x20\x20<p>We're\x20in\x20the\x20process\x20of\x20building\x2
+SF:0a\x20website!\x20Can\x20you\x20believe\x20this\x20technology\x20exists
+SF:\x20in\x20bedrock\?!\?</p>\n\n\x20\x20\x20\x20<p>Barney\x20is\x20helpin
+SF:g\x20to\x20setup\x20the\x20server,\x20and\x20he\x20said\x20this\x20info
+SF:\x20was\x20important\.\.\.</p>\n\n<pre>\nHey,\x20it's\x20Barney\.\x20I\
+SF:x20only\x20figured\x20out\x20nginx\x20so\x20far,\x20what\x20the\x20h3ll
+SF:\x20is\x20a\x20database\?!\?\nBamm\x20Bamm\x20tried\x20to\x20setup\x20a
+SF:\x20sql\x20database,\x20but\x20I\x20don't\x20see\x20it\x20running\.\nLo
+SF:oks\x20like\x20it\x20started\x20something\x20else,\x20but\x20I'm\x20not
+SF:\x20sure\x20how\x20to\x20turn\x20it\x20off\.\.\.\n\nHe\x20said\x20it\x2
+SF:0was\x20from\x20the\x20toilet\x20and\x20OVER\x209000!\n\nNeed\x20to\x20
+SF:try\x20and\x20secure\x20");
+==============NEXT SERVICE FINGERPRINT (SUBMIT INDIVIDUALLY)==============
+SF-Port54321-TCP:V=7.60%T=SSL%I=7%D=8/27%Time=630A6965%P=x86_64-pc-linux-g
+SF:nu%r(NULL,31,"Error:\x20'undefined'\x20is\x20not\x20authorized\x20for\x
+SF:20access\.\n")%r(GenericLines,31,"Error:\x20'undefined'\x20is\x20not\x2
+SF:0authorized\x20for\x20access\.\n")%r(GetRequest,31,"Error:\x20'undefine
+SF:d'\x20is\x20not\x20authorized\x20for\x20access\.\n")%r(HTTPOptions,31,"
+SF:Error:\x20'undefined'\x20is\x20not\x20authorized\x20for\x20access\.\n")
+SF:%r(RTSPRequest,31,"Error:\x20'undefined'\x20is\x20not\x20authorized\x20
+SF:for\x20access\.\n")%r(RPCCheck,31,"Error:\x20'undefined'\x20is\x20not\x
+SF:20authorized\x20for\x20access\.\n")%r(DNSVersionBindReq,31,"Error:\x20'
+SF:undefined'\x20is\x20not\x20authorized\x20for\x20access\.\n")%r(DNSStatu
+SF:sRequest,31,"Error:\x20'undefined'\x20is\x20not\x20authorized\x20for\x2
+SF:0access\.\n")%r(Help,31,"Error:\x20'undefined'\x20is\x20not\x20authoriz
+SF:ed\x20for\x20access\.\n")%r(SSLSessionReq,31,"Error:\x20'undefined'\x20
+SF:is\x20not\x20authorized\x20for\x20access\.\n")%r(TLSSessionReq,31,"Erro
+SF:r:\x20'undefined'\x20is\x20not\x20authorized\x20for\x20access\.\n")%r(K
+SF:erberos,31,"Error:\x20'undefined'\x20is\x20not\x20authorized\x20for\x20
+SF:access\.\n")%r(SMBProgNeg,31,"Error:\x20'undefined'\x20is\x20not\x20aut
+SF:horized\x20for\x20access\.\n")%r(X11Probe,31,"Error:\x20'undefined'\x20
+SF:is\x20not\x20authorized\x20for\x20access\.\n")%r(FourOhFourRequest,31,"
+SF:Error:\x20'undefined'\x20is\x20not\x20authorized\x20for\x20access\.\n")
+SF:%r(LPDString,31,"Error:\x20'undefined'\x20is\x20not\x20authorized\x20fo
+SF:r\x20access\.\n")%r(LDAPSearchReq,31,"Error:\x20'undefined'\x20is\x20no
+SF:t\x20authorized\x20for\x20access\.\n")%r(LDAPBindReq,31,"Error:\x20'und
+SF:efined'\x20is\x20not\x20authorized\x20for\x20access\.\n")%r(SIPOptions,
+SF:31,"Error:\x20'undefined'\x20is\x20not\x20authorized\x20for\x20access\.
+SF:\n")%r(LANDesk-RC,31,"Error:\x20'undefined'\x20is\x20not\x20authorized\
+SF:x20for\x20access\.\n")%r(TerminalServer,31,"Error:\x20'undefined'\x20is
+SF:\x20not\x20authorized\x20for\x20access\.\n")%r(NCP,31,"Error:\x20'undef
+SF:ined'\x20is\x20not\x20authorized\x20for\x20access\.\n")%r(NotesRPC,31,"
+SF:Error:\x20'undefined'\x20is\x20not\x20authorized\x20for\x20access\.\n");
+MAC Address: 02:CC:88:55:A0:B7 (Unknown)
+No exact OS matches for host (If you know what OS is running on it, see https://nmap.org/submit/ ).
+TCP/IP fingerprint:
+OS:SCAN(V=7.60%E=4%D=8/27%OT=22%CT=1%CU=37420%PV=Y%DS=1%DC=D%G=Y%M=02CC88%T
+OS:M=630A69A6%P=x86_64-pc-linux-gnu)SEQ(SP=101%GCD=1%ISR=10B%TI=Z%CI=Z%TS=A
+OS:)SEQ(SP=101%GCD=1%ISR=10B%TI=Z%CI=Z%II=I%TS=A)OPS(O1=M2301ST11NW7%O2=M23
+OS:01ST11NW7%O3=M2301NNT11NW7%O4=M2301ST11NW7%O5=M2301ST11NW7%O6=M2301ST11)
+OS:WIN(W1=F4B3%W2=F4B3%W3=F4B3%W4=F4B3%W5=F4B3%W6=F4B3)ECN(R=Y%DF=Y%T=40%W=
+OS:F507%O=M2301NNSNW7%CC=Y%Q=)T1(R=Y%DF=Y%T=40%S=O%A=S+%F=AS%RD=0%Q=)T2(R=N
+OS:)T3(R=N)T4(R=Y%DF=Y%T=40%W=0%S=A%A=Z%F=R%O=%RD=0%Q=)T5(R=Y%DF=Y%T=40%W=0
+OS:%S=Z%A=S+%F=AR%O=%RD=0%Q=)T6(R=Y%DF=Y%T=40%W=0%S=A%A=Z%F=R%O=%RD=0%Q=)T7
+OS:(R=Y%DF=Y%T=40%W=0%S=Z%A=S+%F=AR%O=%RD=0%Q=)U1(R=Y%DF=N%T=40%IPL=164%UN=
+OS:0%RIPL=G%RID=G%RIPCK=G%RUCK=G%RUD=G)IE(R=Y%DFI=N%T=40%CD=S)
+
+Network Distance: 1 hop
+Service Info: OS: Linux; CPE: cpe:/o:linux:linux_kernel
+
+TRACEROUTE
+HOP RTT     ADDRESS
+1   0.40 ms ip-10-10-201-28.eu-west-1.compute.internal (10.10.201.28)
+
+OS and Service detection performed. Please report any incorrect results at https://nmap.org/submit/ .
+Nmap done: 1 IP address (1 host up) scanned in 1603.10 seconds
+root@ip-10-10-122-123:~# 
