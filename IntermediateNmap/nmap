@@ -1,0 +1,70 @@
+root@ip-10-10-251-129:~# nmap -A -sC -sV -p- -T4 10.10.207.21
+
+Starting Nmap 7.60 ( https://nmap.org ) at 2022-09-17 05:38 BST
+Nmap scan report for ip-10-10-207-21.eu-west-1.compute.internal (10.10.207.21)
+Host is up (0.00027s latency).
+Not shown: 65532 closed ports
+PORT      STATE SERVICE VERSION
+22/tcp    open  ssh     OpenSSH 8.2p1 Ubuntu 4ubuntu0.4 (Ubuntu Linux; protocol 2.0)
+2222/tcp  open  ssh     OpenSSH 8.2p1 Ubuntu 4ubuntu0.4 (Ubuntu Linux; protocol 2.0)
+31337/tcp open  Elite?
+| fingerprint-strings: 
+|   DNSStatusRequest, DNSVersionBindReq, FourOhFourRequest, GenericLines, GetRequest, HTTPOptions, Help, Kerberos, LANDesk-RC, LDAPBindReq, LDAPSearchReq, LPDString, NCP, NULL, NotesRPC, RPCCheck, RTSPRequest, SIPOptions, SMBProgNeg, SSLSessionReq, TLSSessionReq, TerminalServer, X11Probe: 
+|     In case I forget - user:pass
+|_    ubuntu:Dafdas!!/str0ng
+1 service unrecognized despite returning data. If you know the service/version, please submit the following fingerprint at https://nmap.org/cgi-bin/submit.cgi?new-service :
+SF-Port31337-TCP:V=7.60%I=7%D=9/17%Time=63255467%P=x86_64-pc-linux-gnu%r(N
+SF:ULL,35,"In\x20case\x20I\x20forget\x20-\x20user:pass\nubuntu:Dafdas!!/st
+SF:r0ng\n\n")%r(GetRequest,35,"In\x20case\x20I\x20forget\x20-\x20user:pass
+SF:\nubuntu:Dafdas!!/str0ng\n\n")%r(SIPOptions,35,"In\x20case\x20I\x20forg
+SF:et\x20-\x20user:pass\nubuntu:Dafdas!!/str0ng\n\n")%r(GenericLines,35,"I
+SF:n\x20case\x20I\x20forget\x20-\x20user:pass\nubuntu:Dafdas!!/str0ng\n\n"
+SF:)%r(HTTPOptions,35,"In\x20case\x20I\x20forget\x20-\x20user:pass\nubuntu
+SF::Dafdas!!/str0ng\n\n")%r(RTSPRequest,35,"In\x20case\x20I\x20forget\x20-
+SF:\x20user:pass\nubuntu:Dafdas!!/str0ng\n\n")%r(RPCCheck,35,"In\x20case\x
+SF:20I\x20forget\x20-\x20user:pass\nubuntu:Dafdas!!/str0ng\n\n")%r(DNSVers
+SF:ionBindReq,35,"In\x20case\x20I\x20forget\x20-\x20user:pass\nubuntu:Dafd
+SF:as!!/str0ng\n\n")%r(DNSStatusRequest,35,"In\x20case\x20I\x20forget\x20-
+SF:\x20user:pass\nubuntu:Dafdas!!/str0ng\n\n")%r(Help,35,"In\x20case\x20I\
+SF:x20forget\x20-\x20user:pass\nubuntu:Dafdas!!/str0ng\n\n")%r(SSLSessionR
+SF:eq,35,"In\x20case\x20I\x20forget\x20-\x20user:pass\nubuntu:Dafdas!!/str
+SF:0ng\n\n")%r(TLSSessionReq,35,"In\x20case\x20I\x20forget\x20-\x20user:pa
+SF:ss\nubuntu:Dafdas!!/str0ng\n\n")%r(Kerberos,35,"In\x20case\x20I\x20forg
+SF:et\x20-\x20user:pass\nubuntu:Dafdas!!/str0ng\n\n")%r(SMBProgNeg,35,"In\
+SF:x20case\x20I\x20forget\x20-\x20user:pass\nubuntu:Dafdas!!/str0ng\n\n")%
+SF:r(X11Probe,35,"In\x20case\x20I\x20forget\x20-\x20user:pass\nubuntu:Dafd
+SF:as!!/str0ng\n\n")%r(FourOhFourRequest,35,"In\x20case\x20I\x20forget\x20
+SF:-\x20user:pass\nubuntu:Dafdas!!/str0ng\n\n")%r(LPDString,35,"In\x20case
+SF:\x20I\x20forget\x20-\x20user:pass\nubuntu:Dafdas!!/str0ng\n\n")%r(LDAPS
+SF:earchReq,35,"In\x20case\x20I\x20forget\x20-\x20user:pass\nubuntu:Dafdas
+SF:!!/str0ng\n\n")%r(LDAPBindReq,35,"In\x20case\x20I\x20forget\x20-\x20use
+SF:r:pass\nubuntu:Dafdas!!/str0ng\n\n")%r(LANDesk-RC,35,"In\x20case\x20I\x
+SF:20forget\x20-\x20user:pass\nubuntu:Dafdas!!/str0ng\n\n")%r(TerminalServ
+SF:er,35,"In\x20case\x20I\x20forget\x20-\x20user:pass\nubuntu:Dafdas!!/str
+SF:0ng\n\n")%r(NCP,35,"In\x20case\x20I\x20forget\x20-\x20user:pass\nubuntu
+SF::Dafdas!!/str0ng\n\n")%r(NotesRPC,35,"In\x20case\x20I\x20forget\x20-\x2
+SF:0user:pass\nubuntu:Dafdas!!/str0ng\n\n");
+MAC Address: 02:3B:5B:22:25:0D (Unknown)
+No exact OS matches for host (If you know what OS is running on it, see https://nmap.org/submit/ ).
+TCP/IP fingerprint:
+OS:SCAN(V=7.60%E=4%D=9/17%OT=22%CT=1%CU=43096%PV=Y%DS=1%DC=D%G=Y%M=023B5B%T
+OS:M=63255475%P=x86_64-pc-linux-gnu)SEQ(SP=106%GCD=1%ISR=10C%TI=Z%CI=Z%TS=A
+OS:)SEQ(SP=106%GCD=1%ISR=10C%TI=Z%CI=Z%II=I%TS=A)OPS(O1=M5B4ST11NW7%O2=M5B4
+OS:ST11NW7%O3=M5B4NNT11NW7%O4=M5B4ST11NW7%O5=M5B4ST11NW7%O6=M5B4ST11)WIN(W1
+OS:=FE88%W2=FE88%W3=FE88%W4=FE88%W5=FE88%W6=FE88)ECN(R=Y%DF=Y%T=3F%W=FAF0%O
+OS:=M5B4NNSNW7%CC=Y%Q=)T1(R=Y%DF=Y%T=3F%S=O%A=S+%F=AS%RD=0%Q=)T2(R=N)T3(R=N
+OS:)T4(R=Y%DF=Y%T=3F%W=0%S=A%A=Z%F=R%O=%RD=0%Q=)T5(R=Y%DF=Y%T=40%W=0%S=Z%A=
+OS:S+%F=AR%O=%RD=0%Q=)T6(R=Y%DF=Y%T=40%W=0%S=A%A=Z%F=R%O=%RD=0%Q=)T7(R=Y%DF
+OS:=Y%T=40%W=0%S=Z%A=S+%F=AR%O=%RD=0%Q=)U1(R=Y%DF=N%T=40%IPL=164%UN=0%RIPL=
+OS:G%RID=G%RIPCK=G%RUCK=G%RUD=G)IE(R=Y%DFI=N%T=40%CD=S)
+
+Network Distance: 1 hop
+Service Info: OS: Linux; CPE: cpe:/o:linux:linux_kernel
+
+TRACEROUTE
+HOP RTT     ADDRESS
+1   0.27 ms ip-10-10-207-21.eu-west-1.compute.internal (10.10.207.21)
+
+OS and Service detection performed. Please report any incorrect results at https://nmap.org/submit/ .
+Nmap done: 1 IP address (1 host up) scanned in 1331.57 seconds
+root@ip-10-10-251-129:~# 
