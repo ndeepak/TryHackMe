@@ -1,0 +1,25 @@
+flag.txt {THM_SANTA_SMB_SERVER}
+
+userlist.txt
+USERNAME	PASSWORD
+santa		santa101
+santahr		santa25
+santaciso	santa30
+santatech	santa200
+santaaccounts	santa400
+
+Answer the questions below
+What is the name of the HTTP server running on the remote host?
+apache
+What is the name of the service running on port 22 on the QA server?
+
+ssh
+What flag can you find after successfully accessing the Samba service?
+
+{THM_SANTA_SMB_SERVER}
+What is the password for the username santahr?
+
+santa25
+If you want to learn more scanning techniques, we have a module dedicated to Nmap!
+
+No answer needed

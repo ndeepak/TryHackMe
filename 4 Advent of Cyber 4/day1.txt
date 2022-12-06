@@ -1,0 +1,7 @@
+Answer the questions below
+Who is the adversary that attacked Santa's network this year?
+The Bandit Yeti
+What's the flag that they left behind?
+THM{IT'S A Y3T1 CHR1$TMA$}
+Looking to learn more? Check out the rooms on Unified Kill Chain, Cyber Kill Chain, MITRE, or the whole Cyber Defence Frameworks module! 
+

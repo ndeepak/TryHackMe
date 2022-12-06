@@ -1,0 +1,18 @@
+Answer the questions below
+What is the name of the Registrar for the domain santagift.shop?
+Namecheap  Inc
+Find the website's source code (repository) on github.com and open the file containing sensitive credentials. Can you find the flag?
+
+{THM_OSINT_WORKS}
+What is the name of the file containing passwords?
+
+config.php
+What is the name of the QA server associated with the website?
+
+qa.santagift.shop
+What is the DB_PASSWORD that is being reused between the QA and PROD environments?
+
+S@nta2022
+Check out this room if you'd like to learn more about Google Dorking! 
+
+No answer needed
