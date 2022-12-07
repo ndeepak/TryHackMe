@@ -1,0 +1,96 @@
+Answer the questions below
+What is the email address of the sender?
+chief.elf@santaclaus.thm
+What is the return address?
+
+murphy.evident@bandityeti.thm
+On whose behalf was the email sent?
+
+Chief Elf
+What is the X-spam score?
+
+3
+What is hidden in the value of the Message-ID field?
+
+AoC2022_Email_Analysis
+Visit the email reputation check website provided in the task.
+What is the reputation result of the sender's email address?
+
+RISKY
+Check the attachments.
+What is the filename of the attachment?
+
+Division_of_labour-Load_share_plan.doc
+What is the hash value of the attachment?
+
+0827bb9a2e7c0628b82256759f0f888ca1abd6a2d903acdb8e44aca6a1a03467
+Visit the Virus Total website and use the hash value to search.
+Navigate to the behaviour section.
+What is the second tactic marked in the Mitre ATT&CK section?
+
+Defense Evasion
+Visit the InQuest website and use the hash value to search.
+What is the subcategory of the file?
+
+macro_hunter
+If you want to learn more about phishing and analysing emails, check out the Phishing module! 
+
+No answer needed
+
+
+
+
+
+ubuntu@ip-10-10-1-150:~/Desktop$ ls
+Urgent:.eml  mate-terminal.desktop  sublime-text_subl.desktop
+ubuntu@ip-10-10-1-150:~/Desktop$ emlAnalyzer -i Urgent\:.eml --header --html -u --text --extract-all
+ ==============
+ ||  Header  ||
+ ==============
+X-Pm-Content-Encryption.....end-to-end
+X-Pm-Origin.................internal
+Subject.....................Urgent: Blue section is down. Switch to the load share plan!
+From........................Chief Elf <chief.elf@santaclaus.thm>
+Date........................Tue, 6 Dec 2022 00:00:01 +0000
+Mime-Version................1.0
+Content-Type................multipart/mixed;boundary=---------------------03edd9c682a0c8f60d54b9e4bb86659f
+To..........................elves.all@santaclaus.thm <elves.all@santaclaus.thm>
+X-Attached..................Division_of_labour-Load_share_plan.doc
+Message-Id..................<QW9DMjAyMl9FbWFpbF9BbmFseXNpcw==>
+X-Pm-Spamscore..............3
+Received....................from mail.santaclaus.thm by mail.santaclaus.thm; Tue, 6 Dec 2022 00:00:01 +0000
+X-Original-To...............elves.all@santaclaus.thm
+Return-Path.................<murphy.evident@bandityeti.thm>
+Delivered-To................elves.all@santaclaus.thm
+
+ =========================
+ ||  URLs in HTML part  ||
+ =========================
+[+] No URLs found in the html
+
+ =================
+ ||  Plaintext  ||
+ =================
+[+] Email contains no plaintext
+
+ ============
+ ||  HTML  ||
+ ============
+<span>Dear Elves,</span><div><br></div><div><span>Due to technical problems in the blue section of our toy factory, we are having difficulties preparing some toys. </span></div><div><br></div><div><span>There
+ are a few days left to Christmas, so we need to use time efficiently to
+ prepare every wishlist we receive. Due to that, the blue section's 
+workload is shared with the rest to avoid any toy production delay.</span></div><div><br></div><div><span>The detailed division of labour is included in the attached document.</span></div><div><br></div><div><span>Good luck to you all.</span></div><div><br></div><div><b><span>Chief Elf</span></b></div><div><br></div>
+
+ =============================
+ ||  Attachment Extracting  ||
+ =============================
+[+] Attachment [1] "Division_of_labour-Load_share_plan.doc" extracted to eml_attachments/Division_of_labour-Load_share_plan.doc
+ubuntu@ip-10-10-1-150:~/Desktop$ 
+
+https://www.virustotal.com/gui/file/0827bb9a2e7c0628b82256759f0f888ca1abd6a2d903acdb8e44aca6a1a03467/behavior
+
+ubuntu@ip-10-10-1-150:~/Desktop/eml_attachments$ sha256sum Division_of_labour-Load_share_plan.doc 
+0827bb9a2e7c0628b82256759f0f888ca1abd6a2d903acdb8e44aca6a1a03467  Division_of_labour-Load_share_plan.doc
+ubuntu@ip-10-10-1-150:~/Desktop/eml_attachments$ 
+
+
