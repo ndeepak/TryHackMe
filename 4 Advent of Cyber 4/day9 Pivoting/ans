@@ -1,0 +1,33 @@
+Answer the questions below
+Deploy the attached VM, and wait a few minutes. What ports are open?
+80
+What framework is the web application developed with?
+
+laravel
+What CVE is the application vulnerable to?
+
+CVE-2021-3129
+What command can be used to upgrade the last opened session to a Meterpreter session?
+
+sessions -u -1
+What file indicates a session has been opened within a Docker container?
+
+/.dockerenv
+What file often contains useful credentials for web applications?
+
+.env
+What database table contains useful credentials?
+
+users
+What is Santa's password?
+
+p4$$w0rd
+What ports are open on the host machine?
+
+22,80
+What is the root flag?
+
+THM{47C61A0FA8738BA77308A8A600F88E4B}
+Day 9 is done! You might want to take a well-deserved rest now. If this challenge was right up your alley, though, we think you might enjoy the Compromising Active Directory module! 
+
+No answer needed
