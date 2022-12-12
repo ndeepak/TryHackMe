@@ -1,0 +1,18 @@
+Answer the questions below
+What is the Windows version number that the memory image captured?
+
+Note: this initial scan may take up towards 10 minutes to complete. Why not grab some water or stretch your legs?
+10
+What is the name of the binary/gift that secret Santa left?
+
+mysterygift.exe
+What is the Process ID (PID) of this binary?
+
+2040
+Dump the contents of this binary. How many files are dumped?
+
+16
+If you want to learn more about Volatility, please check out a dedicated room here. For more content on forensics, we have a full Digital Forensics and Incident Response module for you! 
+
+No answer needed
+Created by  tr
