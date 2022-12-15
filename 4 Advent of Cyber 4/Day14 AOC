@@ -1,0 +1,13 @@
+http://10.10.192.58:8080/users/105.html
+
+http://10.10.192.58:8080/images/100.png
+THM{CLOSE_THE_DOOR}
+
+Answer the questions below
+What is the office number of Elf Pivot McRed?
+134
+Not only profile pages but also stored images are vulnerable. Start with a URL of a valid profile image; what is the hidden flag?
+
+THM{CLOSE_THE_DOOR}
+Do you like IDOR? It's an Advent of Cyber classic! If you want more, check out the dedicated room or the Corridor challenge. 
+
