@@ -1,0 +1,55 @@
+ubuntu@tryhackme:~/Desktop/RegExPractice$ egrep '^[a-z]{3,9}$' strings
+hfqrf
+ubuntu@tryhackme:~/Desktop/RegExPractice$ egrep '^[a-zA-Z0-9]{6,12}$' strings
+9z8yMc9T
+31337aq
+39C3qxP
+R6fUTY2nC8
+9Qe5f4
+User35
+u3Y73h3
+5Xze553j
+ubuntu@tryhackme:~/Desktop/RegExPractice$ 
+
+
+ubuntu@tryhackme:~/Desktop/RegExPractice$ egrep '^.+@.+\.com$' strings
+br33zy@gmail.com
+lewisham44@amg.com
+johnny.the.sinner@yahoo.com
+badyeti@gmail.com
+maxximax@fedfull.com
+jklabada@tryhackme.com
+johnny.the.sinner@yahoo.com
+hunter4k@canary.com
+hussain.volt@hotmail.com
+marckymarc@tryhackme.com
+batteryvoltas@alfa.com
+ubuntu@tryhackme:~/Desktop/RegExPractice$ 
+
+gmail
+amg
+yahoo
+fedfull
+tryhackme
+canary
+hotmail
+alfa
+
+ubuntu@tryhackme:~/Desktop/RegExPractice$ egrep '^http(s)?.{3}(www)?.+\..+$' strings
+http://www.sample.net/blood?ghost=force
+http://keebler.com/dicta-tempore-id-dolores-blanditiis-ut.html
+http://koch.com/quae-perspiciatis-non-unde-quo
+http://johns.net/nisi-quis-dolorum-et-rerum
+https://www.sample.edu/#fire
+http://www.sample.info/?mint=trouble&action=move
+https://www.sample.org/?quiet=expansion&grip=eggnog
+http://spencer.com/sapiente-tempore-omnis-a-est-aut-atque-pariatur
+http://pfeffer.biz/nulla-non-facilis-incidunt-necessitatibus-velit-inventore
+https://www.kertzmann.com/possimus-ullam-consequatur-itaque-sed-modi-aliquam
+https://www.sample.com/?air=color&cave=judge#shake
+http://schinner.com/quia-vitae-qui-explicabo-provident-minima-ratione.html
+https://runolfsson.com/esse-ab-rerum-et-quis-aut.html
+https://www.moen.com/explicabo-exercitationem-culpa-et-eum-temporibus
+https://horse.sample.com/shape/company?mom=collar#donkey
+http://batz.com/reprehenderit-voluptate-id-soluta-tenetur
+ubuntu@tryhackme:~/Desktop/RegExPractice$ 
