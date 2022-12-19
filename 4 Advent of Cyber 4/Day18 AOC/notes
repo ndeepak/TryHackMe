@@ -1,0 +1,213 @@
+ [Day 18] Sigma Lumberjack Lenny Learns New Rules
+AOC2022_Sigma_v2 10.10.141.60
+┌──(root㉿kali)-[~]
+└─# nmap 10.10.141.60                  
+Starting Nmap 7.93 ( https://nmap.org ) at 2022-12-19 03:11 EST
+Nmap scan report for 10.10.141.60
+Host is up (0.20s latency).
+Not shown: 997 closed tcp ports (reset)
+PORT     STATE SERVICE
+22/tcp   open  ssh
+80/tcp   open  http
+9200/tcp open  wap-wsp
+
+Nmap done: 1 IP address (1 host up) scanned in 2.63 seconds
+                                                                                                                    
+┌──(root㉿kali)-[~]
+
+
+
+title: Local Account Creation Detection
+id: # UUID
+status: experimental #, test, stable, deprecated, unsupported.
+description: This rule will detect the account creation in the local machine
+author: ndeepak
+date: 19/12/2022
+modified: 1
+
+logsource: # Outlines target source of the logs based on operating system, service being run, category of logs.
+  product: windows #, linux, macos.
+  service: # sshd for Linux, Security for Windows, applocker, sysmon.
+  category: security # firewall, web, antivirus, process_creation, network_connection, file_access.
+detection:
+  selection:
+    EventID: 4720
+  #  {FieldName1: Value} # Change me
+
+  condition: selection # Action to be taken. Can use condition operators such as OR, AND, NOT when using multiple search identifiers.
+
+falsepositives: # Legitimate services or use.
+
+level: low # informational, low, medium, high or critical.
+
+tags: # Associated TTPs from MITRE ATT&CK
+  - {attack.tactic} # MITRE Tactic
+  - {attack.technique} # MITRE Technique 
+
+  Successfully detected Suspicious Local Account Creation. 
+  Here is your flag - THM{n0t_just_your_u$ser}
+
+  Challenge #1: Suspicious Account Creation - Sysmon Logs
+Field 	Value
+AccountExpires	%%1794
+AllowedToDelegateTo	-
+DisplayName	%%1793
+EventID	4720
+HomeDirectory	%%1793
+HomePath	%%1793
+LogonHours	%%1797
+NewUacValue	0x15
+OldUacValue	0x0
+PasswordLastSet	%%1794
+PrimaryGroupId	513
+PrivilegeList	-
+ProfilePath	%%1793
+SamAccountName	BanditYetiMini
+ScriptPath	%%1793
+SidHistory	-
+SubjectDomainName	CHANGE-MY-HOSTN
+SubjectLogonId	0x79b32
+SubjectUserName	Administrator
+SubjectUserSid	S-1-5-21-1966530601-3185510712-10604624-500
+TargetDomainName	CHANGE-MY-HOSTN
+
+
+
+title: rr
+id: # UUIDr
+status: # experimental, test, stable, deprecated, unsupported.
+description:
+author:
+date:
+modified:
+
+logsource: # Outlines target source of the logs based on operating system, service being run, category of logs.
+  product: windows #, linux, macos.
+  service: Sysmon, security  # sshd for Linux, Security for Windows, applocker, sysmon.
+  category: process creation  # firewall, web, antivirus, process_creation, network_connection, file_access.
+detection:
+  selection:
+    EventID:
+    - 1
+    Image|endswith: 
+    - reg.exe 
+    CommandLine|contains|all: 
+    - reg 
+    - query 
+    - /v 
+    - svcVersion 
+    # Change me
+
+  condition: selection # Action to be taken. Can use condition operators such as OR, AND, NOT when using multiple search identifiers.
+
+falsepositives: # Legitimate services or use.
+
+level:  # informational, low, medium, high or critical.
+
+tags: # Associated TTPs from MITRE ATT&CK
+  - {attack.tactic} # MITRE Tactic
+  - {attack.technique} # MITRE Technique 
+
+  Successfully detected Windows Software Discovery. 
+  Here is your flag - THM{wh@t_1s_Runn1ng_H3r3} 
+
+
+  Challenge #2: Software Discovery - Sysmon Logs
+Field 	Value
+CommandLine	reg query "HKEY_LOCAL_MACHINE\Software\Microsoft\Internet Explorer" /v svcVersion
+Company	Microsoft Corporation
+CurrentDirectory	C:\Users\BANDIT~1\AppData\Local\Temp\2\
+Description	Registry Console Tool
+EventID	1
+FileVersion	10.0.17763.1 (WinBuild.160101.0800)
+Hashes	MD5=8A93ACAC33151793F8D52000071C0B06,SHA256=19316D4266D0B776D9B2A05D5903D8CBC8F0EA1520E9C2A7E6D5960B6FA4DCAF,IMPHASH=BE482BE427FE212CFEF2CDA0E61F19AC
+Image	C:\Windows\System32\reg.exe
+IntegrityLevel	Medium
+LogonGuid	{c5d2b969-fde8-6383-d0a3-050000000000}
+LogonId	0x5a3d0
+OriginalFileName	reg.exe
+ParentCommandLine	"cmd.exe" /c "reg query "HKEY_LOCAL_MACHINE\Software\Microsoft\Internet Explorer" /v svcVersion"
+ParentImage	C:\Windows\System32\cmd.exe
+ParentProcessGuid	{c5d2b969-0cd4-6384-2e01-000000001701}
+ParentProcessId	3052
+ParentUser	SIGMA_AOC2022\Bandit Yeti
+ProcessGuid	{c5d2b969-0cd4-6384-3001-000000001701}
+ProcessId	5864
+Product	Microsoft® Windows® Operating System
+RuleName	-
+TerminalSessionId	2
+User	SIGMA_AOC2022\Bandit Yeti
+UtcTime	2022-11-28 01:20:20.851
+
+
+
+
+
+title:
+id: # UUID
+status: # experimental, test, stable, deprecated, unsupported.
+description:
+author:
+date:
+modified:
+
+logsource: # Outlines target source of the logs based on operating system, service being run, category of logs.
+  product: windows #, linux, macos.
+  service: sysmon # sshd for Linux, Security for Windows, applocker, sysmon.
+  category: process_creation # firewall, web, antivirus, process_creation, network_connection, file_access.
+detection:
+  selection:
+    EventID:
+    - 1
+    Image|endswith: 
+    - schtasks.exe
+    
+    # Parent_Image|endswith: 
+    # - cmd.exe
+    
+    CommandLine|contains|all:
+    - schtasks
+    - /create
+    
+    
+    # Change me
+
+  condition: selection # Action to be taken. Can use condition operators such as OR, AND, NOT when using multiple search identifiers.
+
+falsepositives: # Legitimate services or use.
+
+level:  # informational, low, medium, high or critical.
+
+tags: # Associated TTPs from MITRE ATT&CK
+  - {attack.tactic} # MITRE Tactic
+  - {attack.technique} # MITRE Technique 
+
+  Successfully detected Scheduled Task Creation. 
+  Here is your flag - THM{sch3dule_0npo1nt_101}
+
+  Challenge #3: Scheduled Task Creation - Sysmon Logs
+Field 	Value
+CommandLine	schtasks /create /tn "T1053_005_OnLogon" /sc onlogon /tr "cmd.exe /c calc.exe"
+Company	Microsoft Corporation
+CurrentDirectory	C:\Users\ADMINI~1\AppData\Local\Temp\2\
+Description	Task Scheduler Configuration Tool
+EventID	1
+FileVersion	10.0.17763.1613 (WinBuild.160101.0800)
+Hashes	MD5=2F6CE97FAF2D5EEA919E4393BDD416A7,SHA256=4B679CCC4E0E84A9EDDC24362EA4A86835597A90D94A1AE0EA905D7BCD9F771C,IMPHASH=0BF09EE8918142EE8D325D5955AA1CD9
+Image	C:\Windows\System32\schtasks.exe
+IntegrityLevel	High
+LogonGuid	{c5d2b969-b4f7-637f-329b-070000000000}
+LogonId	0x79b32
+OriginalFileName	schtasks.exe
+ParentCommandLine	"cmd.exe" /c "schtasks /create /tn "T1053_005_OnLogon" /sc onlogon /tr "cmd.exe /c calc.exe" & schtasks /create /tn "T1053_005_OnStartup" /sc onstart /ru system /tr "cmd.exe /c calc.exe""
+ParentImage	C:\Windows\System32\cmd.exe
+ParentProcessGuid	{c5d2b969-c287-6380-7605-000000001601}
+ParentProcessId	4552
+ParentUser	CHANGE-MY-HOSTN\Administrator
+ProcessGuid	{c5d2b969-c287-6380-7805-000000001601}
+ProcessId	3384
+Product	Microsoft® Windows® Operating System
+RuleName	-
+TerminalSessionId	2
+User	CHANGE-MY-HOSTN\Administrator
+UtcTime	2022-11-25 13:26:31.686
