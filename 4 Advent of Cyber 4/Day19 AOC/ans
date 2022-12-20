@@ -1,0 +1,29 @@
+Answer the questions below
+What device can be used to probe the signals being sent on electrical wires between two devices?
+Logic Analyser
+USART is faster than SPI for communication? (Yea,Nay)
+
+nay
+USART communication uses fewer wires than SPI? (Yea,Nay)
+
+yea
+USART is faster than I2C for communication? (Yea,Nay)
+
+nay
+I2C uses more wires than SPI for communication? (Yea,Nay)
+
+nay
+SPI is faster than I2C for communication? (Yea,Nay)
+
+yea
+What is the maximum number of devices that can be connected on a single pair of I2C lines?
+
+1008
+What is the new baud rate that is negotiated between the microprocessor and ESP32 chip?
+
+9600
+What is the flag that is transmitted once the new baud rate was accepted?
+
+THM{Hacking.Hardware.Is.Fun}
+Looking for a challenge? Try our Recent Threats module! 
+
