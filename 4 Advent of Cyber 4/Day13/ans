@@ -1,0 +1,54 @@
+Answer the questions below
+View the "Protocol Hierarchy" menu.
+
+What is the "Percent Packets" value of the "Hypertext Transfer Protocol"?
+
+0.3
+View the "Conversations".
+Navigate to the TCP section.
+
+Which port number has received more than 1000 packets?
+
+3389
+What is the service name of the used protocol that received more than 1000 packets?
+
+rdp
+Filter the DNS packets.
+
+What are the domain names?
+Enter the domains in alphabetical order and defanged format. (format: domain[.]zzz,domain[.]zzz)
+
+bestfestivalcompany[.]thm,cdn[.]bandityeti[.]thm
+Filter the HTTP packets.
+
+What are the names of the requested files?
+Enter the names in alphabetical order and in defanged format. (format: file[.]xyz,file[.]xyz)
+
+favicon[.]ico,mysterygift[.]exe
+Which IP address downloaded the executable file?
+Enter your answer in defanged format.
+
+10[.]10[.]29[.]186
+Which domain address hosts the malicious file?
+Enter your answer in defanged format.
+
+cdn[.]bandityeti[.]thm
+What is the "user-agent" value used to download the non-executable file?
+
+Nim httpclient/1.6.8
+Export objects from the PCAP file.
+Calculate the file hashes.
+
+What is the sha256 hash value of the executable file?
+
+0ce160a54d10f8e81448d0360af5c2948ff6a4dbb493fe4be756fc3e2c3f900f
+Search the hash value of the executable file on Virustotal.
+Navigate to the "Behaviour" section.
+There are multiple IP addresses associated with this file.
+
+What are the connected IP addresses?
+Enter the IP addressed defanged and in numerical order. (format: IPADDR,IPADDR)
+
+20[.]99[.]133[.]109,20[.]99[.]184[.]37,23[.]216[.]147[.]76
+If you liked working with Wireshark, we have a comprehensive module on this helpful tool here. If you want to dive deeper, the Network Security and Traffic Analysis module is waiting for you! 
+
