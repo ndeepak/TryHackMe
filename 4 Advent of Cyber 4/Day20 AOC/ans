@@ -1,0 +1,14 @@
+Answer the questions below
+What is the flag value after reversing the file firmwarev2.2-encrypted.gpg?
+
+Note: The flag contains underscores - if you're seeing spaces, the underscores might not be rendering.
+
+THM{WE_GOT_THE_FIRMWARE_CODE}
+What is the Paraphrase value for the binary firmwarev1.0_unsigned?
+
+Santa@2022
+After reversing the encrypted firmware, can you find the build number for rootfs?
+
+2.6.31
+Did you know we have a wonderful community on Discord? If you join us there, you can count on nice conversation, cyber security tips & tricks, and room help from our mods and mentors. Our Discord admin has some rooms out, too - you can try an easy one or a hard one!
+
