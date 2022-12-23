@@ -1,0 +1,261 @@
+┌──(root㉿kali)-[~]
+└─# nmap -A -sC -sV -p- 10.10.42.220   
+Starting Nmap 7.93 ( https://nmap.org ) at 2022-12-21 21:00 EST
+Nmap scan report for 10.10.42.220
+Host is up (0.17s latency).
+Not shown: 65532 closed tcp ports (reset)
+PORT     STATE SERVICE                 VERSION
+22/tcp   open  ssh                     OpenSSH 8.2p1 Ubuntu 4ubuntu0.1 (Ubuntu Linux; protocol 2.0)
+| ssh-hostkey: 
+|   3072 a8cd522df3f3f6bbd80138c3c5ff6d9d (RSA)
+|   256 683a3f285dddae731e31858740e5f5d9 (ECDSA)
+|_  256 0c6f915e0d3aa13925361c5e64cf26e6 (ED25519)
+80/tcp   open  http                    WebSockify Python/3.8.10
+| fingerprint-strings: 
+|   GetRequest: 
+|     HTTP/1.1 405 Method Not Allowed
+|     Server: WebSockify Python/3.8.10
+|     Date: Thu, 22 Dec 2022 02:09:02 GMT
+|     Connection: close
+|     Content-Type: text/html;charset=utf-8
+|     Content-Length: 472
+|     <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN"
+|     "http://www.w3.org/TR/html4/strict.dtd">
+|     <html>
+|     <head>
+|     <meta http-equiv="Content-Type" content="text/html;charset=utf-8">
+|     <title>Error response</title>
+|     </head>
+|     <body>
+|     <h1>Error response</h1>
+|     <p>Error code: 405</p>
+|     <p>Message: Method Not Allowed.</p>
+|     <p>Error code explanation: 405 - Specified method is invalid for this resource.</p>
+|     </body>
+|     </html>
+|   HTTPOptions: 
+|     HTTP/1.1 501 Unsupported method ('OPTIONS')
+|     Server: WebSockify Python/3.8.10
+|     Date: Thu, 22 Dec 2022 02:09:02 GMT
+|     Connection: close
+|     Content-Type: text/html;charset=utf-8
+|     Content-Length: 500
+|     <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN"
+|     "http://www.w3.org/TR/html4/strict.dtd">
+|     <html>
+|     <head>
+|     <meta http-equiv="Content-Type" content="text/html;charset=utf-8">
+|     <title>Error response</title>
+|     </head>
+|     <body>
+|     <h1>Error response</h1>
+|     <p>Error code: 501</p>
+|     <p>Message: Unsupported method ('OPTIONS').</p>
+|     <p>Error code explanation: HTTPStatus.NOT_IMPLEMENTED - Server does not support this operation.</p>
+|     </body>
+|_    </html>
+|_http-title: Error response
+|_http-server-header: WebSockify Python/3.8.10
+1883/tcp open  mosquitto version 1.6.9
+| mqtt-subscribe: 
+|   Topics and their most recent payloads: 
+|     $SYS/broker/clients/maximum: 4
+|     $SYS/broker/load/publish/sent/1min: 34.21
+|     $SYS/broker/subscriptions/count: 4
+|     $SYS/broker/store/messages/bytes: 185
+|     $SYS/broker/load/bytes/sent/1min: 1405.31
+|     $SYS/broker/load/sockets/5min: 0.39
+|     $SYS/broker/version: mosquitto version 1.6.9
+|     device/init: E6QTQ8O9P9L8TJVXR4PT
+|     $SYS/broker/heap/current: 56768
+|     $SYS/broker/load/sockets/15min: 0.22
+|     $SYS/broker/load/connections/5min: 0.40
+|     $SYS/broker/load/sockets/1min: 1.09
+|     $SYS/broker/load/bytes/received/5min: 211.26
+|     $SYS/broker/load/bytes/sent/15min: 207.18
+|     $SYS/broker/publish/messages/sent: 104
+|     $SYS/broker/retained messages/count: 42
+|     $SYS/broker/publish/messages/received: 73
+|     $SYS/broker/load/messages/received/1min: 11.37
+|     $SYS/broker/load/connections/15min: 0.22
+|     $SYS/broker/load/messages/sent/5min: 14.96
+|     $SYS/broker/load/publish/sent/15min: 5.39
+|     $SYS/broker/bytes/received: 2798
+|     $SYS/broker/bytes/sent: 3955
+|     $SYS/broker/load/bytes/received/15min: 127.46
+|     $SYS/broker/load/publish/received/5min: 5.46
+|     $SYS/broker/store/messages/count: 39
+|     $SYS/broker/publish/bytes/sent: 1615
+|     $SYS/broker/load/messages/sent/15min: 7.36
+|     $SYS/broker/publish/bytes/received: 1460
+|     $SYS/broker/messages/stored: 39
+|     $SYS/broker/clients/active: 4
+|     $SYS/broker/messages/sent: 147
+|     $SYS/broker/messages/received: 116
+|     $SYS/broker/heap/maximum: 57248
+|     $SYS/broker/uptime: 737 seconds
+|     $SYS/broker/load/messages/sent/1min: 39.70
+|     $SYS/broker/load/publish/received/1min: 5.89
+|     $SYS/broker/clients/total: 4
+|     $SYS/broker/load/publish/received/15min: 3.33
+|     $SYS/broker/load/publish/sent/5min: 11.55
+|     $SYS/broker/load/connections/1min: 1.12
+|     $SYS/broker/clients/connected: 4
+|     $SYS/broker/load/messages/received/5min: 8.87
+|     $SYS/broker/load/bytes/received/1min: 263.41
+|     $SYS/broker/load/messages/received/15min: 5.31
+|_    $SYS/broker/load/bytes/sent/5min: 453.77
+1 service unrecognized despite returning data. If you know the service/version, please submit the following fingerprint at https://nmap.org/cgi-bin/submit.cgi?new-service :
+SF-Port80-TCP:V=7.93%I=7%D=12/21%Time=63A3BC3E%P=x86_64-pc-linux-gnu%r(Get
+SF:Request,291,"HTTP/1\.1\x20405\x20Method\x20Not\x20Allowed\r\nServer:\x2
+SF:0WebSockify\x20Python/3\.8\.10\r\nDate:\x20Thu,\x2022\x20Dec\x202022\x2
+SF:002:09:02\x20GMT\r\nConnection:\x20close\r\nContent-Type:\x20text/html;
+SF:charset=utf-8\r\nContent-Length:\x20472\r\n\r\n<!DOCTYPE\x20HTML\x20PUB
+SF:LIC\x20\"-//W3C//DTD\x20HTML\x204\.01//EN\"\n\x20\x20\x20\x20\x20\x20\x
+SF:20\x20\"http://www\.w3\.org/TR/html4/strict\.dtd\">\n<html>\n\x20\x20\x
+SF:20\x20<head>\n\x20\x20\x20\x20\x20\x20\x20\x20<meta\x20http-equiv=\"Con
+SF:tent-Type\"\x20content=\"text/html;charset=utf-8\">\n\x20\x20\x20\x20\x
+SF:20\x20\x20\x20<title>Error\x20response</title>\n\x20\x20\x20\x20</head>
+SF:\n\x20\x20\x20\x20<body>\n\x20\x20\x20\x20\x20\x20\x20\x20<h1>Error\x20
+SF:response</h1>\n\x20\x20\x20\x20\x20\x20\x20\x20<p>Error\x20code:\x20405
+SF:</p>\n\x20\x20\x20\x20\x20\x20\x20\x20<p>Message:\x20Method\x20Not\x20A
+SF:llowed\.</p>\n\x20\x20\x20\x20\x20\x20\x20\x20<p>Error\x20code\x20expla
+SF:nation:\x20405\x20-\x20Specified\x20method\x20is\x20invalid\x20for\x20t
+SF:his\x20resource\.</p>\n\x20\x20\x20\x20</body>\n</html>\n")%r(HTTPOptio
+SF:ns,2B9,"HTTP/1\.1\x20501\x20Unsupported\x20method\x20\('OPTIONS'\)\r\nS
+SF:erver:\x20WebSockify\x20Python/3\.8\.10\r\nDate:\x20Thu,\x2022\x20Dec\x
+SF:202022\x2002:09:02\x20GMT\r\nConnection:\x20close\r\nContent-Type:\x20t
+SF:ext/html;charset=utf-8\r\nContent-Length:\x20500\r\n\r\n<!DOCTYPE\x20HT
+SF:ML\x20PUBLIC\x20\"-//W3C//DTD\x20HTML\x204\.01//EN\"\n\x20\x20\x20\x20\
+SF:x20\x20\x20\x20\"http://www\.w3\.org/TR/html4/strict\.dtd\">\n<html>\n\
+SF:x20\x20\x20\x20<head>\n\x20\x20\x20\x20\x20\x20\x20\x20<meta\x20http-eq
+SF:uiv=\"Content-Type\"\x20content=\"text/html;charset=utf-8\">\n\x20\x20\
+SF:x20\x20\x20\x20\x20\x20<title>Error\x20response</title>\n\x20\x20\x20\x
+SF:20</head>\n\x20\x20\x20\x20<body>\n\x20\x20\x20\x20\x20\x20\x20\x20<h1>
+SF:Error\x20response</h1>\n\x20\x20\x20\x20\x20\x20\x20\x20<p>Error\x20cod
+SF:e:\x20501</p>\n\x20\x20\x20\x20\x20\x20\x20\x20<p>Message:\x20Unsupport
+SF:ed\x20method\x20\('OPTIONS'\)\.</p>\n\x20\x20\x20\x20\x20\x20\x20\x20<p
+SF:>Error\x20code\x20explanation:\x20HTTPStatus\.NOT_IMPLEMENTED\x20-\x20S
+SF:erver\x20does\x20not\x20support\x20this\x20operation\.</p>\n\x20\x20\x2
+SF:0\x20</body>\n</html>\n");
+No exact OS matches for host (If you know what OS is running on it, see https://nmap.org/submit/ ).
+TCP/IP fingerprint:
+OS:SCAN(V=7.93%E=4%D=12/21%OT=22%CT=1%CU=39103%PV=Y%DS=2%DC=T%G=Y%TM=63A3BC
+OS:A4%P=x86_64-pc-linux-gnu)SEQ(SP=104%GCD=1%ISR=104%TI=Z%CI=Z%II=I%TS=A)OP
+OS:S(O1=M508ST11NW7%O2=M508ST11NW7%O3=M508NNT11NW7%O4=M508ST11NW7%O5=M508ST
+OS:11NW7%O6=M508ST11)WIN(W1=F4B3%W2=F4B3%W3=F4B3%W4=F4B3%W5=F4B3%W6=F4B3)EC
+OS:N(R=Y%DF=Y%T=40%W=F507%O=M508NNSNW7%CC=Y%Q=)T1(R=Y%DF=Y%T=40%S=O%A=S+%F=
+OS:AS%RD=0%Q=)T2(R=N)T3(R=N)T4(R=Y%DF=Y%T=40%W=0%S=A%A=Z%F=R%O=%RD=0%Q=)T5(
+OS:R=Y%DF=Y%T=40%W=0%S=Z%A=S+%F=AR%O=%RD=0%Q=)T6(R=Y%DF=Y%T=40%W=0%S=A%A=Z%
+OS:F=R%O=%RD=0%Q=)T7(R=Y%DF=Y%T=40%W=0%S=Z%A=S+%F=AR%O=%RD=0%Q=)U1(R=Y%DF=N
+OS:%T=40%IPL=164%UN=0%RIPL=G%RID=G%RIPCK=G%RUCK=G%RUD=G)IE(R=Y%DFI=N%T=40%C
+OS:D=S)
+
+Network Distance: 2 hops
+Service Info: OS: Linux; CPE: cpe:/o:linux:linux_kernel
+
+TRACEROUTE (using port 1720/tcp)
+HOP RTT       ADDRESS
+1   170.53 ms 10.8.0.1
+2   171.17 ms 10.10.42.220
+
+OS and Service detection performed. Please report any incorrect results at https://nmap.org/submit/ .
+Nmap done: 1 IP address (1 host up) scanned in 605.08 seconds
+    
+
+
+Short version
+
+└─# nmap -p 1883 10.10.42.220 
+Starting Nmap 7.93 ( https://nmap.org ) at 2022-12-21 21:14 EST
+Nmap scan report for 10.10.42.220
+Host is up (0.17s latency).
+
+PORT     STATE SERVICE
+1883/tcp open  mqtt
+
+Nmap done: 1 IP address (1 host up) scanned in 0.56 seconds
+                                                                                                                    
+┌──(root㉿kali)-[~]
+└─# 
+
+
+┌──(root㉿kali)-[~]
+└─# nmap -p 1883 -sV 10.10.42.220 
+Starting Nmap 7.93 ( https://nmap.org ) at 2022-12-21 21:15 EST
+Nmap scan report for 10.10.42.220
+Host is up (0.17s latency).
+
+PORT     STATE SERVICE                 VERSION
+1883/tcp open  mosquitto version 1.6.9
+
+Service detection performed. Please report any incorrect results at https://nmap.org/submit/ .
+Nmap done: 1 IP address (1 host up) scanned in 14.12 seconds
+                                                                                                                    
+┌──(root㉿kali)-[~]
+└─# 
+
+┌──(root㉿kali)-[~]
+└─# nmap -p 1883 -sV -sC 10.10.42.220 
+Starting Nmap 7.93 ( https://nmap.org ) at 2022-12-21 21:16 EST
+Nmap scan report for 10.10.42.220
+Host is up (0.17s latency).
+
+PORT     STATE SERVICE                 VERSION
+1883/tcp open  mosquitto version 1.6.9
+| mqtt-subscribe: 
+|   Topics and their most recent payloads: 
+|     $SYS/broker/bytes/sent: 10470
+|     $SYS/broker/load/connections/15min: 0.40
+|     $SYS/broker/load/publish/received/15min: 4.20
+|     $SYS/broker/load/messages/received/5min: 10.25
+|     $SYS/broker/load/messages/sent/5min: 30.33
+|     $SYS/broker/clients/total: 6
+|     $SYS/broker/load/messages/received/15min: 7.01
+|     $SYS/broker/clients/maximum: 6
+|     $SYS/broker/load/publish/sent/1min: 65.51
+|     $SYS/broker/publish/bytes/sent: 2924
+|     $SYS/broker/load/connections/5min: 0.85
+|     $SYS/broker/load/messages/sent/15min: 15.82
+|     $SYS/broker/load/bytes/received/15min: 165.26
+|     $SYS/broker/bytes/received: 4236
+|     $SYS/broker/clients/disconnected: 2
+|     $SYS/broker/load/sockets/15min: 0.40
+|     $SYS/broker/version: mosquitto version 1.6.9
+|     $SYS/broker/uptime: 1100 seconds
+|     $SYS/broker/subscriptions/count: 8
+|     $SYS/broker/retained messages/count: 46
+|     $SYS/broker/store/messages/bytes: 202
+|     $SYS/broker/store/messages/count: 46
+|     $SYS/broker/load/bytes/sent/5min: 1029.95
+|     $SYS/broker/publish/messages/sent: 270
+|     $SYS/broker/publish/messages/received: 109
+|     $SYS/broker/publish/bytes/received: 2180
+|     $SYS/broker/messages/sent: 337
+|     $SYS/broker/messages/stored: 46
+|     $SYS/broker/messages/received: 178
+|     $SYS/broker/load/sockets/5min: 0.84
+|     $SYS/broker/load/publish/sent/15min: 13.11
+|     $SYS/broker/load/publish/sent/5min: 26.09
+|     $SYS/broker/clients/active: 4
+|     $SYS/broker/load/sockets/1min: 2.63
+|     $SYS/broker/load/bytes/sent/1min: 2621.18
+|     $SYS/broker/load/messages/received/1min: 13.42
+|     $SYS/broker/load/bytes/sent/15min: 512.71
+|     $SYS/broker/load/messages/sent/1min: 72.78
+|     $SYS/broker/clients/inactive: 2
+|     $SYS/broker/clients/connected: 4
+|     $SYS/broker/heap/current: 58744
+|     $SYS/broker/load/publish/received/5min: 5.77
+|     $SYS/broker/load/publish/received/1min: 5.71
+|     $SYS/broker/heap/maximum: 59144
+|     device/init: E6QTQ8O9P9L8TJVXR4PT
+|     $SYS/broker/load/connections/1min: 2.71
+|     $SYS/broker/load/bytes/received/5min: 238.09
+|_    $SYS/broker/load/bytes/received/1min: 300.44
+
+Service detection performed. Please report any incorrect results at https://nmap.org/submit/ .
+Nmap done: 1 IP address (1 host up) scanned in 13.30 seconds
+                                                                                                                    
+┌──(root㉿kali)-[~]
+└─# 

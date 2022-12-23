@@ -1,0 +1,13 @@
+Answer the questions below
+What port is Mosquitto running on? 
+1883
+Is the device/init topic enumerated by Nmap during a script scan of all ports? (y/n)
+y
+What Mosquitto version is the device using?
+
+1.6.9
+What flag is obtained from viewing the RTSP stream? 
+
+ THM{UR_CAMERA_IS_MINE}
+If you want to learn more check out the Command Injection room or the Vulnerability Research module! 
+
