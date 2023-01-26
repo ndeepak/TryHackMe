@@ -1,0 +1,34 @@
+┌──(root㉿kali)-[~]
+└─# echo "10.10.60.44 blog.futurevera.thm support.futurevera.thm" >> /etc/hosts
+                                                                                                                    
+┌──(root㉿kali)-[~]
+└─# cat /etc/hosts           
+127.0.0.1       localhost
+127.0.1.1       kali
+::1             localhost ip6-localhost ip6-loopback
+ff02::1         ip6-allnodes
+ff02::2         ip6-allrouters
+10.10.60.44 futurevera.thm 
+10.10.60.44 portal.futurevera.thm
+10.10.60.44 blog.futurevera.thm support.futurevera.thm
+                                                                                                                    
+┌──(root㉿kali)-[~]
+└─# echo "10.10.60.44 blog.futurevera.thm support.futurevera.thm secrethelpdesk934752.support.futurevera.thm" >> /etc/hosts
+                                                                                                                    
+┌──(root㉿kali)-[~]
+└─# cat /etc/hosts
+127.0.0.1       localhost
+127.0.1.1       kali
+::1             localhost ip6-localhost ip6-loopback
+ff02::1         ip6-allnodes
+ff02::2         ip6-allrouters
+10.10.60.44 futurevera.thm 
+10.10.60.44 portal.futurevera.thm
+10.10.60.44 blog.futurevera.thm support.futurevera.thm
+10.10.60.44 blog.futurevera.thm support.futurevera.thm secrethelpdesk934752.support.futurevera.thm
+                                                                                                                    
+┌──(root㉿kali)-[~]
+└─# 
+
+
+visit the page with http.. and wolllaaaahh
