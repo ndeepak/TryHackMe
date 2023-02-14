@@ -10,7 +10,7 @@ This is my page for TryHackMe rooms walkthrough.
 | --- | ----- |
 
 <ol>
-    <li><a href="0Day">0 Day</a></li>
+    <li><a href="./0Day">0 Day</a></li>
     <li><a href="4 Advent of Cyber 4">Advent of Cyber</a></li>
     <li><a href="#"></a></li>
     <li><a href="#"></a></li>
