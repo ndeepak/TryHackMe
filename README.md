@@ -6,16 +6,13 @@ This is my page for TryHackMe rooms walkthrough.
     <p>This is Deepak Nagarkoti's TryHackMe rooms walkthrough blogs and writeups.</p>
     <h2>List of Rooms</h2>
 
-| S.N | Rooms |
-| --- | ----- |
-
-<ol>
-    <li><a href="./0Day">0 Day</a></li>
-    <li><a href="4 Advent of Cyber 4">Advent of Cyber</a></li>
-    <li><a href="#"></a></li>
-    <li><a href="#"></a></li>
-    <li><a href="#"></a></li>
-    <li><a href="#"></a></li>
-    <li><a href="#"></a></li>
-    <li><a href="#"></a></li>
-</ol>
+| Rooms |
+| ----- |
+[0 Day](0day%20Created%20by%20%20MuirlandOracle%20and%20%200day/)
+[Advent of Cyber 4](4%20Advent%20of%20Cyber%204/)
+[B3dRock](b3dr0ck/)
+[Blue](Blue/)
+[Data Exfiltration](Data%20Exfiltration/)
+[Enumeration](Enumeration/)
+[FileInclusion](FileInclusion/)
+[]()
