@@ -1,0 +1,24 @@
+Answer the questions below
+Let's run nmap and check what ports are open.
+
+No answer needed
+What port is for the web server?
+
+80
+What port is for remote desktop service?
+
+3389
+What is a possible password in one of the pages web crawlers check for?
+
+UmbracoIsTheBest!
+What CMS is the website using?
+
+umbraco
+What is the domain of the website?
+anthem.com
+What's the name of the Administrator
+
+Solomon Grundy
+Can we find find the email address of the administrator?
+
+sg@anthem.com

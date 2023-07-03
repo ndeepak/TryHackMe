@@ -1,0 +1,63 @@
+└─# gobuster dir -u http://10.10.52.153/ -w /usr/share/wordlists/dirbuster/directory-list-2.3-medium.txt 
+===============================================================
+Gobuster v3.2.0-dev
+by OJ Reeves (@TheColonial) & Christian Mehlmauer (@firefart)
+===============================================================
+[+] Url:                     http://10.10.52.153/
+[+] Method:                  GET
+[+] Threads:                 10
+[+] Wordlist:                /usr/share/wordlists/dirbuster/directory-list-2.3-medium.txt
+[+] Negative Status codes:   404
+[+] User Agent:              gobuster/3.2.0-dev
+[+] Timeout:                 10s
+===============================================================
+2023/07/03 01:49:41 Starting gobuster in directory enumeration mode
+===============================================================
+/search               (Status: 200) [Size: 3418]
+/blog                 (Status: 200) [Size: 5394]
+/sitemap              (Status: 200) [Size: 1041]
+/rss                  (Status: 200) [Size: 1873]
+/archive              (Status: 301) [Size: 123] [--> /blog/]
+/categories           (Status: 200) [Size: 3541]
+/authors              (Status: 200) [Size: 4115]
+/Search               (Status: 200) [Size: 3468]
+/tags                 (Status: 200) [Size: 3594]
+/install              (Status: 302) [Size: 126] [--> /umbraco/]
+/RSS                  (Status: 200) [Size: 1873]
+/Blog                 (Status: 200) [Size: 5394]
+/Archive              (Status: 301) [Size: 123] [--> /blog/]
+/SiteMap              (Status: 200) [Size: 1041]
+Progress: 1606 / 220561 (0.73%)[ERROR] 2023/07/03 01:52:59 [!] Get "http://10.10.52.153/1995": context deadline exceeded (Client.Timeout exceeded while awaiting headers)
+Progress: 1607 / 220561 (0.73%)[ERROR] 2023/07/03 01:53:00 [!] Get "http://10.10.52.153/departments": context deadline exceeded (Client.Timeout exceeded while awaiting headers)
+[ERROR] 2023/07/03 01:53:00 [!] Get "http://10.10.52.153/cp14": context deadline exceeded (Client.Timeout exceeded while awaiting headers)
+Progress: 1609 / 220561 (0.73%)[ERROR] 2023/07/03 01:53:00 [!] Get "http://10.10.52.153/connect": context deadline exceeded (Client.Timeout exceeded while awaiting headers)
+[ERROR] 2023/07/03 01:53:00 [!] Get "http://10.10.52.153/224": context deadline exceeded (Client.Timeout exceeded while awaiting headers)
+Progress: 1611 / 220561 (0.73%)[ERROR] 2023/07/03 01:53:01 [!] Get "http://10.10.52.153/top_left": context deadline exceeded (Client.Timeout exceeded while awaiting headers)
+[ERROR] 2023/07/03 01:53:01 [!] Get "http://10.10.52.153/icon_minipost": context deadline exceeded (Client.Timeout exceeded while awaiting headers)
+[ERROR] 2023/07/03 01:53:01 [!] Get "http://10.10.52.153/rdf": context deadline exceeded (Client.Timeout exceeded while awaiting headers)
+Progress: 1614 / 220561 (0.73%)[ERROR] 2023/07/03 01:53:01 [!] Get "http://10.10.52.153/342": context deadline exceeded (Client.Timeout exceeded while awaiting headers)
+[ERROR] 2023/07/03 01:53:01 [!] Get "http://10.10.52.153/220": context deadline exceeded (Client.Timeout exceeded while awaiting headers)
+/siteMap              (Status: 200) [Size: 1036]
+/INSTALL              (Status: 302) [Size: 126] [--> /umbraco/]
+/Sitemap              (Status: 200) [Size: 1036]
+/1073                 (Status: 200) [Size: 5349]
+/Rss                  (Status: 200) [Size: 1863]
+/Categories           (Status: 200) [Size: 3491]
+/1074                 (Status: 301) [Size: 118] [--> /]
+/*checkout*           (Status: 400) [Size: 3420]
+/1078                 (Status: 200) [Size: 6155]
+/Authors              (Status: 200) [Size: 4070]
+/1075                 (Status: 200) [Size: 4070]
+/1079                 (Status: 200) [Size: 6215]
+Progress: 8866 / 220561 (4.02%)[ERROR] 2023/07/03 02:13:11 [!] Get "http://10.10.52.153/network_security": context deadline exceeded (Client.Timeout exceeded while awaiting headers)
+Progress: 8888 / 220561 (4.03%)[ERROR] 2023/07/03 02:13:24 [!] Get "http://10.10.52.153/2584": context deadline exceeded (Client.Timeout exceeded while awaiting headers)
+Progress: 8889 / 220561 (4.03%)[ERROR] 2023/07/03 02:13:24 [!] Get "http://10.10.52.153/forgotpass": context deadline exceeded (Client.Timeout exceeded while awaiting headers)
+[ERROR] 2023/07/03 02:13:24 [!] Get "http://10.10.52.153/gifshuffle": context deadline exceeded (Client.Timeout exceeded while awaiting headers)
+Progress: 8891 / 220561 (4.03%)[ERROR] 2023/07/03 02:13:25 [!] Get "http://10.10.52.153/checksum": context deadline exceeded (Client.Timeout exceeded while awaiting headers)
+/1076                 (Status: 200) [Size: 5021]
+Progress: 10974 / 220561 (4.98%)[ERROR] 2023/07/03 02:21:29 [!] context deadline exceeded (Client.Timeout or context cancellation while reading body)
+Progress: 11299 / 220561 (5.12%)^C
+[!] Keyboard interrupt detected, terminating.
+===============================================================
+2023/07/03 02:23:15 Finished
+===============================================================

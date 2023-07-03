@@ -1,0 +1,45 @@
+└─# sudo nmap -A -sC -sV -p- -Pn -T4 10.10.52.153
+Starting Nmap 7.93 ( https://nmap.org ) at 2023-07-03 01:51 EDT
+Stats: 0:00:46 elapsed; 0 hosts completed (1 up), 1 undergoing SYN Stealth Scan
+SYN Stealth Scan Timing: About 14.43% done; ETC: 01:56 (0:04:15 remaining)
+sendto in send_ip_packet_sd: sendto(5, packet, 44, 0, 10.10.52.153, 16) => Operation not permitted
+Offending packet: TCP 10.8.28.227:64677 > 10.10.52.153:1623 S ttl=49 id=45234 iplen=44  seq=83904475 win=1024 <mss 1460>
+Nmap scan report for 10.10.52.153
+Host is up (0.19s latency).
+Not shown: 65533 filtered tcp ports (no-response)
+PORT     STATE SERVICE       VERSION
+80/tcp   open  http          Microsoft HTTPAPI httpd 2.0 (SSDP/UPnP)
+|_http-title: Anthem.com - Welcome to our blog
+| http-robots.txt: 4 disallowed entries 
+|_/bin/ /config/ /umbraco/ /umbraco_client/
+3389/tcp open  ms-wbt-server Microsoft Terminal Services
+| rdp-ntlm-info: 
+|   Target_Name: WIN-LU09299160F
+|   NetBIOS_Domain_Name: WIN-LU09299160F
+|   NetBIOS_Computer_Name: WIN-LU09299160F
+|   DNS_Domain_Name: WIN-LU09299160F
+|   DNS_Computer_Name: WIN-LU09299160F
+|   Product_Version: 10.0.17763
+|_  System_Time: 2023-07-03T05:54:37+00:00
+| ssl-cert: Subject: commonName=WIN-LU09299160F
+| Not valid before: 2023-07-02T05:44:51
+|_Not valid after:  2024-01-01T05:44:51
+|_ssl-date: 2023-07-03T05:54:58+00:00; +18s from scanner time.
+Warning: OSScan results may be unreliable because we could not find at least 1 open and 1 closed port
+Device type: specialized
+Running (JUST GUESSING): AVtech embedded (85%)
+Aggressive OS guesses: AVtech Room Alert 26W environmental monitor (85%)
+No exact OS matches for host (test conditions non-ideal).
+Network Distance: 2 hops
+Service Info: OS: Windows; CPE: cpe:/o:microsoft:windows
+
+Host script results:
+|_clock-skew: mean: 17s, deviation: 0s, median: 17s
+
+TRACEROUTE (using port 80/tcp)
+HOP RTT       ADDRESS
+1   184.50 ms 10.8.0.1
+2   201.04 ms 10.10.52.153
+
+OS and Service detection performed. Please report any incorrect results at https://nmap.org/submit/ .
+Nmap done: 1 IP address (1 host up) scanned in 217.08 seconds

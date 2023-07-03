@@ -1,0 +1,13 @@
+
+Let's figure out the username and password to log in to the box.(The box is not on a domain)
+
+No answer needed
+Gain initial access to the machine, what is the contents of user.txt?
+
+THM{N00T_NO0T}
+Can we spot the admin password?
+
+ChangeMeBaby1MoreTime
+Escalate your privileges to root, what is the contents of root.txt?
+
+THM{Y0U_4R3_1337}
